@@ -6,6 +6,38 @@ has not been pushed. The six pilot families remain six. Four separately qualifie
 experimental controllers improve the earlier command-tick models without promoting
 them to broad ASIC/GPU design benchmarks.
 
+## Executed validation
+
+| Scope | Functional + synthesis | Bounded formal | Unbounded formal | Physical |
+|---|---:|---:|---:|---:|
+| Pilot families | 6 | 2 small configurations | 0 | 0 |
+| Experimental fixed-cycle controllers | 4 | 0 | 0 | 0 |
+
+The development suites accepted 16 pilot designs and rejected 65 faulty variants;
+controller suites accepted 13 designs and rejected 28 mutants. All 12 fresh
+structural cases passed with frozen development selections. Every accepted
+candidate ran both RTL and mapped-netlist simulation. All 45 unit tests passed,
+including in a clean checkout. Elastic bounded safety passed at width 8 for 12
+clocks, and symbolic pipelined-dot safety passed at K=1 for 8 clocks. Three negative
+formal controls failed (corrupt elastic, changed-latency equivalence, corrupt dot).
+These results do not establish unbounded liveness or full-size formal correctness.
+
+The installed pilot library, CLI and JSON defaults rejected all 73 bad classes per
+interface: **219 rejection checks**, with all **18 baseline checks** passing. That
+includes the prior cutoff lengths and the new padding/late-write attacks.
+
+The final installed controller API passed baseline and alternate actions for all
+four families, rejected four late-loss candidates, and rejected eight attempts to
+change host settings. Pilot goal tests through installed CLI and JSON confirmed
+that a valid serial dot design receives an area reward but zero balanced/latency
+reward, with `tested_correct=true` and `objective_eligible=false` where appropriate.
+
+A fresh local clone of implementation commit
+`c2040fddbf95d251613c8a1bf20279aaaaf28992` passed 45 tests and fresh-cache dot/DMA
+HDL smoke checks using the independently installed toolchain. All 32 installed
+runtime Python/contract files match that source byte-for-byte. Raw results and
+hashes are retained in the public evidence directory; private vectors stay outside Git.
+
 ## Changes
 
 - Host-selected area, balanced (default), and latency objectives have explicit
@@ -90,7 +122,7 @@ python /path/to/chip-rl/scripts/check_cycle_api.py --output /tmp/cycle-api --cac
 python /path/to/chip-rl/scripts/check_objective_api.py --output /tmp/objective-api.json --cache /tmp/chip-cache
 ```
 
-The actual run split public API checks into compute/memory jobs, and structural
+The actual run split public API checks into compute, scratchpad/cache, and gather jobs, and structural
 checks into compute/scratchpad/cache+gather jobs. Raw replay artifacts are private
 under `/workspace/chip-rl-v4-qualification-final`, `/workspace/chip-rl-v4-holdouts`,
 `/workspace/chip-rl-v4-cycle-release`, and the corresponding formal directories.
@@ -107,6 +139,10 @@ but tiny arithmetic and inefficient starter RTL can be easy; memory mapping can
 make each evaluation expensive without making the design task more representative
 of a real GPU. Sparse/bursty workloads exercise behavior, not a calibrated GPU trace.
 Raw evaluation elapsed seconds are in [`cost.json`](../evidence/v4/cost.json).
+Development baseline evaluations took about 1.2s (elastic), 1.6s (dot), 5.6s
+(tensor), 125.9s (scratchpad), 88.0s (cache), and 179.0s (gather). The full
+compute qualification took 36s and memory qualification 870s; these exclude the
+separate API, structural and controller runs. This cost is material for RL training.
 Measurements used four shared CPU cores and warm synthesis/compiled-program caches,
 with overlapping jobs; they are not cold-run cost comparisons or a throughput SLA.
 Default API tests use new private workloads, so their timings differ from fixed-seed

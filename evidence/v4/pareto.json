@@ -1,0 +1,836 @@
+{
+  "elastic": {
+    "frontier": [
+      "baseline",
+      "global4",
+      "fifo4"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "global4": {
+        "point": {
+          "cells": 0.9382716049382716,
+          "cycles": 1.0,
+          "latency": 1.008072349311258
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0252641090663652,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0133294705901847,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0041639568980398,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      },
+      "fifo4": {
+        "point": {
+          "cells": 2.5185185185185186,
+          "cycles": 0.9960775758820107,
+          "latency": 0.9486176238443857
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 0.6867321823815413,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 0.8095158335908099,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 0.9233423750469285,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      }
+    }
+  },
+  "dot": {
+    "frontier": [
+      "baseline",
+      "serial1",
+      "serial2",
+      "product_pipe"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "serial1": {
+        "point": {
+          "cells": 0.5259678942398489,
+          "cycles": 3.1262845274394806,
+          "latency": 59.8622985239308
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0754119924053378,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      },
+      "serial2": {
+        "point": {
+          "cells": 0.8050047214353163,
+          "cycles": 2.1599559476636707,
+          "latency": 33.31987070134049
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 0.9476998627550182,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      },
+      "product_pipe": {
+        "point": {
+          "cells": 0.9745042492917847,
+          "cycles": 1.001351583112141,
+          "latency": 1.0234289109534784
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0096503737685785,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.002719776390929,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 0.9960591627129709,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      }
+    }
+  },
+  "tensor": {
+    "frontier": [
+      "baseline",
+      "tensor4"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "serial1": {
+        "point": {
+          "cells": 0.42184356880842505,
+          "cycles": 8.717730516961844,
+          "latency": 211.03730661179623
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0563309623833494,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      },
+      "tensor4": {
+        "point": {
+          "cells": 0.3420896935273932,
+          "cycles": 3.1262845274394806,
+          "latency": 59.8622985239308
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.2293733127170565,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      }
+    }
+  },
+  "scratchpad": {
+    "frontier": [
+      "baseline",
+      "time_mux"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "time_mux": {
+        "point": {
+          "cells": 0.27940326124667514,
+          "cycles": 3.1809106494860577,
+          "latency": 149.41931177094426
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.2693314388977819,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      }
+    }
+  },
+  "cache": {
+    "frontier": [
+      "lazy_cache"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "lazy_cache": {
+        "point": {
+          "cells": 0.9836702212318956,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0065854508125,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0037044625192757,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0016464519616848,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "dominates_baseline"
+      }
+    }
+  },
+  "gather": {
+    "frontier": [
+      "baseline",
+      "time_mux"
+    ],
+    "designs": {
+      "baseline": {
+        "point": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "latency": 1.0
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": true,
+            "reward": 1.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "equal_to_baseline"
+      },
+      "time_mux": {
+        "point": {
+          "cells": 0.6155796687607081,
+          "cycles": 2.314822586117609,
+          "latency": 68.74266127675145
+        },
+        "objectives": {
+          "area": {
+            "eligible": true,
+            "reward": 1.030969453781743,
+            "limits": {
+              "weights": [
+                0.8,
+                0.15,
+                0.05
+              ],
+              "max_cycle_ratio": 16.0,
+              "max_latency_ratio": 1024.0
+            }
+          },
+          "balanced": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.45,
+                0.3,
+                0.25
+              ],
+              "max_cycle_ratio": 2.0,
+              "max_latency_ratio": 4.0
+            }
+          },
+          "latency": {
+            "eligible": false,
+            "reward": 0.0,
+            "limits": {
+              "weights": [
+                0.2,
+                0.25,
+                0.55
+              ],
+              "max_cycle_ratio": 1.1,
+              "max_latency_ratio": 1.1
+            }
+          }
+        },
+        "relation": "area_performance_tradeoff"
+      }
+    }
+  }
+}

@@ -8,19 +8,24 @@ sources={
  'qualification-compute':'chip-rl-v4-qualification-final/compute/summary.json',
  'qualification-memory':'chip-rl-v4-qualification-final/memory/summary.json',
  'api-compute':'chip-rl-v4-api/compute/summary.json','api-memory':'chip-rl-v4-api/memory/summary.json',
+ 'api-gather':'chip-rl-v4-api/gather/summary.json',
  'cycle-qualification':'chip-rl-v4-cycle-release/summary.json','cycle-api':'chip-rl-v4-cycle-api-release/summary.json',
  'heldout-compute':'chip-rl-v4-holdouts/compute/summary.json','heldout-scratchpad':'chip-rl-v4-holdouts/scratchpad/summary.json',
  'heldout-memory':'chip-rl-v4-holdouts/memory/summary.json',
  'formal-elastic':'chip-rl-v4-formal-elastic/summary.json','formal-dot':'chip-rl-v4-formal-dot-reproduced/summary.json',
  'arrival-gate':'chip-rl-v4-arrival-final/result.json'}
 sources['objective-api']='chip-rl-v4-objective-api-final.json'
+sources['source-provenance']='chip-rl-v4-source-provenance.json'
+sources['fresh-smoke']='chip-rl-v4-fresh-smoke.json'
 reports={}
 for name,src in sources.items():
  r=json.loads((w/src).read_text());assert not r.get('failures'),(name,r.get('failures'))
  reports[name]=r;(a.output/(name+'.json')).write_text(json.dumps(r,indent=2)+'\n')
 shutil.copy(w/'chip-rl-v4-unit-final.log',a.output/'unit-tests.txt')
+shutil.copy(w/'chip-rl-v4-fresh-tests.log',a.output/'fresh-checkout-tests.txt')
+shutil.copy(w/'chip-rl-v4-wheel.log',a.output/'wheel-install.txt')
 q={**reports['qualification-compute']['tasks'],**reports['qualification-memory']['tasks']}
-api={**reports['api-compute']['tasks'],**reports['api-memory']['tasks']}
+api={**reports['api-compute']['tasks'],**reports['api-memory']['tasks'],**reports['api-gather']['tasks']}
 cy=reports['cycle-qualification']['tasks']
 pareto={};cost={}
 for n,rs in q.items():

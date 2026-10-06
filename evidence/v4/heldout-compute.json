@@ -1,0 +1,516 @@
+{
+  "tasks": {
+    "elastic": {
+      "winner": "global4",
+      "pareto_frontier": [
+        "baseline",
+        "global4",
+        "fifo4"
+      ],
+      "heldouts": [
+        {
+          "tested_correct": true,
+          "reward": 1.017032034382061,
+          "family": "elastic",
+          "contract": "f95c2fc5846f8e38945f24ab7f83dcfa8f33bc0941ae288910f2938a2924c5a3",
+          "source_sha256": "4e65cc52fbef1e09f4547ad3c764d97586bb6dcbdc2caf66e68d4aa5230d69cb",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 60,
+            "logic_depth": 2,
+            "mean_completion_cycles": 1575.5,
+            "mean_offered_latency": 39.24843534284399
+          },
+          "paired_ratios": {
+            "cells": 0.9230769230769231,
+            "cycles": 1.00019120458891,
+            "offered_latency": 1.0078007924713366
+          },
+          "dimension_variants_checked": 4,
+          "private_cases_checked": 5,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 1.0317714237535496,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 1.017032034382061,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 1.0059070481005357,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 0.9230769230769231,
+            "cycles": 1.00019120458891,
+            "latency": 1.0075843670699731
+          },
+          "baseline_relation": "area_performance_tradeoff",
+          "elapsed_s": 2.111,
+          "synthesis_cache_hits": 6,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        },
+        {
+          "tested_correct": true,
+          "reward": 1.0116636309302938,
+          "family": "elastic",
+          "contract": "c5e6124d377d46b51282eb1d7d27b90d7cdeb813b10672d2115af84ad3c2e4f5",
+          "source_sha256": "4e65cc52fbef1e09f4547ad3c764d97586bb6dcbdc2caf66e68d4aa5230d69cb",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 92,
+            "logic_depth": 2,
+            "mean_completion_cycles": 1453.0,
+            "mean_offered_latency": 42.62634854771784
+          },
+          "paired_ratios": {
+            "cells": 0.9484536082474226,
+            "cycles": 1.0,
+            "offered_latency": 1.0019880465500337
+          },
+          "dimension_variants_checked": 4,
+          "private_cases_checked": 5,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 1.0211080490104396,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 1.0116636309302938,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 1.0047601516486484,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 0.9484536082474226,
+            "cycles": 1.0,
+            "latency": 1.0019364842564509
+          },
+          "baseline_relation": "area_performance_tradeoff",
+          "elapsed_s": 2.061,
+          "synthesis_cache_hits": 6,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        }
+      ]
+    },
+    "dot": {
+      "winner": "product_pipe",
+      "pareto_frontier": [
+        "baseline",
+        "serial1",
+        "serial2",
+        "product_pipe"
+      ],
+      "heldouts": [
+        {
+          "tested_correct": true,
+          "reward": 0.9882365015785769,
+          "family": "dot",
+          "contract": "14a1cc5bb291f342c7272a3a0fa21849ae307ba162a0d63a818e67aba4fba9cf",
+          "source_sha256": "8afcb0e787db65a4433db78ea3361e690b0400b6ced94d146ec9c2878aef0179",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 462,
+            "logic_depth": 24,
+            "mean_completion_cycles": 1222.5,
+            "mean_offered_latency": 29.248250008883204
+          },
+          "paired_ratios": {
+            "cells": 1.0405405405405406,
+            "cycles": 1.0022279981760147,
+            "offered_latency": 1.0210864101551484
+          },
+          "dimension_variants_checked": 3,
+          "private_cases_checked": 4,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 0.9834449975500784,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 0.9882365015785769,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 0.9902705170715944,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 1.0405405405405406,
+            "cycles": 1.0022279981760147,
+            "latency": 1.0202751115124464
+          },
+          "baseline_relation": "dominated_by_baseline",
+          "elapsed_s": 2.032,
+          "synthesis_cache_hits": 6,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        },
+        {
+          "tested_correct": true,
+          "reward": 1.0029239133627257,
+          "family": "dot",
+          "contract": "0bae013c8479da04facece2d6f81f742051e2f5d89ba4f2ef45f0178dc9e5504",
+          "source_sha256": "8afcb0e787db65a4433db78ea3361e690b0400b6ced94d146ec9c2878aef0179",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 1541,
+            "logic_depth": 24,
+            "mean_completion_cycles": 1269.0,
+            "mean_offered_latency": 29.828735056676233
+          },
+          "paired_ratios": {
+            "cells": 0.9771718452758402,
+            "cycles": 1.0013966480446927,
+            "offered_latency": 1.017285721220052
+          },
+          "dimension_variants_checked": 3,
+          "private_cases_checked": 4,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 1.0087190723509614,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 1.0029239133627257,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 0.9975970629482895,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 0.9771718452758402,
+            "cycles": 1.0013966480446927,
+            "latency": 1.0166860064933085
+          },
+          "baseline_relation": "area_performance_tradeoff",
+          "elapsed_s": 2.431,
+          "synthesis_cache_hits": 6,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        }
+      ]
+    },
+    "tensor": {
+      "winner": "baseline",
+      "pareto_frontier": [
+        "baseline",
+        "tensor4"
+      ],
+      "heldouts": [
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "tensor",
+          "contract": "59591131fb7686f9c5f72fb40cb3613df9e7ef6e75c42ffd30b17de3118aaa44",
+          "source_sha256": "917672297f123350b2aeda0f4e971da2084ddf8518ac56359695447cd9f6243b",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 1765,
+            "logic_depth": 24,
+            "mean_completion_cycles": 1446.5,
+            "mean_offered_latency": 31.22535008095353
+          },
+          "paired_ratios": {
+            "cells": 1.0,
+            "cycles": 1.0,
+            "offered_latency": 1.0
+          },
+          "dimension_variants_checked": 3,
+          "private_cases_checked": 4,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 1.0,
+            "cycles": 1.0,
+            "latency": 1.0
+          },
+          "baseline_relation": "equal_to_baseline",
+          "elapsed_s": 6.716,
+          "synthesis_cache_hits": 5,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        },
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "tensor",
+          "contract": "b3b34e509abeead13a0caf19a36d36d7ca5ac91a87c09f5d8bb9dea6cec0a350",
+          "source_sha256": "917672297f123350b2aeda0f4e971da2084ddf8518ac56359695447cd9f6243b",
+          "validation": "rtl_and_netlist_pass",
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "pilot_eligible": true,
+          "coverage_profile": "mandatory-variable-stream-v3",
+          "objective": "balanced",
+          "objective_eligible": true,
+          "metrics": {
+            "cells": 6283,
+            "logic_depth": 33,
+            "mean_completion_cycles": 1496.5,
+            "mean_offered_latency": 30.126919393455708
+          },
+          "paired_ratios": {
+            "cells": 1.0,
+            "cycles": 1.0,
+            "offered_latency": 1.0
+          },
+          "dimension_variants_checked": 3,
+          "private_cases_checked": 4,
+          "objectives": {
+            "area": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.8,
+                  0.15,
+                  0.05
+                ],
+                "max_cycle_ratio": 16.0,
+                "max_latency_ratio": 1024.0
+              }
+            },
+            "balanced": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.45,
+                  0.3,
+                  0.25
+                ],
+                "max_cycle_ratio": 2.0,
+                "max_latency_ratio": 4.0
+              }
+            },
+            "latency": {
+              "eligible": true,
+              "reward": 1.0,
+              "limits": {
+                "weights": [
+                  0.2,
+                  0.25,
+                  0.55
+                ],
+                "max_cycle_ratio": 1.1,
+                "max_latency_ratio": 1.1
+              }
+            }
+          },
+          "pareto_point": {
+            "cells": 1.0,
+            "cycles": 1.0,
+            "latency": 1.0
+          },
+          "baseline_relation": "equal_to_baseline",
+          "elapsed_s": 8.788,
+          "synthesis_cache_hits": 5,
+          "baseline_simulation_cache_hits": 0,
+          "recipe_sha256": "d17225751ab6a52461d1bbc749c19e2b58b7ee2568382b551ab349c444296363",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+        }
+      ]
+    }
+  },
+  "failures": [],
+  "scope": "frozen public structural stress split; private new workloads; not trained RL"
+}

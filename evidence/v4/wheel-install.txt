@@ -1,0 +1,21 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: chip-rl
+  Building wheel for chip-rl (pyproject.toml): started
+  Building wheel for chip-rl (pyproject.toml): finished with status 'done'
+  Created wheel for chip-rl: filename=chip_rl-0.4.0-py3-none-any.whl size=54386 sha256=f6bb6ef27ff397a5d5c1bf70e08082e4400c79eacbea3fe4851a614e83ad2dc7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-mgnurq9i/wheels/b8/24/06/3a1340e86ba45c0ec1c8ca6857eb8ca74d8e10671c8c476342
+Successfully built chip-rl
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /workspace/chip-rl-v4-wheel/chip_rl-0.4.0-py3-none-any.whl
+Installing collected packages: chip-rl
+  Attempting uninstall: chip-rl
+    Found existing installation: chip-rl 0.4.0
+    Uninstalling chip-rl-0.4.0:
+      Successfully uninstalled chip-rl-0.4.0
+Successfully installed chip-rl-0.4.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

@@ -1,0 +1,1158 @@
+{
+  "tasks": {
+    "dma": {
+      "evaluations": [
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "dma",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "ab6f1965eb1befb0ca44787d31f5b9f565c678acb0f2e8747662bced690e50f4",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 680,
+                "accepted": 78,
+                "retired": 68,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 170,
+              "baseline_cells": 170,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 889,
+                "accepted": 91,
+                "retired": 83,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 170,
+              "baseline_cells": 170,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 735,
+                "accepted": 72,
+                "retired": 67,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 192,
+              "baseline_cells": 192,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 899,
+                "accepted": 86,
+                "retired": 83,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 192,
+              "baseline_cells": 192,
+              "depth": 6,
+              "baseline_depth": 6
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 1.36
+        },
+        {
+          "tested_correct": true,
+          "reward": 0.9977880273236734,
+          "family": "dma",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "202c98424f624186cfcd95b5d97a0fedf7f3aaaa16973379b6d0c3bc1d2cbe59",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 909,
+                "accepted": 99,
+                "retired": 97,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 171,
+              "baseline_cells": 170,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 748,
+                "accepted": 66,
+                "retired": 64,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 171,
+              "baseline_cells": 170,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 901,
+                "accepted": 91,
+                "retired": 91,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 193,
+              "baseline_cells": 192,
+              "depth": 6,
+              "baseline_depth": 6
+            },
+            {
+              "config": {
+                "name": "dma",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 699,
+                "accepted": 80,
+                "retired": 77,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 193,
+              "baseline_cells": 192,
+              "depth": 6,
+              "baseline_depth": 6
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 1.413
+        },
+        {
+          "tested_correct": false,
+          "reward": 0.0,
+          "family": "dma",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "a631a60fdbc1af40089276345225664027112dec7938d0e5b3eb4150de2b78e3",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "rejected",
+          "reason": "cycle qualification failed",
+          "elapsed_s": 0.025
+        }
+      ],
+      "action_rejected": {
+        "ok": false,
+        "error": "source-only action"
+      },
+      "reset_rejected": {
+        "ok": false,
+        "error": "only reset(task,seed) and step(action) are supported"
+      }
+    },
+    "router": {
+      "evaluations": [
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "router",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "4fbd7ddd27aa37e457650733628a5c3f54c868e7cc66afce81c7a7e23b29abdb",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "router",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 795,
+                "accepted": 893,
+                "retired": 890,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 25420,
+              "baseline_cells": 25420,
+              "depth": 54,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 762,
+                "accepted": 761,
+                "retired": 757,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 71,
+                "nonzero_results": 0
+              },
+              "cells": 25420,
+              "baseline_cells": 25420,
+              "depth": 54,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 8,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 878,
+                "accepted": 955,
+                "retired": 952,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 21515,
+              "baseline_cells": 21515,
+              "depth": 54,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 8,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 770,
+                "accepted": 836,
+                "retired": 834,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 79,
+                "nonzero_results": 0
+              },
+              "cells": 21515,
+              "baseline_cells": 21515,
+              "depth": 54,
+              "baseline_depth": 54
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 14.049
+        },
+        {
+          "tested_correct": true,
+          "reward": 1.4915342898503208,
+          "family": "router",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "a9b5b67bde7e6335ada265fb3c5e0a7d68c357a678dc96ae48d645feb25f763c",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "router",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 684,
+                "accepted": 683,
+                "retired": 679,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 1315,
+              "baseline_cells": 25420,
+              "depth": 42,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 884,
+                "accepted": 1008,
+                "retired": 1005,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 1315,
+              "baseline_cells": 25420,
+              "depth": 42,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 8,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 682,
+                "accepted": 700,
+                "retired": 698,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 1079,
+              "baseline_cells": 21515,
+              "depth": 42,
+              "baseline_depth": 54
+            },
+            {
+              "config": {
+                "name": "router",
+                "width": 8,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 682,
+                "accepted": 681,
+                "retired": 677,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 1079,
+              "baseline_cells": 21515,
+              "depth": 42,
+              "baseline_depth": 54
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 7.713
+        },
+        {
+          "tested_correct": false,
+          "reward": 0.0,
+          "family": "router",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "783e8fbc45f40a590412367fc0d139fcdba06bd56514922aa52341d782fd752f",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "rejected",
+          "reason": "cycle qualification failed",
+          "elapsed_s": 0.585
+        }
+      ],
+      "action_rejected": {
+        "ok": false,
+        "error": "source-only action"
+      },
+      "reset_rejected": {
+        "ok": false,
+        "error": "only reset(task,seed) and step(action) are supported"
+      }
+    },
+    "scoreboard": {
+      "evaluations": [
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "scoreboard",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "44681682652171886fe79b8be0944bdb5c6975b3b41f1b10b202861982fa0ea7",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 687,
+                "accepted": 361,
+                "retired": 357,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 3199,
+              "baseline_cells": 3199,
+              "depth": 44,
+              "baseline_depth": 44
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 748,
+                "accepted": 404,
+                "retired": 400,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 3199,
+              "baseline_cells": 3199,
+              "depth": 44,
+              "baseline_depth": 44
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 800,
+                "accepted": 348,
+                "retired": 346,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 2092,
+              "baseline_cells": 2092,
+              "depth": 29,
+              "baseline_depth": 29
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 743,
+                "accepted": 329,
+                "retired": 327,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 2092,
+              "baseline_cells": 2092,
+              "depth": 29,
+              "baseline_depth": 29
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 20.264
+        },
+        {
+          "tested_correct": true,
+          "reward": 0.9995589649394216,
+          "family": "scoreboard",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "8b6e626ddd5d25cebc5abb55ff6c258e67d7c788b5f15de675ad825ca234cbf3",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 4,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 813,
+                "accepted": 446,
+                "retired": 442,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 96,
+                "nonzero_results": 0
+              },
+              "cells": 3203,
+              "baseline_cells": 3199,
+              "depth": 44,
+              "baseline_depth": 44
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 680,
+                "accepted": 370,
+                "retired": 366,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 3203,
+              "baseline_cells": 3199,
+              "depth": 44,
+              "baseline_depth": 44
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 703,
+                "accepted": 311,
+                "retired": 309,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 2094,
+              "baseline_cells": 2092,
+              "depth": 29,
+              "baseline_depth": 29
+            },
+            {
+              "config": {
+                "name": "scoreboard",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 715,
+                "accepted": 306,
+                "retired": 304,
+                "resets": 5,
+                "overlap_cycles": 0,
+                "idle_clocks": 64,
+                "nonzero_results": 0
+              },
+              "cells": 2094,
+              "baseline_cells": 2092,
+              "depth": 29,
+              "baseline_depth": 29
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 18.447
+        },
+        {
+          "tested_correct": false,
+          "reward": 0.0,
+          "family": "scoreboard",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "1f6bcc3d8b1f17486984e8b606d8a0e04089291a1d2b00b94ddc8595aec75624",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "rejected",
+          "reason": "cycle qualification failed",
+          "elapsed_s": 0.087
+        }
+      ],
+      "action_rejected": {
+        "ok": false,
+        "error": "source-only action"
+      },
+      "reset_rejected": {
+        "ok": false,
+        "error": "only reset(task,seed) and step(action) are supported"
+      }
+    },
+    "accelerator": {
+      "evaluations": [
+        {
+          "tested_correct": true,
+          "reward": 1.0,
+          "family": "accelerator",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "154855c91c19cd4f54db2cb5d8b249c30fd7b5229418d392cac8ab201e123aef",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 6,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 776,
+                "accepted": 101,
+                "retired": 100,
+                "resets": 5,
+                "overlap_cycles": 267,
+                "idle_clocks": 85,
+                "nonzero_results": 59
+              },
+              "cells": 1417,
+              "baseline_cells": 1417,
+              "depth": 35,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 729,
+                "accepted": 107,
+                "retired": 102,
+                "resets": 5,
+                "overlap_cycles": 251,
+                "idle_clocks": 64,
+                "nonzero_results": 55
+              },
+              "cells": 1417,
+              "baseline_cells": 1417,
+              "depth": 35,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 692,
+                "accepted": 90,
+                "retired": 86,
+                "resets": 5,
+                "overlap_cycles": 226,
+                "idle_clocks": 64,
+                "nonzero_results": 11
+              },
+              "cells": 3121,
+              "baseline_cells": 3121,
+              "depth": 35,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 754,
+                "accepted": 107,
+                "retired": 106,
+                "resets": 5,
+                "overlap_cycles": 261,
+                "idle_clocks": 64,
+                "nonzero_results": 12
+              },
+              "cells": 3121,
+              "baseline_cells": 3121,
+              "depth": 35,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 802,
+                "accepted": 105,
+                "retired": 104,
+                "resets": 5,
+                "overlap_cycles": 203,
+                "idle_clocks": 96,
+                "nonzero_results": 86
+              },
+              "cells": 1419,
+              "baseline_cells": 1419,
+              "depth": 35,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 774,
+                "accepted": 113,
+                "retired": 108,
+                "resets": 5,
+                "overlap_cycles": 188,
+                "idle_clocks": 83,
+                "nonzero_results": 63
+              },
+              "cells": 1419,
+              "baseline_cells": 1419,
+              "depth": 35,
+              "baseline_depth": 35
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 4.129
+        },
+        {
+          "tested_correct": true,
+          "reward": 1.0055208228419008,
+          "family": "accelerator",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "63a748688016ccbfeb6d4b3d2f05aab0da7acaed4c18da2e127667b084b38270",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "cycle_exact_rtl_and_netlist",
+          "cases_checked": 6,
+          "resource_metrics": [
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 798,
+                "accepted": 110,
+                "retired": 102,
+                "resets": 5,
+                "overlap_cycles": 290,
+                "idle_clocks": 96,
+                "nonzero_results": 60
+              },
+              "cells": 1386,
+              "baseline_cells": 1417,
+              "depth": 34,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 854,
+                "accepted": 119,
+                "retired": 116,
+                "resets": 5,
+                "overlap_cycles": 320,
+                "idle_clocks": 96,
+                "nonzero_results": 68
+              },
+              "cells": 1386,
+              "baseline_cells": 1417,
+              "depth": 34,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 850,
+                "accepted": 120,
+                "retired": 111,
+                "resets": 5,
+                "overlap_cycles": 310,
+                "idle_clocks": 96,
+                "nonzero_results": 25
+              },
+              "cells": 3132,
+              "baseline_cells": 3121,
+              "depth": 36,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 64,
+                "k": 4,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 856,
+                "accepted": 136,
+                "retired": 123,
+                "resets": 5,
+                "overlap_cycles": 298,
+                "idle_clocks": 96,
+                "nonzero_results": 23
+              },
+              "cells": 3132,
+              "baseline_cells": 3121,
+              "depth": 36,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 750,
+                "accepted": 104,
+                "retired": 94,
+                "resets": 5,
+                "overlap_cycles": 189,
+                "idle_clocks": 64,
+                "nonzero_results": 65
+              },
+              "cells": 1387,
+              "baseline_cells": 1419,
+              "depth": 34,
+              "baseline_depth": 35
+            },
+            {
+              "config": {
+                "name": "accelerator",
+                "width": 16,
+                "depth": 16,
+                "k": 2,
+                "objective": "balanced",
+                "max_cells": 250000,
+                "max_cycles": 30000
+              },
+              "stats": {
+                "cycles": 713,
+                "accepted": 106,
+                "retired": 91,
+                "resets": 5,
+                "overlap_cycles": 167,
+                "idle_clocks": 64,
+                "nonzero_results": 60
+              },
+              "cells": 1387,
+              "baseline_cells": 1419,
+              "depth": 34,
+              "baseline_depth": 35
+            }
+          ],
+          "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+          "elapsed_s": 3.851
+        },
+        {
+          "tested_correct": false,
+          "reward": 0.0,
+          "family": "accelerator",
+          "status": "experimental_cycle_controller",
+          "objective": "fixed_cycle_area",
+          "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+          "pilot_eligible": false,
+          "formal": "not_run",
+          "physical": "not_run",
+          "os_isolation": "not_provided",
+          "source_sha256": "2348b0779d0668c03a5c6fc4da5c094e155be303e67402d2812b8109a4e644ad",
+          "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+          "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+          "validation": "rejected",
+          "reason": "cycle qualification failed",
+          "elapsed_s": 0.054
+        }
+      ],
+      "action_rejected": {
+        "ok": false,
+        "error": "source-only action"
+      },
+      "reset_rejected": {
+        "ok": false,
+        "error": "only reset(task,seed) and step(action) are supported"
+      }
+    }
+  },
+  "failures": [],
+  "installed_module": "/workspace/chip-rl-v4-venv/lib/python3.12/site-packages/chip_rl/__init__.py"
+}

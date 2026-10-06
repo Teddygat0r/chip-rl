@@ -11,6 +11,10 @@ arithmetic architectures, stronger default workloads, new structural stress spli
 and independent cycle-controller monitors. See [iteration results](docs/iteration-v4.md)
 for actual counts, costs, tradeoffs and exact reproduction commands.
 
+Validated this iteration: 16 pilot and 13 experimental controller designs; 65 pilot
+and 28 controller mutants rejected; 219 installed pilot API rejection checks;
+12 fresh structural cases and 45 unit tests passed.
+
 This is a block-level research benchmark. No RL policy has been trained. Generic
 cell counts, gate levels and workload cycles are proxies; there is no routed timing,
 frequency, power, or silicon-readiness claim. Ten runnable families are not ten

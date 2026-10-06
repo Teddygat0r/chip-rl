@@ -1,0 +1,17 @@
+{
+  "pilot_families": 6,
+  "pilot_valid_designs": 16,
+  "pilot_bad_rejected": 65,
+  "pilot_api_bad_rejected": 219,
+  "pilot_api_baselines": 18,
+  "experimental_cycle_families": 4,
+  "cycle_valid_designs": 13,
+  "cycle_bad_rejected": 28,
+  "structural_fresh_cases": 12,
+  "bounded_formal_families": 2,
+  "unbounded_formal_families": 0,
+  "physical_families": 0,
+  "trained_policies": 0,
+  "os_sandbox": "not_provided",
+  "scope": "six pilot families plus four separate experimental fixed-cycle controllers; no promotion"
+}

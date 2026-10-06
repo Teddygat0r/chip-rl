@@ -1,0 +1,2183 @@
+{
+  "tasks": {
+    "dma": {
+      "baseline": {
+        "tested_correct": true,
+        "reward": 1.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "ab6f1965eb1befb0ca44787d31f5b9f565c678acb0f2e8747662bced690e50f4",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 72,
+              "retired": 71,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 170,
+            "baseline_cells": 170,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 92,
+              "retired": 90,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 170,
+            "baseline_cells": 170,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 72,
+              "retired": 67,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 192,
+            "baseline_cells": 192,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 74,
+              "retired": 64,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 192,
+            "baseline_cells": 192,
+            "depth": 6,
+            "baseline_depth": 6
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 1.324
+      },
+      "alternate": {
+        "tested_correct": true,
+        "reward": 0.9826456264313157,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "4db10d9234e7ad999f5fdbfb080e0cec051ef24196c1a2594265837e36f900b8",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 72,
+              "retired": 71,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 178,
+            "baseline_cells": 170,
+            "depth": 7,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 92,
+              "retired": 90,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 178,
+            "baseline_cells": 170,
+            "depth": 7,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 72,
+              "retired": 67,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 200,
+            "baseline_cells": 192,
+            "depth": 7,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 74,
+              "retired": 64,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 200,
+            "baseline_cells": 192,
+            "depth": 7,
+            "baseline_depth": 6
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 1.131
+      },
+      "pruned": {
+        "tested_correct": true,
+        "reward": 0.9977880273236734,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "202c98424f624186cfcd95b5d97a0fedf7f3aaaa16973379b6d0c3bc1d2cbe59",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 72,
+              "retired": 71,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 171,
+            "baseline_cells": 170,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 92,
+              "retired": 90,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 171,
+            "baseline_cells": 170,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 72,
+              "retired": 67,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 193,
+            "baseline_cells": 192,
+            "depth": 6,
+            "baseline_depth": 6
+          },
+          {
+            "config": {
+              "name": "dma",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 74,
+              "retired": 64,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 193,
+            "baseline_cells": 192,
+            "depth": 6,
+            "baseline_depth": 6
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 1.466
+      },
+      "zero": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "63812bf581b35fc3060150a520425c44e4557da6f878bfeb5c384dd81d3ebecf",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.035
+      },
+      "clock": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "6f31602a6ab33774bbf9411ccf44dc6f831e82faf4ce0fcb68c023bde0c2822d",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.221
+      },
+      "drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "317208c06c6ebcbc735b0400eeb153fc4699f9b88f4b13d52a7d0da667b0508c",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.03
+      },
+      "stall": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "390a721d14aaf8b4f1ffbf14c5f3eded41bb76b59dbba7c3ac581fa851c08950",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.034
+      },
+      "no_reset": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "eaf4fc017f994b76f88647030d0b861b722b6ccec3ace42f8342d3c3cc4b2822",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.025
+      },
+      "late_drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "a631a60fdbc1af40089276345225664027112dec7938d0e5b3eb4150de2b78e3",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.043
+      },
+      "bad_data": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "dma",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "bd5fa9f2b216d19cd9f56f3674dfedf5c701a204f64f976342f005bbfe1f936b",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "df248f57250f44551e4c9c0cc390702c345a68717b5dca4925ff32b1b7e149f2",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.027
+      }
+    },
+    "router": {
+      "baseline": {
+        "tested_correct": true,
+        "reward": 1.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "4fbd7ddd27aa37e457650733628a5c3f54c868e7cc66afce81c7a7e23b29abdb",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 748,
+              "retired": 745,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 25420,
+            "baseline_cells": 25420,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 1048,
+              "retired": 1045,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 25420,
+            "baseline_cells": 25420,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 795,
+              "retired": 791,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21515,
+            "baseline_cells": 21515,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 723,
+              "retired": 719,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21515,
+            "baseline_cells": 21515,
+            "depth": 54,
+            "baseline_depth": 54
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 13.529
+      },
+      "alternate": {
+        "tested_correct": true,
+        "reward": 1.0002596987108168,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "c2071e64382d216ec01e89e0ecca33b3d6e39c1f43b9b6cb1193afcdac99a1bf",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 748,
+              "retired": 745,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 25400,
+            "baseline_cells": 25420,
+            "depth": 45,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 1048,
+              "retired": 1045,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 25400,
+            "baseline_cells": 25420,
+            "depth": 45,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 795,
+              "retired": 791,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21504,
+            "baseline_cells": 21515,
+            "depth": 45,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 723,
+              "retired": 719,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21504,
+            "baseline_cells": 21515,
+            "depth": 45,
+            "baseline_depth": 54
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 13.507
+      },
+      "pruned": {
+        "tested_correct": true,
+        "reward": 1.0000686605757585,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "5249e17db48be457599dfa7a3c01a05423b3cf2243cc8af22af2d99a15d027e7",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 748,
+              "retired": 745,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 25416,
+            "baseline_cells": 25420,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 1048,
+              "retired": 1045,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 25416,
+            "baseline_cells": 25420,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 795,
+              "retired": 791,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21511,
+            "baseline_cells": 21515,
+            "depth": 54,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 723,
+              "retired": 719,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 21511,
+            "baseline_cells": 21515,
+            "depth": 54,
+            "baseline_depth": 54
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 13.389
+      },
+      "decoded": {
+        "tested_correct": true,
+        "reward": 1.4915342898503208,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "a9b5b67bde7e6335ada265fb3c5e0a7d68c357a678dc96ae48d645feb25f763c",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 748,
+              "retired": 745,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 1315,
+            "baseline_cells": 25420,
+            "depth": 42,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 1048,
+              "retired": 1045,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 1315,
+            "baseline_cells": 25420,
+            "depth": 42,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 795,
+              "retired": 791,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 1079,
+            "baseline_cells": 21515,
+            "depth": 42,
+            "baseline_depth": 54
+          },
+          {
+            "config": {
+              "name": "router",
+              "width": 8,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 723,
+              "retired": 719,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 1079,
+            "baseline_cells": 21515,
+            "depth": 42,
+            "baseline_depth": 54
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 7.46
+      },
+      "zero": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "731bf2d3e86f73d735109fb30900953eac3cd122389fb250ad567eb3cf34cc9f",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.446
+      },
+      "clock": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "d7e9a0512e6978130089a7f22d160a73e1e72c990c37cbb20e70b89d8fb340cf",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 41.267
+      },
+      "drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "9ee896e72247530a79d983a0b892faaf6b7695d307881e099aec2b97a362aa29",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.708
+      },
+      "stall": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "4d3afe887dd539210a9e511c7a09b413e16419f3730cc0f40240c5bf955bb86f",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.479
+      },
+      "no_reset": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "b295ba160bf46ce415a1567fb92f65205e408f6e8a225aec30113cdf7bc6fbf5",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.593
+      },
+      "late_drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "783e8fbc45f40a590412367fc0d139fcdba06bd56514922aa52341d782fd752f",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.481
+      },
+      "unfair": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "router",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "8af9c636e8a9cc45561ebda95dd5738288eacfc2db6b4153b1505ee53f447d88",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "7d67040e939e2e2bba8de61088576ce03cbe69d0666e04392419fad5a7e8dc8a",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.298
+      }
+    },
+    "scoreboard": {
+      "baseline": {
+        "tested_correct": true,
+        "reward": 1.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "44681682652171886fe79b8be0944bdb5c6975b3b41f1b10b202861982fa0ea7",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 381,
+              "retired": 377,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 3199,
+            "baseline_cells": 3199,
+            "depth": 44,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 504,
+              "retired": 500,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 3199,
+            "baseline_cells": 3199,
+            "depth": 44,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 324,
+              "retired": 322,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2092,
+            "baseline_cells": 2092,
+            "depth": 29,
+            "baseline_depth": 29
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 277,
+              "retired": 275,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2092,
+            "baseline_cells": 2092,
+            "depth": 29,
+            "baseline_depth": 29
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 18.525
+      },
+      "alternate": {
+        "tested_correct": true,
+        "reward": 1.0005998546711696,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "af512234f9e44a6bcdea2b1935a5eaadf130da281f8196b90f43701f3c9fa1f0",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 381,
+              "retired": 377,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 3194,
+            "baseline_cells": 3199,
+            "depth": 36,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 504,
+              "retired": 500,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 3194,
+            "baseline_cells": 3199,
+            "depth": 36,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 324,
+              "retired": 322,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2089,
+            "baseline_cells": 2092,
+            "depth": 27,
+            "baseline_depth": 29
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 277,
+              "retired": 275,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2089,
+            "baseline_cells": 2092,
+            "depth": 27,
+            "baseline_depth": 29
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 19.026
+      },
+      "pruned": {
+        "tested_correct": true,
+        "reward": 0.9995589649394216,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "8b6e626ddd5d25cebc5abb55ff6c258e67d7c788b5f15de675ad825ca234cbf3",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 4,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 381,
+              "retired": 377,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 3203,
+            "baseline_cells": 3199,
+            "depth": 44,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 504,
+              "retired": 500,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 96,
+              "nonzero_results": 0
+            },
+            "cells": 3203,
+            "baseline_cells": 3199,
+            "depth": 44,
+            "baseline_depth": 44
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 324,
+              "retired": 322,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2094,
+            "baseline_cells": 2092,
+            "depth": 29,
+            "baseline_depth": 29
+          },
+          {
+            "config": {
+              "name": "scoreboard",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 277,
+              "retired": 275,
+              "resets": 5,
+              "overlap_cycles": 0,
+              "idle_clocks": 64,
+              "nonzero_results": 0
+            },
+            "cells": 2094,
+            "baseline_cells": 2092,
+            "depth": 29,
+            "baseline_depth": 29
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 19.456
+      },
+      "zero": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "8aafa80e520decaa61480ffa57dbb22def12177d136df4022f3a3663967abc2f",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.059
+      },
+      "clock": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "a71b4f5ea8e8be49453e1bcb3b5d184f4d17dc3e0872e035e32219639edab800",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 1.496
+      },
+      "drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "2bf3f90c74c1012ce0b34bfa97495cbe2e06011290b703167ea3d9674672d5e8",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.07
+      },
+      "stall": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "c6299c1d6f143a35034ef9178018ce1b239ff2267c092f2227bb8be47a056af1",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.089
+      },
+      "no_reset": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "0ac827eb517d5e4d13bd0a9385cc4bf10471601bf748b14256e8aa9ac32fea33",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.074
+      },
+      "late_drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "1f6bcc3d8b1f17486984e8b606d8a0e04089291a1d2b00b94ddc8595aec75624",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.09
+      },
+      "unfair": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "scoreboard",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "002a3af7c3304b554cbbe6451c8e5d4895e25a71aa7b38a2146f9c4857c03859",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "be357187d49f93e66a53617c07fb9589c256b1e05841e4c8da73a352c73d8118",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.072
+      }
+    },
+    "accelerator": {
+      "baseline": {
+        "tested_correct": true,
+        "reward": 1.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "154855c91c19cd4f54db2cb5d8b249c30fd7b5229418d392cac8ab201e123aef",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 6,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 105,
+              "retired": 102,
+              "resets": 5,
+              "overlap_cycles": 255,
+              "idle_clocks": 64,
+              "nonzero_results": 50
+            },
+            "cells": 1417,
+            "baseline_cells": 1417,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 125,
+              "retired": 122,
+              "resets": 5,
+              "overlap_cycles": 326,
+              "idle_clocks": 96,
+              "nonzero_results": 74
+            },
+            "cells": 1417,
+            "baseline_cells": 1417,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 98,
+              "retired": 97,
+              "resets": 5,
+              "overlap_cycles": 262,
+              "idle_clocks": 64,
+              "nonzero_results": 19
+            },
+            "cells": 3121,
+            "baseline_cells": 3121,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 99,
+              "retired": 88,
+              "resets": 5,
+              "overlap_cycles": 228,
+              "idle_clocks": 64,
+              "nonzero_results": 8
+            },
+            "cells": 3121,
+            "baseline_cells": 3121,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 911,
+              "accepted": 127,
+              "retired": 116,
+              "resets": 5,
+              "overlap_cycles": 247,
+              "idle_clocks": 96,
+              "nonzero_results": 101
+            },
+            "cells": 1419,
+            "baseline_cells": 1419,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 817,
+              "accepted": 122,
+              "retired": 117,
+              "resets": 5,
+              "overlap_cycles": 217,
+              "idle_clocks": 96,
+              "nonzero_results": 85
+            },
+            "cells": 1419,
+            "baseline_cells": 1419,
+            "depth": 35,
+            "baseline_depth": 35
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 3.895
+      },
+      "alternate": {
+        "tested_correct": true,
+        "reward": 0.9957550103072813,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "0fb2e809974d9b590e37f18d9add084ac5a861be0de64717c20a99ec0e293dab",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 6,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 105,
+              "retired": 102,
+              "resets": 5,
+              "overlap_cycles": 255,
+              "idle_clocks": 64,
+              "nonzero_results": 50
+            },
+            "cells": 1427,
+            "baseline_cells": 1417,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 125,
+              "retired": 122,
+              "resets": 5,
+              "overlap_cycles": 326,
+              "idle_clocks": 96,
+              "nonzero_results": 74
+            },
+            "cells": 1427,
+            "baseline_cells": 1417,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 98,
+              "retired": 97,
+              "resets": 5,
+              "overlap_cycles": 262,
+              "idle_clocks": 64,
+              "nonzero_results": 19
+            },
+            "cells": 3177,
+            "baseline_cells": 3121,
+            "depth": 37,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 99,
+              "retired": 88,
+              "resets": 5,
+              "overlap_cycles": 228,
+              "idle_clocks": 64,
+              "nonzero_results": 8
+            },
+            "cells": 3177,
+            "baseline_cells": 3121,
+            "depth": 37,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 911,
+              "accepted": 127,
+              "retired": 116,
+              "resets": 5,
+              "overlap_cycles": 247,
+              "idle_clocks": 96,
+              "nonzero_results": 101
+            },
+            "cells": 1429,
+            "baseline_cells": 1419,
+            "depth": 35,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 817,
+              "accepted": 122,
+              "retired": 117,
+              "resets": 5,
+              "overlap_cycles": 217,
+              "idle_clocks": 96,
+              "nonzero_results": 85
+            },
+            "cells": 1429,
+            "baseline_cells": 1419,
+            "depth": 35,
+            "baseline_depth": 35
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 3.621
+      },
+      "pruned": {
+        "tested_correct": true,
+        "reward": 1.0055208228419008,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "63a748688016ccbfeb6d4b3d2f05aab0da7acaed4c18da2e127667b084b38270",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "cycle_exact_rtl_and_netlist",
+        "cases_checked": 6,
+        "resource_metrics": [
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 726,
+              "accepted": 105,
+              "retired": 102,
+              "resets": 5,
+              "overlap_cycles": 255,
+              "idle_clocks": 64,
+              "nonzero_results": 50
+            },
+            "cells": 1386,
+            "baseline_cells": 1417,
+            "depth": 34,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 895,
+              "accepted": 125,
+              "retired": 122,
+              "resets": 5,
+              "overlap_cycles": 326,
+              "idle_clocks": 96,
+              "nonzero_results": 74
+            },
+            "cells": 1386,
+            "baseline_cells": 1417,
+            "depth": 34,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 755,
+              "accepted": 98,
+              "retired": 97,
+              "resets": 5,
+              "overlap_cycles": 262,
+              "idle_clocks": 64,
+              "nonzero_results": 19
+            },
+            "cells": 3132,
+            "baseline_cells": 3121,
+            "depth": 36,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 64,
+              "k": 4,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 690,
+              "accepted": 99,
+              "retired": 88,
+              "resets": 5,
+              "overlap_cycles": 228,
+              "idle_clocks": 64,
+              "nonzero_results": 8
+            },
+            "cells": 3132,
+            "baseline_cells": 3121,
+            "depth": 36,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 911,
+              "accepted": 127,
+              "retired": 116,
+              "resets": 5,
+              "overlap_cycles": 247,
+              "idle_clocks": 96,
+              "nonzero_results": 101
+            },
+            "cells": 1387,
+            "baseline_cells": 1419,
+            "depth": 34,
+            "baseline_depth": 35
+          },
+          {
+            "config": {
+              "name": "accelerator",
+              "width": 16,
+              "depth": 16,
+              "k": 2,
+              "objective": "balanced",
+              "max_cells": 250000,
+              "max_cycles": 30000
+            },
+            "stats": {
+              "cycles": 817,
+              "accepted": 122,
+              "retired": 117,
+              "resets": 5,
+              "overlap_cycles": 217,
+              "idle_clocks": 96,
+              "nonzero_results": 85
+            },
+            "cells": 1387,
+            "baseline_cells": 1419,
+            "depth": 34,
+            "baseline_depth": 35
+          }
+        ],
+        "metric_scope": "fixed protocol cycles; reward reflects generic-cell area only, not timing/power",
+        "elapsed_s": 4.176
+      },
+      "zero": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "e2d6a238ca64618770154da8540d0c26fabb5908bdcc14a5777271750c4109b3",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.049
+      },
+      "clock": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "c1f7e45a84802c04d9b142596ba3cd95800234d34a7a52a118d03a14283a9117",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.482
+      },
+      "drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "d42d4c7fc5da83c6db55ff7e4c3705551274d856615ab3b17908b5924756e2ac",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.051
+      },
+      "stall": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "2a8ad930e5414e810f20b13a24cfffbeed1bab60e9fa3390b4c1bc516046bde1",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.054
+      },
+      "no_reset": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "a216c82aa355f83bf4272636f7ab3d704e4ac631aa3b14538a4f0acece0ae6ff",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.057
+      },
+      "late_drop": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "2348b0779d0668c03a5c6fc4da5c094e155be303e67402d2812b8109a4e644ad",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.059
+      },
+      "no_overlap": {
+        "tested_correct": false,
+        "reward": 0.0,
+        "family": "accelerator",
+        "status": "experimental_cycle_controller",
+        "objective": "fixed_cycle_area",
+        "contract": "2efb64a15811276ec18c84295e6b89a95dfe9f8a2f56f828417ef917d1441b36",
+        "pilot_eligible": false,
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "source_sha256": "64b912cd2a896558888bb3ac9c29a85484904a5e240a03961e7ce034e0b902db",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+        "recipe_sha256": "bb14aeb3f94cfea99218783a0276b35591da048a275d75ee41f1668bba771891",
+        "validation": "rejected",
+        "reason": "cycle qualification failed",
+        "elapsed_s": 0.054
+      }
+    }
+  },
+  "failures": [],
+  "scope": "experimental fixed-cycle controllers, not promoted"
+}
