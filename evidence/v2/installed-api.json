@@ -1,0 +1,63 @@
+{
+  "installed_module": "/workspace/chip-rl-v2-reproduction-venv/lib/python3.12/site-packages/chip_rl/__init__.py",
+  "baseline": {
+    "tested_correct": true,
+    "reward": 1.0,
+    "family": "elastic",
+    "contract": "d9a4e1b7e4b04e14937584f82e1a131fa4c051273c805476fd1f225a1fb31701",
+    "source_sha256": "53a7219543ff1ba3ab91b522514e4b88c1c616ee51376fc441b9fa87a98b16ce",
+    "validation": "rtl_and_netlist_pass",
+    "formal": "not_run",
+    "physical": "not_run",
+    "os_isolation": "not_provided",
+    "pilot_eligible": true,
+    "metrics": {
+      "cells": 81,
+      "logic_depth": 5,
+      "mean_completion_cycles": 117.5,
+      "mean_offered_latency": 57.53030303030303
+    },
+    "paired_ratios": {
+      "cells": 1.0,
+      "cycles": 1.0,
+      "offered_latency": 1.0
+    },
+    "dimension_variants_checked": 3,
+    "private_cases_checked": 4,
+    "elapsed_s": 1.232,
+    "synthesis_cache_hits": 1,
+    "baseline_simulation_cache_hits": 0,
+    "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  },
+  "step": {
+    "tested_correct": true,
+    "reward": 1.0254642757180639,
+    "family": "elastic",
+    "contract": "d9a4e1b7e4b04e14937584f82e1a131fa4c051273c805476fd1f225a1fb31701",
+    "source_sha256": "4e65cc52fbef1e09f4547ad3c764d97586bb6dcbdc2caf66e68d4aa5230d69cb",
+    "validation": "rtl_and_netlist_pass",
+    "formal": "not_run",
+    "physical": "not_run",
+    "os_isolation": "not_provided",
+    "pilot_eligible": true,
+    "metrics": {
+      "cells": 76,
+      "logic_depth": 2,
+      "mean_completion_cycles": 109.0,
+      "mean_offered_latency": 48.50757575757576
+    },
+    "paired_ratios": {
+      "cells": 0.9382716049382716,
+      "cycles": 1.0,
+      "offered_latency": 1.0
+    },
+    "dimension_variants_checked": 3,
+    "private_cases_checked": 4,
+    "elapsed_s": 0.812,
+    "synthesis_cache_hits": 3,
+    "baseline_simulation_cache_hits": 0,
+    "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  }
+}

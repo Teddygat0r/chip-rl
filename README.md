@@ -1,5 +1,8 @@
 # chip-rl: a constrained RTL research pilot
 
+**Validated: six families, thirteen valid designs, fifty-seven rejected bad regressions,
+six fresh heldout winners, and thirty-two tests.**
+
 V2 remediates an empirical viability audit that found reward hacking and insufficient
 contracts in v1. Six families are pilot candidates: elastic buffering, exact INT8
 dot products, banked scratchpad arbitration, 2x2 INT8 tensor computation,

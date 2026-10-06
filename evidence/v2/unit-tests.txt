@@ -12,7 +12,7 @@ test_tensor_layout (test_models.ReferenceTests.test_tensor_layout) ... ok
 test_invalid_replay_seed (test_v2.Boundary.test_invalid_replay_seed) ... ok
 test_public_failure_coarse (test_v2.Boundary.test_public_failure_coarse) ... ok
 test_server_injections (test_v2.Boundary.test_server_injections) ... ok
-test_source_only_and_private_seed (test_v2.Boundary.test_source_only_and_private_seed) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py:940: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/chip-rl-v2-cache-rij0huz5'>
+test_source_only_and_private_seed (test_v2.Boundary.test_source_only_and_private_seed) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py:940: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/chip-rl-v2-cache-qkq0k5al'>
   _warnings.warn(warn_message, ResourceWarning)
 ok
 test_cold_reads_before_write (test_v2.Contracts.test_cold_reads_before_write) ... ok
@@ -34,6 +34,6 @@ test_missing_physical (test_v2.HDLBoundary.test_missing_physical) ... ok
 test_no_private_payload_on_success (test_v2.HDLBoundary.test_no_private_payload_on_success) ... ok
 
 ----------------------------------------------------------------------
-Ran 32 tests in 2.248s
+Ran 32 tests in 2.235s
 
 OK

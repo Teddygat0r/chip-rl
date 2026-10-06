@@ -1,0 +1,68 @@
+{
+  "cache-lazy_cache": {
+    "tested_correct": true,
+    "reward": 1.0065854508125,
+    "family": "cache",
+    "contract": "eebebd4c256d2b6f132eb12d1a169b767891cf3594246129c772298479a3dba0",
+    "source_sha256": "8e817d5b461646d2b36fd1d09d63f79c04fd650e18035d219e0f801e1ad7f442",
+    "validation": "rtl_and_netlist_pass",
+    "formal": "not_run",
+    "physical": "not_run",
+    "os_isolation": "not_provided",
+    "pilot_eligible": true,
+    "metrics": {
+      "cells": 30902,
+      "logic_depth": 23,
+      "mean_completion_cycles": 2790.5,
+      "mean_offered_latency": 743.8178512913454
+    },
+    "paired_ratios": {
+      "cells": 0.9836702212318956,
+      "cycles": 1.0,
+      "offered_latency": 1.0
+    },
+    "dimension_variants_checked": 3,
+    "private_cases_checked": 4,
+    "elapsed_s": 70.241,
+    "synthesis_cache_hits": 6,
+    "baseline_simulation_cache_hits": 0,
+    "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  },
+  "cache-cache_reset": {
+    "tested_correct": false,
+    "reward": 0.0,
+    "family": "cache",
+    "contract": "eebebd4c256d2b6f132eb12d1a169b767891cf3594246129c772298479a3dba0",
+    "source_sha256": "63ef091a7ce268445aa648a5b9ce6a79b3784853414f90ff412d3e3a2e5f7b2d",
+    "validation": "rejected",
+    "formal": "not_run",
+    "physical": "not_run",
+    "os_isolation": "not_provided",
+    "pilot_eligible": true,
+    "reason": "functional mismatch",
+    "elapsed_s": 7.932,
+    "synthesis_cache_hits": 1,
+    "baseline_simulation_cache_hits": 1,
+    "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  },
+  "gather-gather_order": {
+    "tested_correct": false,
+    "reward": 0.0,
+    "family": "gather",
+    "contract": "5d5d94f613556f5a5e3cca3f958030681b99a942571f015938e91effc3779131",
+    "source_sha256": "5ad1488aea5779257b0005b7d9d6b9f31c347cd04cedd824d9b91b2c97f4d8f9",
+    "validation": "rejected",
+    "formal": "not_run",
+    "physical": "not_run",
+    "os_isolation": "not_provided",
+    "pilot_eligible": true,
+    "reason": "functional mismatch",
+    "elapsed_s": 52.04,
+    "synthesis_cache_hits": 1,
+    "baseline_simulation_cache_hits": 0,
+    "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  }
+}

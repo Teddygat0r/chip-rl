@@ -1,0 +1,145 @@
+{
+  "scope": "dot only; fresh cache then repeated/new source and workload; no generalization to memory-family cost",
+  "runs": [
+    {
+      "case": "cold_baseline",
+      "wall_s": 1.4888167299995985,
+      "child_cpu_s": 1.215875,
+      "result": {
+        "tested_correct": true,
+        "reward": 1.0,
+        "family": "dot",
+        "contract": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+        "source_sha256": "75013f3083ad000dad429d2446290ad2551a391dc339981a6ae1e0db43d1acb9",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 2118,
+          "logic_depth": 35,
+          "mean_completion_cycles": 109.0,
+          "mean_offered_latency": 32.74117647058823
+        },
+        "paired_ratios": {
+          "cells": 1.0,
+          "cycles": 1.0,
+          "offered_latency": 1.0
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 1.489,
+        "synthesis_cache_hits": 1,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      }
+    },
+    {
+      "case": "new_candidate_cached_baseline",
+      "wall_s": 1.4861592360011855,
+      "child_cpu_s": 1.2740709999999997,
+      "result": {
+        "tested_correct": true,
+        "reward": 1.0780938342889983,
+        "family": "dot",
+        "contract": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+        "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 1114,
+          "logic_depth": 33,
+          "mean_completion_cycles": 582.0,
+          "mean_offered_latency": 276.00588235294117
+        },
+        "paired_ratios": {
+          "cells": 0.5259678942398489,
+          "cycles": 5.33956228956229,
+          "offered_latency": 8.430368078990126
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 1.486,
+        "synthesis_cache_hits": 2,
+        "baseline_simulation_cache_hits": 3,
+        "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      }
+    },
+    {
+      "case": "warm_same_instance",
+      "wall_s": 0.42253232300026866,
+      "child_cpu_s": 0.3014049999999999,
+      "result": {
+        "tested_correct": true,
+        "reward": 1.0780938342889983,
+        "family": "dot",
+        "contract": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+        "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 1114,
+          "logic_depth": 33,
+          "mean_completion_cycles": 582.0,
+          "mean_offered_latency": 276.00588235294117
+        },
+        "paired_ratios": {
+          "cells": 0.5259678942398489,
+          "cycles": 5.33956228956229,
+          "offered_latency": 8.430368078990126
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 0.422,
+        "synthesis_cache_hits": 4,
+        "baseline_simulation_cache_hits": 3,
+        "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      }
+    },
+    {
+      "case": "warm_fresh_instance",
+      "wall_s": 0.6150573710001481,
+      "child_cpu_s": 0.46385400000000043,
+      "result": {
+        "tested_correct": true,
+        "reward": 1.064991124722406,
+        "family": "dot",
+        "contract": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+        "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 1114,
+          "logic_depth": 33,
+          "mean_completion_cycles": 556.5,
+          "mean_offered_latency": 251.74705882352941
+        },
+        "paired_ratios": {
+          "cells": 0.5259678942398489,
+          "cycles": 5.767991407089152,
+          "offered_latency": 11.910187379673607
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 0.615,
+        "synthesis_cache_hits": 4,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "90584b030678ae5be38729c8e560f4f8de504eb9d900298742d85f99de6d8fd5",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      }
+    }
+  ]
+}

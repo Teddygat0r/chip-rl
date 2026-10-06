@@ -1,0 +1,18 @@
+{
+  "tested_correct": true,
+  "metrics": {
+    "commands": 85,
+    "cycles": 571,
+    "useful_units": 340,
+    "offered_latency": 262.3529411764706,
+    "useful_throughput": 0.5954465849387041,
+    "maximum_response_cycles": 11
+  },
+  "synthesis": {
+    "cells": 1114,
+    "contract_sha256": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+    "logic_depth": 33,
+    "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+  }
+}

@@ -36,7 +36,55 @@ a corrupt design fails. Fixed-cycle equivalence separately passes identical RTL 
 fails changed latency. There are zero unbounded proofs and zero physical validations.
 The physical backend is optional and unvalidated; proxy gate depth is not routed timing.
 
-The final measured table and clean-checkout evidence are recorded after qualification
-completes. Development qualification uses a trusted reproducibility seed; this seed
-is not exposed by the agent API and is not a production heldout seed. Private replay
-bundles must never be supplied to a training agent.
+Final counts: **6/6 pilot families**, **13 valid designs accepted**, **57 distinct bad
+regression classes rejected**, **6/6 frozen winners accepted on fresh heldout workloads**,
+**32 unit/reference/boundary tests passed**. Functional, synthesis, mapped-netlist and
+same-source structural counts are each six. Bounded-formal count is one; unbounded
+formal and physical counts are zero. The aggregate [summary](../evidence/v2/summary.json)
+explains probe replacement/counting; raw development histories remain visible.
+
+| Family / frozen design | Cells / baseline | Completion cycles / baseline | Offered latency / baseline | Reward |
+|---|---:|---:|---:|---:|
+| elastic / global4 | 0.938 | 1.000 | 1.000 | 1.0255 |
+| dot / serial1 | 0.526 | 5.232 | 7.956 | 1.0808 |
+| scratchpad / time_mux | 0.279 | 5.319 | 9.204 | 1.2887 |
+| tensor / serial1 | 0.422 | 14.143 | 21.826 | 1.0696 |
+| cache / lazy_cache | 0.984 | 1.000 | 1.000 | 1.0066 |
+| gather / time_mux | 0.616 | 3.215 | 4.127 | 1.0707 |
+
+Ratios below one mean less area/time. Tensor saves cells but takes roughly fourteen
+times as many completion cycles and twenty-two times the offered latency. That is
+an explicit area-first tradeoff, not performance improvement. Elastic and cache have
+small measured headroom; the catalog does not establish broad optimization potential.
+
+The final heldout evaluation walls were 0.44s elastic, 1.10s dot, 55.70s scratchpad,
+3.77s tensor, 74.59s cache and 81.96s gather, with synthesis caches populated and
+mixed simulator-program reuse. A separately measured dot run took 1.49s with a cold
+cache, 0.42s for the same cached instance, and 0.62s for a fresh instance with cached
+programs. These are observed costs on a four-CPU-quota executor, not throughput
+promises. Mapped-memory compilation dominates some cases. Cache hits still execute
+candidate RTL/netlist simulations; exact private baseline simulations may be reused.
+
+Clean reproduction cloned code commit `013b1b9`, built/installed the 0.2.0 wheel in a
+separate virtual environment, passed all 32 tests, accepted five compute designs and
+rejected all 18 compute mutants. An external installed-package JSON API episode and
+private artifact replay also passed. Tool packages were the independently installed
+Debian Icarus 12.0/Yosys 0.52 prefix from the earlier clean-tool reproduction.
+
+Reproduce broader evidence using:
+
+```bash
+python -m chip_rl.suite --output /tmp/pilot-private --cache /tmp/pilot-cache
+PYTHONPATH=. python scripts/reproduce_formal.py --output /tmp/bounded-formal
+PYTHONPATH=. python scripts/check_arrival_reward.py --output /tmp/arrival-private
+```
+
+`search_pilot.py` consumes partitioned qualification summaries (compute, scratchpad,
+cache, gather) and freezes the finite-catalog winner before private heldout testing.
+The development seed is a trusted replay fixture, not a production heldout seed.
+Private replay vectors/seeds live outside Git and must never enter the agent workspace.
+
+Verdict: suitable for a **limited, externally isolated, area-first RTL pilot**. This
+is not evidence of ten viable environments, learned design ability, physical PPA,
+or readiness for unrestricted autonomous training. Four families need architectural
+redesign; OS isolation and real physical validation remain external prerequisites.
