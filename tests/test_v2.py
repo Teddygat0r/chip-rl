@@ -68,7 +68,7 @@ class Boundary(unittest.TestCase):
             env.step({'rtl':design(Config('elastic'))});self.assertEqual(ev.call_args.kwargs,{})
             with self.assertRaises(RuntimeError):env.step({'rtl':''})
     def test_server_injections(self):
-        inp=[{'op':'reset','task':'elastic','seed':'1; $finish'}, {'op':'reset','task':'elastic','replay_seed':1}, {'op':'reset','task':'elastic','artifacts':'/tmp/test'}, {'op':'reset','task':'scoreboard'}]
+        inp=[{'op':'reset','task':'elastic','seed':'1; $finish'}, {'op':'reset','task':'elastic','replay_seed':1}, {'op':'reset','task':'elastic','artifacts':'/tmp/test'}, {'op':'reset','task':'scoreboard'}, {'op':'reset','task':'dot','count':16}]
         out=io.StringIO();serve(io.StringIO(''.join(json.dumps(x)+'\n' for x in inp)),out)
         self.assertTrue(all(not json.loads(x)['ok'] for x in out.getvalue().splitlines()))
     def test_public_failure_coarse(self):
@@ -112,5 +112,29 @@ class HDLBoundary(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             r=physical(Config('elastic'),design(Config('elastic')),Path(d)/'absent',Path(d)/'out')
             self.assertEqual(r['status'],'not_run');self.assertFalse(r['physical_verified'])
+
+class MandatoryCoverage(unittest.TestCase):
+    def test_no_legacy_count_can_shorten_profile(self):
+        from chip_rl.coverage import cases
+        for n in PILOT:
+            c=Config(n)
+            for seed in range(10):
+                default=cases(c,seed)
+                self.assertEqual(default,cases(c,seed,16))
+                self.assertEqual(default,cases(c,seed,80))
+                self.assertEqual(default,cases(c,seed,128))
+                self.assertGreaterEqual(default[1][4],1024)
+                self.assertTrue(all(x[4]>=128 for x in default))
+    def test_lengths_vary_and_budget_explicit(self):
+        from chip_rl.coverage import cases,BANDS
+        c=Config('dot')
+        lengths={cases(c,seed)[1][4] for seed in range(30)}
+        self.assertGreater(len(lengths),20)
+        for seed in range(30):
+            for _,_,cc,secret,count,band in cases(c,seed):
+                lo,hi=BANDS[band];self.assertTrue(lo<=count<=hi)
+                xs=commands(cc,secret,count)
+                _,_,limit=schedule(cc,len(xs),secret)
+                self.assertLessEqual(limit,cc.max_cycles)
 
 if __name__=='__main__':unittest.main()

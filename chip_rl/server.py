@@ -4,10 +4,10 @@ Only trusted-host CLI flags set episode limits. No candidate file paths or comma
 """
 import argparse,json,sys
 from .env import ChipEnv
-from .evaluate import Rejected
+from .evaluate import Rejected,TrustedEvaluator
 
-def serve(inp,out,horizon=8):
-    env=None
+def serve(inp,out,horizon=8,cache_root=None):
+    env=None;evaluator=None
     while True:
         line=inp.readline(200001)
         if not line: break
@@ -18,7 +18,8 @@ def serve(inp,out,horizon=8):
             req=json.loads(line)
             if not isinstance(req,dict):raise ValueError('request must be an object')
             if req.get('op')=='reset' and set(req)<={'op','task','seed'}:
-                env=ChipEnv(req['task'],horizon=horizon)
+                if evaluator is None:evaluator=TrustedEvaluator(cache_root)
+                env=ChipEnv(req['task'],horizon=horizon,evaluator=evaluator)
                 obs,info=env.reset(seed=req.get('seed',1))
                 response={'ok':True,'observation':obs,'info':info}
             elif req.get('op')=='step' and set(req)=={'op','action'}:
@@ -33,7 +34,7 @@ def serve(inp,out,horizon=8):
         out.write(json.dumps(response)+'\n');out.flush()
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--horizon',type=int,default=8);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--horizon',type=int,default=8);p.add_argument('--cache');a=p.parse_args()
     if not 1<=a.horizon<=1024:p.error('horizon must be in 1..1024')
-    serve(sys.stdin,sys.stdout,a.horizon)
+    serve(sys.stdin,sys.stdout,a.horizon,a.cache)
 if __name__=='__main__':main()

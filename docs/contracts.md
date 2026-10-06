@@ -134,3 +134,30 @@ axes are monotone: a candidate cannot score better by worsening any one axis whi
 holding the others fixed. The objective explicitly prioritizes generic cell area
 and may prefer serial designs with substantially worse performance. It is not a
 throughput-maximization objective. Logic depth is a hard proxy budget, not a reward.
+
+## Mandatory variable-stream profile (0.3.0)
+
+All qualifying entry points use `coverage.cases`: direct library evaluation,
+`ChipEnv`, JSON reset/step, ordinary CLI, the release suite, heldout selection, and
+the functional prerequisite of the optional physical launcher. There is no shorter
+default or quick-success path. Main-configuration cases draw workload sizes from
+128..256 and 1024..1280; each other structural configuration draws from 512..768.
+These are random generator units: task-specific directed prefixes and, for cache,
+multi-command transactions add commands. Case lengths vary independently with the
+private seed. Legacy host `count` requests can only increase these coverage floors.
+The complete reset, cold-memory, cache-alias, signed-extreme, fairness, stall,
+completion and structural checks apply in every case.
+
+Per-case clocks remain capped by min(max_cycles, 32*actual_commands+128), normally
+30,000 clocks. Simulation wall timeout is 120 seconds, compile/synthesis wall timeout
+is 120 seconds, and each child has a 90-second CPU/3GiB memory limit. A timeout
+rejects the candidate; it never downgrades to a shorter profile. Exact private
+baseline results and compiled programs may be cached; candidate simulations still
+run. Early RTL failure rejects without baseline measurement. RTL preflight success
+alone never qualifies: required synthesis and mapped-netlist tests must also pass.
+
+This finite profile rejects the tested 64/127/257/777/1023 cutoff variants. It cannot
+prove correctness beyond its sampled streams; a sufficiently later cutoff can
+still evade finite tests. Public band limits are not secret. Universal liveness or
+correctness requires stronger verification. Single-case replay is diagnostic only
+and reports `case_replay_passed`, never candidate qualification.

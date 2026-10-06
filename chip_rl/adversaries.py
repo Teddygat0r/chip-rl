@@ -43,3 +43,17 @@ def mutant(c,label):
         table='case(idx)\n'+'\n'.join(f"{i}:y=256'h{v:064x};" for i,v in enumerate(ys))+'\ndefault:y=0;endcase'
         return out.replace('y[(WIDTH-1):0]=in_data[(WIDTH-1):0];',table).replace('valid<=0;','valid<=0;idx<=0;').replace('if(fire) begin  end','if(fire) begin idx<=idx+1; end')
     raise ValueError(label)
+
+def labels(name):
+    result=['zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
+    if name in ('scratchpad','gather'):result+=['no_reset']
+    if name=='scratchpad':result+=['unfair']
+    if name in ('dot','tensor'):result+=['narrow']
+    if name=='elastic':result+=['capacity']
+    if name=='cache':result+=['tag_alias','cache_reset']
+    if name=='gather':result+=['gather_order']
+    return result
+
+def threshold_mutant(c,threshold):
+    if type(threshold) is not int or not 1<=threshold<=65534:raise ValueError('threshold')
+    return mutant(c,'late_drop').replace('accepted_count<64',f'accepted_count<{threshold}')

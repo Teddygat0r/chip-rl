@@ -7,6 +7,6 @@ p=argparse.ArgumentParser();p.add_argument('artifact',type=Path);p.add_argument(
 r=json.loads((a.artifact/'private-replay.json').read_text());c=Config(**r['config']);src=(a.artifact/'candidate.sv').read_text();q=TrustedEvaluator(a.cache)
 try:
  sd,sm,_=q._synth(c,src);result=q._simulate(c,src,sd,r['seed'],r['count'],a.output)
- print(json.dumps({'tested_correct':True,'metrics':result,'synthesis':sm},indent=2))
+ print(json.dumps({'case_replay_passed':True,'qualification':'not_performed_by_single_case_replay','metrics':result,'synthesis':sm},indent=2))
 except Rejected as e:
- print(json.dumps({'tested_correct':False,'reason':str(e)}));raise SystemExit(1)
+ print(json.dumps({'case_replay_passed':False,'qualification':'not_performed_by_single_case_replay','reason':str(e)}));raise SystemExit(1)

@@ -7,11 +7,11 @@ from .evaluate import TrustedEvaluator
 from .contracts import PILOT,specification
 
 class ChipEnv:
-    def __init__(self,name,horizon=8,**config):
+    def __init__(self,name,horizon=8,evaluator=None,**config):
         if type(horizon) is not int or not 1<=horizon<=1024:raise ValueError('horizon must be in 1..1024')
         if name not in PILOT:raise ValueError('experimental family excluded from pilot')
         self.config=Config(name,**config);self.horizon=horizon;self.baseline=None
-        self._evaluator=TrustedEvaluator()
+        self._evaluator=evaluator if evaluator is not None else TrustedEvaluator()
     def reset(self,seed=1):
         # Compatibility: this seed can identify agent search, never evaluation instances.
         if type(seed) is not int or not 0<=seed<=0xffffffff:raise ValueError('seed must be an unsigned 32-bit integer')

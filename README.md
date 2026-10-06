@@ -1,7 +1,12 @@
-# chip-rl: a constrained RTL research pilot
+# chip-rl: a constrained RTL research pilot (0.3.0)
 
 **Validated: six families, thirteen valid designs, fifty-seven rejected bad regressions,
 six fresh heldout winners, and thirty-two tests.**
+
+The original v2 qualification used longer workloads than its default API, allowing
+a 64-command cutoff mutant to pass default dot/tensor evaluations. Version 0.3.0
+centralizes mandatory variable-length coverage for every qualification path; see
+[the correction and API evidence](docs/mandatory-coverage.md).
 
 V2 remediates an empirical viability audit that found reward hacking and insufficient
 contracts in v1. Six families are pilot candidates: elastic buffering, exact INT8

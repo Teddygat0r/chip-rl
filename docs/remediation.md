@@ -1,3 +1,5 @@
+> Historical v2 profile results. The later default-path gap and mandatory-coverage correction are documented in [mandatory coverage](mandatory-coverage.md).
+
 # V2 remediation and evidence
 
 The [v1 viability study](v1-viability-study.md) found all ten fixed-workload ROMs

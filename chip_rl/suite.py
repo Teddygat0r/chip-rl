@@ -5,7 +5,7 @@ from .tasks import Config
 from .contracts import PILOT,EXPERIMENTAL
 from .rtl import design
 from .architectures import architecture,CATALOG
-from .adversaries import mutant
+from .adversaries import mutant,labels
 from .evaluate import TrustedEvaluator
 
 def compact(path):
@@ -23,17 +23,11 @@ def main():
     for name in a.tasks:
         c=Config(name);rows[name]={}
         cases=[(label,architecture(c,label),True) for label in CATALOG[name]]
-        bad=['zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
-        if name in ('scratchpad','gather'):bad+=['no_reset']
-        if name=='scratchpad':bad+=['unfair']
-        if name in ('dot','tensor'):bad+=['narrow']
-        if name=='elastic':bad+=['capacity']
-        if name=='cache':bad+=['tag_alias','cache_reset']
-        if name=='gather':bad+=['gather_order']
+        bad=labels(name)
         cases += [('bad_'+label,mutant(c,label),False) for label in bad]
         for label,src,expected in cases:
             path=root/name/label
-            r=q.evaluate(c,src,replay_seed=a.seed,count=80,artifacts=path)
+            r=q.evaluate(c,src,replay_seed=a.seed,artifacts=path)
             compact(path);rows[name][label]=r
             if r['tested_correct']!=expected:failures.append(name+'/'+label)
             print(name,label,'PASS' if r['tested_correct']==expected else 'FAIL',round(r['reward'],4),r.get('reason',''),flush=True)

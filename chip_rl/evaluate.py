@@ -9,6 +9,7 @@ from .tasks import Model,useful_work
 from .corpus import commands,schedule,dirty_command
 from .contracts import specification,identity,PILOT
 from .rtl import design
+from .coverage import cases,PROFILE
 
 def sanitize(source):
     if not isinstance(source,str):return _sanitize(source)
@@ -97,7 +98,7 @@ class TrustedEvaluator:
         self._temp=None
         if cache_root is None:
             self._temp=tempfile.TemporaryDirectory(prefix='chip-rl-v2-cache-');cache_root=self._temp.name
-        self.recipe_fingerprint=hashlib.sha256(b''.join(Path(__file__).with_name(n).read_bytes() for n in ('evaluate.py','corpus.py','tasks.py','contracts.py','_tools.py'))).hexdigest()
+        self.recipe_fingerprint=hashlib.sha256(b''.join(Path(__file__).with_name(n).read_bytes() for n in ('evaluate.py','corpus.py','tasks.py','contracts.py','_tools.py','coverage.py'))).hexdigest()
         self.root=Path(cache_root);self.root.mkdir(parents=True,exist_ok=True);self.root.chmod(0o700)
         # Include executable contents, not merely version labels, in cache identity.
         bins=[Path(tool(n)) for n in ('yosys','yosys-abc','iverilog','vvp')]
@@ -143,17 +144,17 @@ class TrustedEvaluator:
             shutil.copytree(d,str(d)+'-complete');os.rename(str(d)+'-complete',dest)
         return dest,metrics,False
 
-    def _simulate(self,c,src,synthdir,seed,count,out=None):
+    def _simulate(self,c,src,synthdir,seed,count,out=None,rtl_only=False):
         xs=commands(c,seed,count);model=Model(c);ys=[model.step(x) for x in xs]
         tb,arrivals,ready=bench(c,xs,seed)
         with tempfile.TemporaryDirectory(prefix='chip-rl-v2-private-') as td:
             d=Path(td);(d/'candidate.sv').write_text(src);(d/'tb.sv').write_text(tb)
             for name,vals,width in [('inputs',xs,128),('expected',ys,64),('release',arrivals,8),('weights',[useful_work(c,x,y) for x,y in zip(xs,ys)],8),('ready',ready,1)]:
                 (d/(name+'.hex')).write_text(''.join(f'{v:0{width}x}\n' for v in vals))
-            shutil.copy(synthdir/'netlist.v',d/'netlist.v')
+            if not rtl_only:shutil.copy(synthdir/'netlist.v',d/'netlist.v')
             answers=[]
             try:
-                for label,file in [('rtl','candidate.sv'),('netlist','netlist.v')]:
+                for label,file in ([('rtl','candidate.sv')] if rtl_only else [('rtl','candidate.sv'),('netlist','netlist.v')]):
                     # Yosys's mapped module has resolved parameters; do not re-override it.
                     if label=='netlist':(d/'tb.sv').write_text(tb.replace(f'candidate #(.WIDTH({c.width}),.DEPTH({c.depth}),.K({c.k}))','candidate'))
                     cmd=[tool('iverilog')]
@@ -168,11 +169,11 @@ class TrustedEvaluator:
                         else:
                             run(cmd+['-g2012','-s','tb','-o',label+'.vvp',file,'tb.sv'],d,label+'-compile')
                             shutil.copy(d/(label+'.vvp'),str(cached)+'.new');os.replace(str(cached)+'.new',cached)
-                    output=run([tool('vvp'),label+'.vvp'],d,label+'-simulation',30)
+                    output=run([tool('vvp'),label+'.vvp'],d,label+'-simulation',120)
                     m=re.search(r'^PASS (\d+) (\d+) (\d+) (\d+) (\d+)$',output,re.M)
                     if not m:raise Rejected('incomplete simulation')
                     answers.append(tuple(map(int,m.groups())))
-                if answers[0]!=answers[1]:raise Rejected('RTL/netlist divergence')
+                if not rtl_only and answers[0]!=answers[1]:raise Rejected('RTL/netlist divergence')
                 n,cycles,units,lat,mx=answers[0]
                 return {'commands':n,'cycles':cycles,'useful_units':units,'offered_latency':lat/max(1,units),'useful_throughput':units/cycles,'maximum_response_cycles':mx}
             finally:
@@ -180,51 +181,57 @@ class TrustedEvaluator:
                     target=Path(out);target.parent.mkdir(parents=True,exist_ok=True);shutil.copytree(d,target)
                     (target/'private-replay.json').write_text(json.dumps({'config':asdict(c),'seed':seed,'count':count})+'\n')
 
-    def evaluate(self,c,src,*,replay_seed=None,count=48,artifacts=None,allow_experimental=False):
+    def evaluate(self,c,src,*,replay_seed=None,count=None,artifacts=None,allow_experimental=False):
         started=time.monotonic();pub={'tested_correct':False,'reward':0.,'family':c.name,'contract':identity(c),'source_sha256':digest(src) if isinstance(src,str) else None,
-            'validation':'not_run','formal':'not_run','physical':'not_run','os_isolation':'not_provided','pilot_eligible':c.name in PILOT}
+            'validation':'not_run','formal':'not_run','physical':'not_run','os_isolation':'not_provided','pilot_eligible':c.name in PILOT,'coverage_profile':PROFILE}
         private=[];cache_hits=0;baseline_hits=0
         try:
             if c.name not in PILOT and not allow_experimental:raise Rejected('experimental family excluded from pilot')
-            if type(count) is not int or not 16<=count<=256:raise Rejected('invalid workload size')
             if replay_seed is not None and (type(replay_seed) is not int or not 0<=replay_seed<2**128):raise Rejected('invalid trusted replay seed')
             seed=secrets.randbits(128) if replay_seed is None else replay_seed
-            # Unchanged source is elaborated across ALL supported relevant dimensions.
-            variants=[c]
-            if c.name=='elastic':variants += [replace(c,width=w) for w in (8,16,24) if w!=c.width]
-            elif c.name in ('dot','tensor'):variants += [replace(c,k=k) for k in (2,4) if k!=c.k]
-            elif c.name in ('scratchpad','cache','gather','accelerator'):variants += [replace(c,depth=d) for d in (16,64,256) if d!=c.depth]
-            for vi,cc in enumerate(variants):
-                sd,sm,hit=self._synth(cc,src);cache_hits+=hit
-                baseline=design(cc);bd,bm,hit=self._synth(cc,baseline);cache_hits+=hit
-                for repeat in range(2 if vi==0 else 1):
-                    secret=int.from_bytes(hashlib.sha256(f'{seed}:{vi}:{repeat}'.encode()).digest()[:16],'big')
-                    path=Path(artifacts)/f'case-{vi}-{repeat}' if artifacts else None
-                    # Private deterministic baseline memoization: exact recipe, toolchain,
-                    # source/config, workload seed and size. No agent controls this cache.
-                    bk=digest(self.recipe_fingerprint+self.tool_fingerprint+identity(cc)+baseline+str(secret)+str(count))
-                    bp=self.root/('baseline-'+bk+'.json')
-                    if bp.exists():
-                        b=json.loads(bp.read_text());baseline_hits+=1
-                        if path:
-                            (path/'baseline').mkdir(parents=True,exist_ok=True)
-                            (path/'baseline'/'private-replay.json').write_text(json.dumps({'config':asdict(cc),'seed':secret,'count':count})+'\n')
-                            (path/'baseline'/'candidate.sv').write_text(baseline)
-                            (path/'baseline'/'cached-metrics.json').write_text(json.dumps(b)+'\n')
-                    else:
-                        b=self._simulate(cc,baseline,bd,secret,count,path/'baseline' if path else None)
-                        bp.write_text(json.dumps(b)+'\n')
-                    r=self._simulate(cc,src,sd,secret,count,path/'candidate' if path else None)
-                    if r['cycles']>16*b['cycles']:raise Rejected('throughput floor')
-                    b.update({k:bm[k] for k in ('cells','logic_depth')});r.update({k:sm[k] for k in ('cells','logic_depth')})
-                    private.append({'config':asdict(cc),'baseline':b,'candidate':r,'reward':reward(b,r),'target':vi==0})
+            plan=cases(c,seed,count)
+            sanitize(src)
+            # Cheap complete RTL preflight rejects invalid actions before expensive
+            # baseline/netlist work. Success here NEVER qualifies a candidate.
+            seen={}
+            for vi,repeat,cc,secret,case_count,band in plan:
+                if vi not in seen:
+                    sd,sm,hit=self._synth(cc,src);cache_hits+=hit;seen[vi]=(sd,sm)
+                path=Path(artifacts)/f'preflight-{vi}-{repeat}' if artifacts else None
+                self._simulate(cc,src,None,secret,case_count,path,rtl_only=True)
+            paired={}
+            for vi,repeat,cc,secret,count,band in plan:
+                if vi not in paired:
+                    sd,sm=seen[vi]
+                    baseline=design(cc);bd,bm,hit=self._synth(cc,baseline);cache_hits+=hit
+                    paired[vi]=(sd,sm,baseline,bd,bm)
+                sd,sm,baseline,bd,bm=paired[vi]
+                path=Path(artifacts)/f'case-{vi}-{repeat}' if artifacts else None
+                # Private deterministic baseline memoization: exact recipe, toolchain,
+                # source/config, workload seed and size. No agent controls this cache.
+                bk=digest(self.recipe_fingerprint+self.tool_fingerprint+identity(cc)+baseline+str(secret)+str(count))
+                bp=self.root/('baseline-'+bk+'.json')
+                if bp.exists():
+                    b=json.loads(bp.read_text());baseline_hits+=1
+                    if path:
+                        (path/'baseline').mkdir(parents=True,exist_ok=True)
+                        (path/'baseline'/'private-replay.json').write_text(json.dumps({'config':asdict(cc),'seed':secret,'count':count})+'\n')
+                        (path/'baseline'/'candidate.sv').write_text(baseline)
+                        (path/'baseline'/'cached-metrics.json').write_text(json.dumps(b)+'\n')
+                else:
+                    b=self._simulate(cc,baseline,bd,secret,count,path/'baseline' if path else None)
+                    bp.write_text(json.dumps(b)+'\n')
+                r=self._simulate(cc,src,sd,secret,count,path/'candidate' if path else None)
+                if r['cycles']>16*b['cycles']:raise Rejected('throughput floor')
+                b.update({k:bm[k] for k in ('cells','logic_depth')});r.update({k:sm[k] for k in ('cells','logic_depth')})
+                private.append({'config':asdict(cc),'baseline':b,'candidate':r,'reward':reward(b,r),'target':vi==0})
             targets=[row for row in private if row['target']]
             pub.update({'tested_correct':True,'validation':'rtl_and_netlist_pass','reward':sum(r['reward'] for r in targets)/len(targets),
                         'metrics':{'cells':targets[0]['candidate']['cells'],'logic_depth':targets[0]['candidate']['logic_depth'],
                                    'mean_completion_cycles':sum(r['candidate']['cycles'] for r in targets)/len(targets),
                                    'mean_offered_latency':sum(r['candidate']['offered_latency'] for r in targets)/len(targets)},
                         'paired_ratios':{k:sum(r['candidate'][k]/r['baseline'][k] for r in targets)/len(targets) for k in ('cells','cycles','offered_latency')},
-                        'dimension_variants_checked':len(variants),'private_cases_checked':len(private)})
+                        'dimension_variants_checked':len(seen),'private_cases_checked':len(private)})
         except (Rejected,OSError,ValueError,KeyError,TypeError) as e:
             # Do not return vectors, seeds, expected values, tool logs or raw errors.
             msg=str(e);pub['validation']='rejected'

@@ -1,0 +1,31 @@
+{
+  "tested_correct": true,
+  "reward": 1.0449791782796587,
+  "family": "gather",
+  "contract": "9542c63583069103454cc9769327090791999c2ef727d5652c7e159950da01f9",
+  "source_sha256": "f3ec288b8c856b80053ff531c4ff30c4c1b5229e46a08709828d8beac156697b",
+  "validation": "rtl_and_netlist_pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "os_isolation": "not_provided",
+  "pilot_eligible": true,
+  "coverage_profile": "mandatory-variable-stream-v3",
+  "metrics": {
+    "cells": 26947,
+    "logic_depth": 16,
+    "mean_completion_cycles": 5039.5,
+    "mean_offered_latency": 2470.215558574234
+  },
+  "paired_ratios": {
+    "cells": 0.6155796687607081,
+    "cycles": 4.105599823034673,
+    "offered_latency": 5.899504924915103
+  },
+  "dimension_variants_checked": 3,
+  "private_cases_checked": 4,
+  "elapsed_s": 82.049,
+  "synthesis_cache_hits": 6,
+  "baseline_simulation_cache_hits": 0,
+  "recipe_sha256": "2d5d24c7c446bd5e9033a47cc0c9e42e18d6c32b6fd8a5ec6d5dfe9cef1f9b7b",
+  "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+}
