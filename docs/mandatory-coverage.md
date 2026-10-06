@@ -46,7 +46,24 @@ and direct library calls with default evaluation arguments. It covers every exis
 family-specific attack class and adds dot/tensor cutoffs 127, 257, 777 and 1023,
 in addition to 64. Valid baselines are positive controls. Fixed winners are then
 checked on fresh private mandatory profiles, without choosing source after seeing
-those samples. Full counts and results are recorded in `evidence/v3` after completion.
+those samples. Final results are in [`evidence/v3/summary.json`](../evidence/v3/summary.json):
+13 valid designs accepted, 57 qualification mutants rejected, and 65 bad cases
+rejected through **each** of JSON, CLI and library evaluation (195 rejections),
+with 18 baseline acceptances across those APIs. All six frozen winners passed
+fresh heldouts. The unit suite passed 34 tests.
+
+The complete API matrix used the same mandatory plan and initial stricter 30-second
+simulation limit in all three implementations; none of those entries timed out.
+The final 120-second shared budget was checked by the gather retest/heldout and a
+clean installed-wheel compute API rerun. Original and final recipe hashes are
+retained. This budget expansion changes no workload, functional, cycle or cell gate.
+
+Observed heldout evaluation walls with populated synthesis caches were 1.23s elastic,
+3.62s dot, 14.11s tensor, 120.01s scratchpad, 126.08s cache and 165.68s gather.
+These are per-evaluation totals across multiple individually bounded cases on this
+executor, not guaranteed throughput. Mapped memory evaluation remains expensive.
+Area-first tradeoffs persist: tensor's selected serial design used 0.422x baseline
+cells but 15.261x completion cycles and 25.012x offered latency. This is not a speedup.
 
 Finite streams cannot prove an unbounded transaction contract. A later cutoff beyond
 all sampled lengths can still evade these tests. This correction closes the known

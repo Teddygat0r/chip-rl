@@ -1,7 +1,8 @@
 # chip-rl: a constrained RTL research pilot (0.3.0)
 
-**Validated: six families, thirteen valid designs, fifty-seven rejected bad regressions,
-six fresh heldout winners, and thirty-two tests.**
+**Validated: six families, thirteen valid designs, fifty-seven qualification regressions,
+sixty-five bad cases rejected through each of three APIs, six fresh heldout winners,
+and thirty-four tests.**
 
 The original v2 qualification used longer workloads than its default API, allowing
 a 64-command cutoff mutant to pass default dot/tensor evaluations. Version 0.3.0
@@ -52,7 +53,7 @@ observation, reward, terminated, truncated, info = env.step(
     {'rtl': architecture(Config('dot'), 'serial1')})
 ```
 
-`reset(seed=...)` identifies an agent-side search only; it never selects evaluation
+`reset(seed=...)` is retained for compatibility; it never selects evaluation
 seeds. Every action receives fresh private 128-bit randomness. The trusted-host CLI
 alone offers `--replay-seed` for reproduction. The JSON-lines server
 (`python -m chip_rl.server`) accepts only reset(task, seed) and step({rtl: source}).

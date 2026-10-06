@@ -1,0 +1,19 @@
+{
+  "case_replay_passed": true,
+  "qualification": "not_performed_by_single_case_replay",
+  "metrics": {
+    "commands": 208,
+    "cycles": 1420,
+    "useful_units": 832,
+    "offered_latency": 646.5048076923077,
+    "useful_throughput": 0.5859154929577465,
+    "maximum_response_cycles": 13
+  },
+  "synthesis": {
+    "cells": 1114,
+    "logic_depth": 33,
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+    "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+    "contract_sha256": "6a6dc1dcaf7dfa21fd7787ebd911e8b920d10493004eac4a999e67f1f247a2eb"
+  }
+}

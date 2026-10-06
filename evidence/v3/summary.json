@@ -1764,5 +1764,13 @@
       },
       "comparator": "Enumerating the same finite catalog in random order with the same complete budget yields the same development winner; no search superiority claim."
     }
+  },
+  "clean_reproduction_code_commit": "e0b1f442ee4476fd68530b1285d34c42e05893e0",
+  "fresh_installed_compute_recheck": {
+    "negative_rejections": 105,
+    "baseline_acceptances": 9,
+    "unit_tests": 34,
+    "diagnostic_replay_passed": true,
+    "simulation_wall_seconds": 120
   }
 }
