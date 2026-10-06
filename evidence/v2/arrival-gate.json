@@ -1,0 +1,30 @@
+{
+  "tested_correct": true,
+  "reward": 0.9990240441385316,
+  "family": "dma",
+  "contract": "6fa76eb2f3267948110c38f7721a1588e6672c0c6f64cabc895049526b156264",
+  "source_sha256": "9015c50ab995beb9dba08795a57c3b38382ffa2ba3e79425c9f2853a61443c86",
+  "validation": "rtl_and_netlist_pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "os_isolation": "not_provided",
+  "pilot_eligible": false,
+  "metrics": {
+    "cells": 707,
+    "logic_depth": 26,
+    "mean_completion_cycles": 468.0,
+    "mean_offered_latency": 123.68115942028984
+  },
+  "paired_ratios": {
+    "cells": 1.001416430594901,
+    "cycles": 1.002141681150913,
+    "offered_latency": 1.0101069881474456
+  },
+  "dimension_variants_checked": 1,
+  "private_cases_checked": 2,
+  "elapsed_s": 1.103,
+  "synthesis_cache_hits": 0,
+  "baseline_simulation_cache_hits": 0,
+  "recipe_sha256": "40b029237eafc69c98348c3b7cd4e8a8b15cef31cd790940794d81f68fa6142b",
+  "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+}

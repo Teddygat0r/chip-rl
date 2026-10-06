@@ -1,3 +1,5 @@
+> Historical v1 evidence; superseded by [v2 remediation](remediation.md).
+
 # GitHub delivery provenance
 
 This compact source snapshot is derived from audited local commit

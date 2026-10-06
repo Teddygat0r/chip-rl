@@ -1,3 +1,5 @@
+> Historical v1 evidence; superseded by [v2 remediation](remediation.md).
+
 # Final v1 audit
 
 This is an independent-style, adversarial **self-audit**, not third-party verification.

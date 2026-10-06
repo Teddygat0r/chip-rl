@@ -1,3 +1,5 @@
+> Historical v1 evidence; superseded by [v2 remediation](remediation.md).
+
 # Validation results
 
 Final qualification: **10/10 families; 40 valid cases pass; 30/30 bad RTL cases rejected.**

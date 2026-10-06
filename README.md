@@ -1,127 +1,82 @@
-# chip-rl: ten runnable RTL optimization environments
+# chip-rl: a constrained RTL research pilot
 
-This GitHub delivery contains the audited source and compact validation evidence.
-[Publication provenance](docs/PUBLISHING.md) explains the original audit commit and
-the generated artifacts intentionally omitted from Git history.
+V2 remediates an empirical viability audit that found reward hacking and insufficient
+contracts in v1. Six families are pilot candidates: elastic buffering, exact INT8
+dot products, banked scratchpad arbitration, 2x2 INT8 tensor computation,
+write-through cache control, and stable sparse gather. Four additional models
+(DMA, router, scoreboard, integrated accelerator) remain **experimental and excluded**
+from pilot counts. Ten runnable v1 tasks did not establish ten viable RL environments.
+Historical v1 results are retained under `artifacts/audit` and `legacy/v1-tests`.
 
-A local, dependency-light v1 for agents that edit synthesizable RTL or choose
-constrained architecture parameters. It contains ten distinct functional contracts,
-independent Python reference machines, parameterized workloads, elastic RTL
-baselines/alternatives, task-specific bad mutants, reproducible evaluation artifacts,
-and a `reset`/`step` interface. No model API, paid service or proprietary IP is needed.
+This is an area-first block-level optimization benchmark, not an ASIC/GPU design
+system. No RL policy has been trained. Cell counts and workload cycles are proxies;
+there is no routed timing, frequency, power or silicon-readiness claim.
 
-The tasks are elastic pipelines, exact INT8 dot products, banked scratchpad arbitration,
-burst DMA address generation, five-port packet routing, four-context scoreboarding,
-2x2 INT8 tensor computation, a memory/copy/dot accelerator subsystem, a 1KiB
-write-through cache controller, and sparse gather/stable compaction. See
-[the exact contracts and scope](docs/contracts.md) before training.
+## Run locally
 
-## Run
-
-Requires Python 3.10+, Icarus Verilog 12 and Yosys with ABC on `PATH`. The qualification
-runs used Debian Icarus 12.0 and Yosys 0.52. For a Debian 13 host without those tools:
+Requires Python 3.10+, Icarus Verilog 12 and Yosys with ABC. No paid services,
+proprietary IP or model API is required. On a compatible Debian 13 host:
 
 ```bash
 ./scripts/install_tools.sh "$PWD/.tools"
 source .tools/env.sh
-```
-
-This installs under the requested local prefix. It requires access to Debian's
-public package mirror and compatible host shared libraries. Package versions are
-pinned; if the mirror ages them out, use an appropriate Debian snapshot. In this
-executor the prepared prefix is `/workspace/tools/root/usr` and is discovered by
-fallback; `CHIP_RL_TOOLS` can override it.
-
-From the repository root:
-
-```bash
 python -m unittest discover -s tests -v
-python -m chip_rl dot --artifacts /tmp/dot-run
-python -m chip_rl router --stages 2 --emit > /tmp/router.sv
-python -m chip_rl router --rtl /tmp/router.sv --artifacts /tmp/router-run
+python -m chip_rl dot --artifacts /tmp/dot-private
 PYTHONPATH=. python examples/rollout.py --task elastic
-python -m chip_rl.suite --output /tmp/chip-rl-release
-PYTHONPATH=. python scripts/replay.py /tmp/chip-rl-release/dot/alternate --output /tmp/dot-replay
+python -m chip_rl.suite --output /tmp/pilot-private --cache /tmp/pilot-cache
+PYTHONPATH=. python scripts/replay.py /tmp/pilot-private/dot/serial1/case-0-0/candidate --output /tmp/replay
 ```
 
-Artifact destinations must not already exist. Full qualification includes mapped
-memory designs and takes several minutes; scratchpad netlist elaboration is the
-largest cost. Each bad-case `PASS` means the evaluator **rejected** that design.
-Replay recomputes the trusted workload and checks the recorded acceptance outcome;
-its standalone reward defaults to 1 for correct candidates without a loaded baseline.
+Tool installation is local, version-pinned, and requires Debian mirror access and
+compatible shared libraries. `CHIP_RL_TOOLS` overrides the fallback tool prefix.
+Artifacts and caches belong to the trusted host; use new artifact output paths.
+Full qualification includes mapped 256-word memories and can take many minutes.
+A `bad_* PASS` means rejection, never acceptance.
 
 ```python
 from chip_rl import ChipEnv
+from chip_rl.tasks import Config
+from chip_rl.architectures import architecture
 
-env = ChipEnv("tensor", horizon=3)
+env = ChipEnv('dot', horizon=1)
 observation, info = env.reset(seed=17)
-observation, reward, terminated, truncated, info = env.step({"stages": 2})
-# Or: env.step({"rtl": complete_candidate_source})
+observation, reward, terminated, truncated, info = env.step(
+    {'rtl': architecture(Config('dot'), 'serial1')})
 ```
 
-For an external process, an installed package also supports a JSON-lines action API:
+`reset(seed=...)` identifies an agent-side search only; it never selects evaluation
+seeds. Every action receives fresh private 128-bit randomness. The trusted-host CLI
+alone offers `--replay-seed` for reproduction. The JSON-lines server
+(`python -m chip_rl.server`) accepts only reset(task, seed) and step({rtl: source}).
+Candidate actions cannot change constraints, baseline, seeds, artifact locations,
+commands or files. The Python API is trusted host code, **not an isolation boundary**.
 
-```bash
-python -m pip install --no-deps --no-build-isolation .
-printf '%s\n' '{"op":"reset","task":"elastic","seed":17}' '{"op":"step","action":{"stages":2}}' | python -m chip_rl.server --horizon 1
-```
+Each candidate is simulated against an independent integer model, synthesized with
+Yosys, then the mapped netlist is simulated on identical inputs. Unchanged source is
+elaborated across every relevant supported WIDTH/DEPTH/K. Checks enforce registered
+latency, storage capacity, in-order responses, stable stalls, completion, arbitration,
+reset, arithmetic extremes, full cache tag-bit aliases, and resource budgets.
+Missing tools, timeouts and unproven formal results never count as success.
 
-Every observation includes the full packaged contract text. The server accepts no
-candidate paths, commands, baseline values or constraint overrides. It does not
-provide an OS sandbox. `chip_rl.alternates.alternate(Config(task))` emits each
-specific alternative for an RTL action.
+Baselines are fixed independently of candidates. Paired offline release/consumer
+schedules measure waiting before acceptance as well as execution time. The reward
+is monotone in cell count, total completion cycles and useful offered-to-retired
+latency, with explicit area-first weights. Serial alternatives may earn more while
+being slower; read paired ratios rather than interpreting reward as throughput.
+See [contracts](docs/contracts.md), [remediation evidence](docs/remediation.md),
+[security boundary](docs/security.md), and [reference/license audit](docs/references.md).
 
-`reset` really evaluates the baseline and fails if the tools or design fail.
-`step` evaluates the action, returns metrics and correctness, and ends at the chosen
-horizon. Correctness failures yield zero reward; valid designs are scored against
-the fixed baseline's measured generic cell count and useful-work cycle metrics.
-Agent actions cannot change task constraints, harness or baseline. The API is
-Gym-style without a Gymnasium dependency or a fixed-size numeric observation space;
-observations contain RTL text and structured metrics.
+## Limits
 
-## Evidence and limitations
+Tests are finite and publicly documented; private samples prevent simple fixed-ROM
+replay but are not a proof against adaptive overfitting. Formal helpers provide
+bounded evidence only when explicitly run. No family has an unbounded proof, and
+no family has physical validation. The optional ORFS launcher remains unvalidated;
+absent OpenROAD/PDK or unreviewed reports cannot produce verified physical results.
 
-Post-audit qualification: **10/10 families, 40 valid cases passed, 30 bad RTL cases
-rejected, 34 unit tests passed.** Bounded formal evidence covers one family; physical
-validation covers zero. See [final audit, measured matrix and scope](docs/audit.md) (the [initial qualification history](docs/validation.md) is retained).
-
-[Post-audit summary](artifacts/audit/summary.json) records every valid and negative
-case. Published task/case directories retain result JSON. Full candidate RTL, testbenches,
-vectors, logs and mapped netlists remain in the cloud task bundle and can be
-regenerated with the suite command; they are intentionally omitted from this compact
-GitHub snapshot. See
-[unit-test output](artifacts/audit/unit-tests.txt), [ten installed-package rollouts](artifacts/audit/external-rollouts.jsonl),
-and [tool provenance](artifacts/toolchain.json).
-
-Correctness requires both RTL and synthesized-netlist simulation to agree on all
-outputs, stall behavior and workload completion. Synthesized cell counts are an
-area **proxy**; measured latency/throughput is in cycles. There are no routed timing,
-frequency or power claims. These small tasks teach block-level transformations;
-they do not constitute silicon-ready ASIC/GPU designs. Memory maps to registers/muxes,
-not SRAM macros. Post-audit alternatives include task-specific implementation changes as well as
-buffer-depth changes; their reward improvements do not isolate kernel-only gains or
-claim global optimality. The initial release used buffering changes alone.
-
-Formal evidence is limited to 12-cycle transaction safety for a small elastic
-pipeline, with a failing mutant control. A separate bounded fixed-cycle equivalence
-helper has tests showing why changed latency cannot be judged by that contract.
-Other families have no formal proof. Every missing/timeout/unproven stage is explicit.
-
-OpenROAD/ORFS and a PDK are absent here; **physical validation is zero**. The optional
-launcher can use a separately installed trusted ORFS Nangate45 flow:
-
-```bash
-python -m chip_rl.physical elastic --flow-root /path/to/OpenROAD-flow-scripts/flow --output /tmp/physical-elastic
-```
-
-That integration is unvalidated in this executor. It first requires functional
-qualification, preserves raw physical reports, and never marks setup or flow exit
-alone as physically verified. Review timing/DRC/library assumptions explicitly.
-Do not include its outputs in training rewards until the physical flow is qualified.
-
-The [evaluator boundary](docs/security.md) protects against candidate-source edits
-and resource abuse under a constrained RTL action interface. It is not a hardened
-multi-tenant compiler sandbox. Published heldout seeds are replay examples; keep
-fresh evaluation seeds private on the trusted host for real training.
-[Reference and license audit](docs/references.md) explains the open-source research
-and tools used; no external benchmark RTL/data was copied.
+Compiler runs have wall/CPU/memory/file limits, isolated temporary working directories,
+and source restrictions, but this executor cannot create a dedicated OS sandbox.
+Do not give an untrusted agent filesystem/process access to evaluator code, caches,
+private artifacts or host credentials. Production use needs an external container/VM
+or separate account and source-only RPC. This limitation is returned in every result.
+Memory currently maps to registers and muxes, not SRAM macros.

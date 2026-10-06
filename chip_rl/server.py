@@ -4,6 +4,7 @@ Only trusted-host CLI flags set episode limits. No candidate file paths or comma
 """
 import argparse,json,sys
 from .env import ChipEnv
+from .evaluate import Rejected
 
 def serve(inp,out,horizon=8):
     env=None
@@ -25,6 +26,8 @@ def serve(inp,out,horizon=8):
                 obs,reward,terminated,truncated,info=env.step(req['action'])
                 response={'ok':True,'observation':obs,'reward':reward,'terminated':terminated,'truncated':truncated,'info':info}
             else:raise ValueError('only reset(task,seed) and step(action) are supported')
+        except Rejected:
+            response={'ok':False,'error':'required qualification tools unavailable'}
         except (ValueError,TypeError,KeyError,RuntimeError) as e:
             response={'ok':False,'error':str(e)}
         out.write(json.dumps(response)+'\n');out.flush()

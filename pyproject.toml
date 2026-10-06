@@ -3,8 +3,8 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "chip-rl"
-version = "0.1.0"
-description = "Ten local RTL optimization environments with fail-closed HDL evaluation"
+version = "0.2.0"
+description = "Constrained RTL pilot with private paired HDL evaluation"
 requires-python = ">=3.10"
 [tool.setuptools]
 packages = ["chip_rl"]

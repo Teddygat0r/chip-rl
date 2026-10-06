@@ -1,0 +1,166 @@
+{
+  "tasks": {
+    "elastic": {
+      "search_kind": "finite catalog enumeration with measured feedback, not trained RL",
+      "candidate_count": 3,
+      "winner_frozen_before_heldout": "global4",
+      "development_rewards": {
+        "baseline": 1.0,
+        "global4": 1.0254642757180639,
+        "fifo4": 0.6857488532308516
+      },
+      "heldout": {
+        "tested_correct": true,
+        "reward": 1.0254642757180639,
+        "family": "elastic",
+        "contract": "d9a4e1b7e4b04e14937584f82e1a131fa4c051273c805476fd1f225a1fb31701",
+        "source_sha256": "4e65cc52fbef1e09f4547ad3c764d97586bb6dcbdc2caf66e68d4aa5230d69cb",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 76,
+          "logic_depth": 2,
+          "mean_completion_cycles": 216.0,
+          "mean_offered_latency": 82.88698630136986
+        },
+        "paired_ratios": {
+          "cells": 0.9382716049382716,
+          "cycles": 1.0,
+          "offered_latency": 1.0
+        },
+        "dimension_variants_checked": 3,
+        "private_cases_checked": 4,
+        "elapsed_s": 0.557,
+        "synthesis_cache_hits": 6,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "40b029237eafc69c98348c3b7cd4e8a8b15cef31cd790940794d81f68fa6142b",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      },
+      "comparator": "Enumerating the same finite catalog in random order with the same complete budget yields the same development winner; no search superiority claim."
+    },
+    "dot": {
+      "search_kind": "finite catalog enumeration with measured feedback, not trained RL",
+      "candidate_count": 2,
+      "winner_frozen_before_heldout": "serial1",
+      "development_rewards": {
+        "baseline": 1.0,
+        "serial1": 1.0768639071920334
+      },
+      "heldout": {
+        "tested_correct": true,
+        "reward": 1.0817072043098066,
+        "family": "dot",
+        "contract": "fe5d30fd3c10f43c8923a9f8d94d1b78763d16a58b0c2a69d05cdf8ddbf89c0b",
+        "source_sha256": "4947a33f97ec8ef81173a889fdf4e6c26351fa70145bf43011649419fa934a78",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 1114,
+          "logic_depth": 33,
+          "mean_completion_cycles": 882.5,
+          "mean_offered_latency": 410.67293233082705
+        },
+        "paired_ratios": {
+          "cells": 0.5259678942398489,
+          "cycles": 5.057704939569101,
+          "offered_latency": 8.481471426110321
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 1.208,
+        "synthesis_cache_hits": 4,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "40b029237eafc69c98348c3b7cd4e8a8b15cef31cd790940794d81f68fa6142b",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      },
+      "comparator": "Enumerating the same finite catalog in random order with the same complete budget yields the same development winner; no search superiority claim."
+    },
+    "tensor": {
+      "search_kind": "finite catalog enumeration with measured feedback, not trained RL",
+      "candidate_count": 2,
+      "winner_frozen_before_heldout": "serial1",
+      "development_rewards": {
+        "baseline": 1.0,
+        "serial1": 1.0595266203634806
+      },
+      "heldout": {
+        "tested_correct": true,
+        "reward": 1.0583351739429583,
+        "family": "tensor",
+        "contract": "16ef06acb74ca5342d813797f9bdebfd8ecc76fb361d2919517eabbc2e63a5e4",
+        "source_sha256": "4e2cf070ff14cecbe4631c54888c27cae2bf213ca6a22447013132f4592650a8",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 3565,
+          "logic_depth": 42,
+          "mean_completion_cycles": 2481.5,
+          "mean_offered_latency": 1200.3684210526317
+        },
+        "paired_ratios": {
+          "cells": 0.42184356880842505,
+          "cycles": 14.60576789918294,
+          "offered_latency": 31.530950134113063
+        },
+        "dimension_variants_checked": 2,
+        "private_cases_checked": 3,
+        "elapsed_s": 4.588,
+        "synthesis_cache_hits": 4,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "40b029237eafc69c98348c3b7cd4e8a8b15cef31cd790940794d81f68fa6142b",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      },
+      "comparator": "Enumerating the same finite catalog in random order with the same complete budget yields the same development winner; no search superiority claim."
+    },
+    "cache": {
+      "search_kind": "finite catalog enumeration with measured feedback, not trained RL",
+      "candidate_count": 2,
+      "winner_frozen_before_heldout": "lazy_cache",
+      "development_rewards": {
+        "baseline": 1.0,
+        "lazy_cache": 1.0065854508125
+      },
+      "heldout": {
+        "tested_correct": true,
+        "reward": 1.0065854508125,
+        "family": "cache",
+        "contract": "eebebd4c256d2b6f132eb12d1a169b767891cf3594246129c772298479a3dba0",
+        "source_sha256": "8e817d5b461646d2b36fd1d09d63f79c04fd650e18035d219e0f801e1ad7f442",
+        "validation": "rtl_and_netlist_pass",
+        "formal": "not_run",
+        "physical": "not_run",
+        "os_isolation": "not_provided",
+        "pilot_eligible": true,
+        "metrics": {
+          "cells": 30902,
+          "logic_depth": 23,
+          "mean_completion_cycles": 2982.0,
+          "mean_offered_latency": 792.6765743310912
+        },
+        "paired_ratios": {
+          "cells": 0.9836702212318956,
+          "cycles": 1.0,
+          "offered_latency": 1.0
+        },
+        "dimension_variants_checked": 3,
+        "private_cases_checked": 4,
+        "elapsed_s": 75.926,
+        "synthesis_cache_hits": 6,
+        "baseline_simulation_cache_hits": 0,
+        "recipe_sha256": "40b029237eafc69c98348c3b7cd4e8a8b15cef31cd790940794d81f68fa6142b",
+        "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+      },
+      "comparator": "Enumerating the same finite catalog in random order with the same complete budget yields the same development winner; no search superiority claim."
+    }
+  },
+  "failures": []
+}

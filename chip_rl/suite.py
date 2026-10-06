@@ -1,52 +1,47 @@
-"""Reproducible release qualification; no success if any required case fails."""
-import argparse, dataclasses, gzip, json, shutil
+"""Trusted-host pilot release qualification; evidence is private, never agent input."""
+import argparse,gzip,json,shutil,time,resource
 from pathlib import Path
-from .tasks import Config,NAMES
+from .tasks import Config
+from .contracts import PILOT,EXPERIMENTAL
 from .rtl import design
-from .alternates import alternate
-from .mutants import semantic
-from .evaluate import evaluate,tool
-from .formal import check_elastic
+from .architectures import architecture,CATALOG
+from .adversaries import mutant
+from .evaluate import TrustedEvaluator
 
 def compact(path):
-    # Preserve source, vectors, harness and tool logs. Recreate binaries by replay.
-    for p in path.iterdir():
-        if p.suffix=='.vvp': p.unlink()
+    for p in path.rglob('*'):
+        if not p.is_file():continue
+        if p.suffix=='.vvp':p.unlink()
         elif p.name in ('netlist.json','netlist.v') or p.suffix=='.log':
-            with p.open('rb') as src,gzip.open(str(p)+'.gz','wb') as dst: shutil.copyfileobj(src,dst)
+            with p.open('rb') as src,gzip.open(str(p)+'.gz','wb') as dst:shutil.copyfileobj(src,dst)
             p.unlink()
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--output',default='artifacts/release');ap.add_argument('--tasks',nargs='*',default=list(NAMES));args=ap.parse_args()
-    root=Path(args.output);root.mkdir(parents=True,exist_ok=False);results={};failures=[]
-    for name in args.tasks:
-        c=Config(name);base=None;rows={}
-        cases=[('baseline',c,design(c),1,'train'),('alternate',c,alternate(c),1,'train'),
-               ('heldout',c,alternate(c),982451653,'challenge'),
-               ('structural',dataclasses.replace(c,width=24,depth=16,k=2),None,32452843,'challenge'),
-               ('semantic_bad',c,semantic(c),1,'train'),('drop_bad',c,design(c,mutant='drop'),1,'train'),
-               ('stall_bad',c,design(c,mutant='unstable'),1,'train')]
-        for label,conf,source,seed,split in cases:
-            source=source or alternate(conf);path=root/name/label
-            r=evaluate(conf,source,seed=seed,split=split,count=128,artifacts=path,baseline=base if label=='alternate' else None)
-            compact(path);rows[label]=r
-            expected=not label.endswith('_bad')
-            if r['correct']!=expected: failures.append(name+'/'+label+': '+str(r.get('error')))
-            if label=='baseline': base=r
-            if label=='alternate' and r['correct'] and r['reward']<=1.: failures.append(name+'/reward not sensitive')
-            print(name,label,'PASS' if r['correct']==expected else 'FAIL',r.get('cells','-'),round(r['reward'],4),flush=True)
-        results[name]=rows
-        (root/'summary.json').write_text(json.dumps({'tasks':results,'failures':failures},indent=2)+'\n')
-    formal={}
-    for label,stages,mutant in [('baseline',4,None),('alternate',2,None),('bad',2,'corrupt')]:
-        path=root/('formal-'+label)
-        src=alternate(Config('elastic',width=8),stages) if label=='alternate' else design(Config('elastic',width=8),stages,mutant)
-        r=check_elastic(src,artifacts=path);compact(path);formal[label]=r
-        if (r['status']=='bounded_pass') != (mutant is None): failures.append('formal/'+label)
-    counts={stage:sum(all(rows[k][stage]=='pass' for k in ('baseline','alternate','heldout','structural')) for rows in results.values()) for stage in ('functional','synthesis','netlist')}
-    counts.update({'formal_bounded_families':int(formal['baseline']['status']=='bounded_pass' and formal['alternate']['status']=='bounded_pass'),'formal_unbounded_families':0,'physical_families':0})
-    summary={'tasks':results,'formal':formal,'counts':counts,'failures':failures}
-    (root/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-    print(json.dumps({'counts':counts,'failures':failures},indent=2))
-    if failures: raise SystemExit(1)
+    ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);ap.add_argument('--cache');ap.add_argument('--tasks',nargs='+',choices=PILOT,default=list(PILOT));ap.add_argument('--seed',type=int,default=20261006);a=ap.parse_args()
+    root=Path(a.output);root.mkdir(parents=True,exist_ok=False);root.chmod(0o700)
+    q=TrustedEvaluator(a.cache);rows={};failures=[];started=time.monotonic()
+    for name in a.tasks:
+        c=Config(name);rows[name]={}
+        cases=[(label,architecture(c,label),True) for label in CATALOG[name]]
+        bad=['zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
+        if name in ('scratchpad','gather'):bad+=['no_reset']
+        if name=='scratchpad':bad+=['unfair']
+        if name in ('dot','tensor'):bad+=['narrow']
+        if name=='elastic':bad+=['capacity']
+        if name=='cache':bad+=['tag_alias','cache_reset']
+        if name=='gather':bad+=['gather_order']
+        cases += [('bad_'+label,mutant(c,label),False) for label in bad]
+        for label,src,expected in cases:
+            path=root/name/label
+            r=q.evaluate(c,src,replay_seed=a.seed,count=80,artifacts=path)
+            compact(path);rows[name][label]=r
+            if r['tested_correct']!=expected:failures.append(name+'/'+label)
+            print(name,label,'PASS' if r['tested_correct']==expected else 'FAIL',round(r['reward'],4),r.get('reason',''),flush=True)
+            report={'tasks':rows,'failures':failures,'excluded':list(EXPERIMENTAL),'elapsed_s':time.monotonic()-started,'child_cpu_s':sum(resource.getrusage(resource.RUSAGE_CHILDREN)[:2])}
+            (root/'summary.json').write_text(json.dumps(report,indent=2)+'\n')
+    report['counts']={'functional_and_synthesis_families':sum(all(r['tested_correct'] for k,r in cases.items() if not k.startswith('bad_')) for cases in rows.values()),
+        'adversaries_rejected':sum(not r['tested_correct'] for cases in rows.values() for k,r in cases.items() if k.startswith('bad_')),
+        'formal_unbounded_families':0,'physical_families':0}
+    (root/'summary.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report['counts']),flush=True)
+    if failures:raise SystemExit(1)
 if __name__=='__main__':main()

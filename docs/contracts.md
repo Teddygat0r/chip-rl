@@ -3,7 +3,7 @@
 Every candidate is one synthesizable SystemVerilog module named `candidate`:
 
 ```verilog
-module candidate(input clk, input rst, input in_valid, output in_ready,
+module candidate #(parameter WIDTH=16, DEPTH=256, K=4)(input clk, input rst, input in_valid, output in_ready,
  input [511:0] in_data, output out_valid, input out_ready,
  output [255:0] out_data);
 ```
@@ -13,11 +13,11 @@ A command is accepted on a rising edge with `in_valid && in_ready`.
 Exactly one response must eventually retire per accepted command, in order.
 The producer holds input valid/data until acceptance. The consumer may stall;
 output valid/data must remain stable until retirement. Unused output bits are zero.
-Memory resets to zero. All integer field numbering is little endian (bit 0 least
+Scratchpad/gather memory resets to zero; cache valid bits reset, and invalid cache data is unobservable. All integer field numbering is little endian (bit 0 least
 significant); addresses outside configured memory wrap modulo depth. No X/Z
-outputs are allowed when valid. Four stages are the fixed reference baseline;
-responses are **latency flexible**, so alternatives may change internal buffering.
-All candidates face the same backpressure schedule, deadline, workload and budget.
+outputs are allowed when valid. The elastic baseline stores four words; other reference designs have one output register.
+Responses are **latency flexible** within 1..64 cycles after acceptance; elastic designs must accept at least four commands while their consumer is blocked.
+Candidates and the fixed baseline face identical offline command release times and consumer schedules. All designs use one positive-edge clock and synchronous state. Completion is bounded by min(max_cycles, 32*commands+128), useful throughput must be at least 1/16 of baseline, and generic combinational depth is bounded by the limits in contracts.py. These gate levels are a timing proxy, not clock closure.
 
 The starter designs compute a task transition at command acceptance and buffer its
 response. Task ticks (DMA acknowledgement or scoreboard progression) are **logical
@@ -109,3 +109,28 @@ other families. `check_cycle_equivalence` is a **separate** bounded all-port mit
 for explicitly fixed-cycle specifications. The unit test confirms a 4-to-2-stage
 change fails cycle equivalence while passing transaction safety. Timeout, error and
 inconclusive results are always `unproven`, never correctness success.
+
+## v2 pilot boundary
+
+Only elastic, dot, scratchpad, tensor, cache and gather are pilot candidates. DMA,
+router, scoreboard and accelerator remain experimental command-transition models;
+they are not included in pilot counts or the agent server. Their logical ticks are
+not suitable evidence for cycle-accurate scheduling or system integration.
+
+Every source must declare WIDTH, DEPTH and K. The evaluator elaborates the *same
+source text* under all relevant supported dimension values (WIDTH 8/16/24, DEPTH
+16/64/256 or K 2/4). Source regeneration between configurations is not permitted.
+The published dimension set is public stress coverage, not a secret holdout.
+Private numerical workloads, schedules, memory data and seeds change per action;
+two target-size cases and one case per other dimension are checked. Finite tests
+provide evidence, not a universal correctness proof.
+
+Reward is zero for any failed required check. Otherwise it is the mean target-size
+paired utility: 1 - 0.5*tanh(0.8*ln(cell_ratio) + 0.15*ln(completion_cycle_ratio) +
+0.05*ln((candidate_offered_latency+1)/(baseline_offered_latency+1))).
+Useful latency is weighted by the existing `useful_work` definition, measured from
+exogenous release to response retirement, including input queue waiting. All three
+axes are monotone: a candidate cannot score better by worsening any one axis while
+holding the others fixed. The objective explicitly prioritizes generic cell area
+and may prefer serial designs with substantially worse performance. It is not a
+throughput-maximization objective. Logic depth is a hard proxy budget, not a reward.

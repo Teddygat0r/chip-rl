@@ -5,7 +5,7 @@ def semantic(c):
     s=design(c);n=c.name
     if n in ('scratchpad','router'): return design(c,mutant='unfair')
     replacements={
-      'elastic':(f'y[{c.width-1}:0]=in_data[{c.width-1}:0];',f'y[{c.width-2}:0]=in_data[{c.width-2}:0];'),
+      'elastic':('y[(WIDTH-1):0]=in_data[(WIDTH-1):0];','y[(WIDTH-2):0]=in_data[(WIDTH-2):0];'),
       'dot':('$signed','$unsigned'),
       'tensor':('$signed','$unsigned'),
       'dma':('addr=nb+nr*ns+4*nc','addr=nb+4*nc'),

@@ -18,7 +18,7 @@ def physical(c,source,flow_root,output):
         result['error']='use an output path without whitespace or make metacharacters'
     else:
         qual=evaluate(c,source,artifacts=out/'qualification')
-        if not qual['correct']:result['error']='functional/synthesis qualification failed'
+        if not qual['tested_correct']:result['error']='functional/synthesis qualification failed'
         else:
             (out/'candidate.sv').write_text(source)
             (out/'constraint.sdc').write_text('create_clock -name clk -period 10.0 [get_ports clk]\nset_input_delay 1.0 -clock clk [remove_from_collection [all_inputs] [get_ports clk]]\nset_output_delay 1.0 -clock clk [all_outputs]\n')
