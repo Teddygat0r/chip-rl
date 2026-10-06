@@ -13,7 +13,13 @@ def commands(c,seed,count=48):
         xs += [0,(1<<c.width)-1]+[1<<i for i in range(c.width)]
     elif n in ('dot','tensor'):
         for val in (128,127,255,0,1):xs.append(pack([val]*16,8))
-        xs += [pack([r.randrange(256) for _ in range(16)],8) for _ in range(count)]
+        for t in range(count):
+            mode=(t//32)%4
+            values=[r.randrange(256) for _ in range(16)]
+            if mode==1:values=[r.choice((0,0,0,1,255)) for _ in range(16)]
+            if mode==2:values=[r.choice((128,127,129,126)) for _ in range(16)]
+            if mode==3:values=[(1<<r.randrange(8)) if i%2 else r.randrange(256) for i in range(16)]
+            xs.append(pack(values,8))
     elif n=='scratchpad':
         # Read uninitialized words; prime bench has dirtied memory before reset.
         for a in (0,7,c.depth-1,255):xs.append(1|(a<<2))
@@ -23,7 +29,8 @@ def commands(c,seed,count=48):
             xs.extend([(3|(a<<2)|(v<<10))<<(48*lane),(1|(a<<2))<<(48*lane)])
         for t in range(count):
             a=r.randrange(256)
-            xs.append(sum((1|((a if t%3 else r.randrange(256))<<2)|(r.getrandbits(32)<<10))<<(48*i) for i in range(4)))
+            x=sum((1|(r.randrange(2)<<1)|((a if t%3 else r.randrange(256))<<2)|(r.getrandbits(32)<<10))<<(48*i) for i in range(4))
+            xs.extend([x,x & ~sum(2<<(48*i) for i in range(4))])
         for bank in range(4):xs += [sum((1|(bank<<2))<<(48*i) for i in range(4))]*8
     elif n in ('gather','accelerator'):
         xs += [((1<<4)|(a<<16)) if n=='gather' else (3|(a<<8)) for a in (0,7,c.depth-1,255)]
@@ -32,6 +39,8 @@ def commands(c,seed,count=48):
             for mask in range(16):
                 for _ in range(2):xs.append((mask<<4)|sum(r.randrange(256)<<(16+8*i) for i in range(4)))
             for t in range(count):
+                if t%5==0:
+                    a=r.randrange(256);xs.extend([1|(a<<8)|(r.getrandbits(32)<<16),(1<<4)|(a<<16)])
                 a=r.randrange(256);xs.append((r.randrange(16)<<4)|sum((a if i%2 else r.randrange(256))<<(16+8*i) for i in range(4)))
         else:
             for a in range(c.k):xs.append((a<<8)|(128<<16))
@@ -66,12 +75,16 @@ def commands(c,seed,count=48):
     else:
         for t in range(count+32):
             xs.append(sum((1|(r.randrange(16)<<1)|(r.randrange(16)<<5)|(r.randrange(8)<<9))<<(24*i) for i in range(4)))
-    return xs
+    used={'elastic':c.width,'dot':64,'tensor':128,'scratchpad':192,'dma':48,'router':165,'scoreboard':96,'accelerator':48,'cache':56,'gather':48}[n]
+    # Reserved inputs must be ignored, not assumed permanently zero.
+    return [(x&((1<<used)-1))|(r.getrandbits(512-used)<<used) for x in xs]
 
 def schedule(c,n,seed):
     r=random.Random(seed ^ 0x319ac8);arrival=[];t=0
     for i in range(n):
-        if i>=4:t+=r.choice((0,0,0,1,2))
+        if i>=4:
+            phase=(i//64)%3
+            t += r.choice((0,0,0,1,2)) if phase==0 else (15 if i%16==0 else 0) if phase==1 else r.choice((3,4,8))
         arrival.append(t)
     limit=min(c.max_cycles,n*32+128)
     ready=[]

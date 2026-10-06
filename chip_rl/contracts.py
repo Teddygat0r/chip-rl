@@ -1,14 +1,17 @@
 """Trusted, versioned contract limits. Candidate actions cannot modify these."""
 import hashlib,json
+from copy import deepcopy
 from dataclasses import asdict
+from .objectives import PROFILES
 PILOT=('elastic','dot','scratchpad','tensor','cache','gather')
 EXPERIMENTAL=('dma','router','scoreboard','accelerator')
 LOGIC_LEVEL_LIMIT={'elastic':24,'dot':72,'scratchpad':160,'tensor':80,'cache':96,'gather':160,
                    'dma':128,'router':160,'scoreboard':128,'accelerator':160}
-VERSION='mandatory-variable-stream-v3'
+VERSION='pareto-cycle-v4'
 def specification(c):
     return {'version':VERSION,'config':asdict(c),'status':'pilot_candidate' if c.name in PILOT else 'experimental_excluded',
             'coverage_profile':'mandatory-variable-stream-v3','random_command_bands':{'target_short':[128,256],'target_long':[1024,1280],'structural':[512,768]},
+            'objective':c.objective,'objective_profiles':deepcopy(PROFILES),
             'dimensions':{'WIDTH':[8,16,24],'DEPTH':[16,64,256],'K':[2,4]},
             'clock':'single positive-edge clk; synchronous state only; no frequency claim',
             'minimum_response_cycles':1,'maximum_response_cycles':64,

@@ -5,6 +5,12 @@ from .corpus import commands
 
 def mutant(c,label):
     s=design(c)
+    if label=='padding':return s.replace('data[0]<=y;',"data[0]<=y ^ ({255'b0,in_data[511]}<<255);")
+    if label=='ignore_late_writes':
+        s=s.replace('integer st;', 'integer st;reg [15:0] accepted_count;').replace('valid<=0;','valid<=0;accepted_count<=0;').replace('if(fire) begin ', 'if(fire) begin accepted_count<=accepted_count+1; ')
+        if c.name=='scratchpad':return s.replace('if(in_data[win[z]*48+1]) mem[','if(in_data[win[z]*48+1] && accepted_count<2*DEPTH+4) mem[')
+        if c.name=='gather':return s.replace('if(in_data[0]) mem[','if(in_data[0] && accepted_count<DEPTH+4) mem[')
+        raise ValueError('memory family required')
     if label=='zero':return s.replace('data[0]<=y;',"data[0]<=256'b0;")
     if label=='duplicate':return s.replace('valid[0]<=in_valid;', 'valid[0]<=in_valid || valid[0];')
     if label=='late_drop':
@@ -45,8 +51,8 @@ def mutant(c,label):
     raise ValueError(label)
 
 def labels(name):
-    result=['zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
-    if name in ('scratchpad','gather'):result+=['no_reset']
+    result=['padding','zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
+    if name in ('scratchpad','gather'):result+=['no_reset','ignore_late_writes']
     if name=='scratchpad':result+=['unfair']
     if name in ('dot','tensor'):result+=['narrow']
     if name=='elastic':result+=['capacity']

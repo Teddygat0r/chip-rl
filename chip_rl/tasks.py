@@ -15,14 +15,16 @@ class Config:
     width: int = 16
     depth: int = 256
     k: int = 4
+    objective: str = "balanced"
     max_cells: int = 250000
     max_cycles: int = 30000
     def __post_init__(self):
+        if self.objective not in ('area','balanced','latency'):raise ValueError('unsupported objective')
         if any(type(v) is not int for v in (self.width,self.depth,self.k,self.max_cells,self.max_cycles)):
             raise ValueError('configuration values must be integers')
         if not 1<=self.max_cells<=1000000 or not 1<=self.max_cycles<=100000:
             raise ValueError('resource bounds outside supported limits')
-        if self.name not in NAMES or self.width not in (8,16,24) or self.depth not in (16,64,256) or self.k not in (2,4):
+        if self.name not in NAMES or self.width not in (8,12,16,20,24) or self.depth not in (16,32,64,128,256) or self.k not in (1,2,3,4):
             raise ValueError('unsupported task configuration')
 
 class Model:

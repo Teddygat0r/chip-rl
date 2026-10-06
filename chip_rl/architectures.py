@@ -119,12 +119,53 @@ def architecture(c,label):
     if label=='lazy_cache' and c.name=='cache':
         return design(c).replace('for(z=0;z<DEPTH;z=z+1) begin mem[z]<=0; tag[z]<=0; end','')
     pc=Parameters(c.name)
-    if label=='serial1' and c.name in ('dot','tensor'):src=serial(pc)
+    if label=='product_pipe' and c.name=='dot':src=product_pipe()
+    elif label=='tensor4' and c.name=='tensor':src=tensor4()
+    elif label=='serial2' and c.name=='dot':src=serial2()
+    elif label=='serial1' and c.name in ('dot','tensor'):src=serial(pc)
     elif label=='time_mux' and c.name in ('scratchpad','gather'):src=temporal(pc)
     elif label=='fifo4' and c.name=='elastic':src=fifo(pc,4)
     else:raise ValueError('unsupported architecture')
     return src.replace('module candidate(',f'module candidate #(parameter WIDTH={c.width}, DEPTH={c.depth}, K={c.k})(')
 
-CATALOG={'elastic':['baseline','global4','fifo4'],'dot':['baseline','serial1'],
-         'scratchpad':['baseline','time_mux'],'tensor':['baseline','serial1'],
+CATALOG={'elastic':['baseline','global4','fifo4'],'dot':['baseline','serial1','serial2','product_pipe'],
+         'scratchpad':['baseline','time_mux'],'tensor':['baseline','serial1','tensor4'],
          'cache':['baseline','lazy_cache'],'gather':['baseline','time_mux']}
+
+
+def product_pipe():
+ return """module candidate(input clk,input rst,input in_valid,output in_ready,input [511:0] in_data,
+ output out_valid,input out_ready,output [255:0] out_data);
+ reg v1,v2;reg signed [15:0] products[0:3];reg signed [17:0] total;reg [17:0] result;integer j;
+ wire r2=!v2 || out_ready;wire r1=!v1 || r2;
+ assign in_ready=!rst && r1;assign out_valid=!rst && v2;assign out_data={238'b0,result};
+ always @* begin total=0;for(j=0;j<K;j=j+1)total=total+$signed(products[j]);end
+ always @(posedge clk)begin
+  if(rst)begin v1<=0;v2<=0;result<=0;for(j=0;j<4;j=j+1)products[j]<=0;end
+  else begin
+   if(r2)begin v2<=v1;if(v1)result<=total;end
+   if(r1)begin v1<=in_valid;if(in_valid)for(j=0;j<4;j=j+1)products[j]<=$signed(in_data[j*8+:8])*$signed(in_data[32+j*8+:8]);end
+  end
+ end endmodule"""
+
+def serial2():
+ # Mask the second lane in odd K; do not silently truncate K/2 iterations.
+ s=serial(Parameters('dot'),2).replace('((K/2)-1)','(((K+1)/2)-1)')
+ term='($signed(saved[(idx*2+1)*8+:8])*$signed(saved[32+(idx*2+1)*8+:8]))'
+ return s.replace(term,"((idx*2+1<K)?"+term+":18'sd0)")
+
+def tensor4():
+ return """module candidate(input clk,input rst,input in_valid,output in_ready,input [511:0] in_data,
+ output out_valid,input out_ready,output [255:0] out_data);
+ reg busy,ov;reg [2:0] idx;reg [127:0] saved;reg signed [17:0] acc[0:3];reg signed [17:0] piece[0:3];integer i;
+ assign in_ready=!rst && !busy && !ov;assign out_valid=!rst && ov;
+ assign out_data={184'b0,acc[3],acc[2],acc[1],acc[0]};
+ always @* for(i=0;i<4;i=i+1)piece[i]=$signed(saved[((i/2)*4+idx)*8+:8])*$signed(saved[64+(idx*2+i%2)*8+:8]);
+ always @(posedge clk)begin
+  if(rst)begin busy<=0;ov<=0;idx<=0;saved<=0;for(i=0;i<4;i=i+1)acc[i]<=0;end
+  else begin
+   if(ov && out_ready)ov<=0;
+   if(in_valid && in_ready)begin saved<=in_data[127:0];idx<=0;busy<=1;for(i=0;i<4;i=i+1)acc[i]<=0;end
+   else if(busy)begin for(i=0;i<4;i=i+1)acc[i]<=acc[i]+piece[i];idx<=idx+1;if(idx==K-1)begin busy<=0;ov<=1;end end
+  end
+ end endmodule"""

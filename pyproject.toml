@@ -3,10 +3,11 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "chip-rl"
-version = "0.3.0"
+version = "0.4.0"
 description = "Constrained RTL pilot with private paired HDL evaluation"
 requires-python = ">=3.10"
 [tool.setuptools]
-packages = ["chip_rl"]
+packages = ["chip_rl", "chip_rl.cycle"]
 [tool.setuptools.package-data]
 chip_rl = ["contracts.md"]
+"chip_rl.cycle" = ["contracts.md"]

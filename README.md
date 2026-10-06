@@ -1,25 +1,20 @@
-# chip-rl: a constrained RTL research pilot (0.3.0)
+# chip-rl: constrained RTL research environments (0.4.0)
 
-**Validated: six families, thirteen valid designs, fifty-seven qualification regressions,
-sixty-five bad cases rejected through each of three APIs, six fresh heldout winners,
-and thirty-four tests.**
+Six pilot families support latency-flexible RTL optimization: elastic pipelines,
+INT8 dot products, banked scratchpads, INT8 tensor tiles, write-through caches, and
+stable sparse gather. Four separate **experimental** families now implement physical
+clock behavior: data-moving DMA, a queued router, a scoreboard with autonomous
+completion, and concurrent load/compute. They remain excluded from pilot counts.
 
-The original v2 qualification used longer workloads than its default API, allowing
-a 64-command cutoff mutant to pass default dot/tensor evaluations. Version 0.3.0
-centralizes mandatory variable-length coverage for every qualification path; see
-[the correction and API evidence](docs/mandatory-coverage.md).
+Version 0.4 adds explicit area/balanced/latency goals, Pareto measurements, additional
+arithmetic architectures, stronger default workloads, new structural stress splits,
+and independent cycle-controller monitors. See [iteration results](docs/iteration-v4.md)
+for actual counts, costs, tradeoffs and exact reproduction commands.
 
-V2 remediates an empirical viability audit that found reward hacking and insufficient
-contracts in v1. Six families are pilot candidates: elastic buffering, exact INT8
-dot products, banked scratchpad arbitration, 2x2 INT8 tensor computation,
-write-through cache control, and stable sparse gather. Four additional models
-(DMA, router, scoreboard, integrated accelerator) remain **experimental and excluded**
-from pilot counts. Ten runnable v1 tasks did not establish ten viable RL environments.
-Historical v1 results are retained under `artifacts/audit` and `legacy/v1-tests`.
-
-This is an area-first block-level optimization benchmark, not an ASIC/GPU design
-system. No RL policy has been trained. Cell counts and workload cycles are proxies;
-there is no routed timing, frequency, power or silicon-readiness claim.
+This is a block-level research benchmark. No RL policy has been trained. Generic
+cell counts, gate levels and workload cycles are proxies; there is no routed timing,
+frequency, power, or silicon-readiness claim. Ten runnable families are not ten
+production-ready ASIC/GPU design environments.
 
 ## Run locally
 
@@ -29,63 +24,73 @@ proprietary IP or model API is required. On a compatible Debian 13 host:
 ```bash
 ./scripts/install_tools.sh "$PWD/.tools"
 source .tools/env.sh
+python -m pip install .
 python -m unittest discover -s tests -v
-python -m chip_rl dot --artifacts /tmp/dot-private
+python -m chip_rl dot --objective balanced --artifacts /tmp/dot-private
 PYTHONPATH=. python examples/rollout.py --task elastic
 python -m chip_rl.suite --output /tmp/pilot-private --cache /tmp/pilot-cache
-PYTHONPATH=. python scripts/replay.py /tmp/pilot-private/dot/serial1/case-0-0/candidate --output /tmp/replay
+python -m chip_rl.cycle.suite --output /tmp/cycle-private --cache /tmp/pilot-cache
+PYTHONPATH=. python examples/cycle_rollout.py --task router --cache /tmp/pilot-cache
 ```
 
-Tool installation is local, version-pinned, and requires Debian mirror access and
-compatible shared libraries. `CHIP_RL_TOOLS` overrides the fallback tool prefix.
-Artifacts and caches belong to the trusted host; use new artifact output paths.
-Full qualification includes mapped 256-word memories and can take many minutes.
-A `bad_* PASS` means rejection, never acceptance.
+Tool installation is local, version-pinned and requires Debian mirror access and
+compatible shared libraries. `CHIP_RL_TOOLS` overrides the fallback prefix. Artifacts
+and caches belong to the trusted host; use new artifact output paths. Qualification
+of register-mapped memories can take minutes per candidate. `bad_* PASS` means the
+bad candidate was rejected.
 
 ```python
 from chip_rl import ChipEnv
 from chip_rl.tasks import Config
 from chip_rl.architectures import architecture
 
-env = ChipEnv('dot', horizon=1)
+env = ChipEnv('dot', horizon=1, objective='balanced')
 observation, info = env.reset(seed=17)
 observation, reward, terminated, truncated, info = env.step(
-    {'rtl': architecture(Config('dot'), 'serial1')})
+    {'rtl': architecture(Config('dot'), 'product_pipe')})
 ```
 
-`reset(seed=...)` is retained for compatibility; it never selects evaluation
-seeds. Every action receives fresh private 128-bit randomness. The trusted-host CLI
-alone offers `--replay-seed` for reproduction. The JSON-lines server
-(`python -m chip_rl.server`) accepts only reset(task, seed) and step({rtl: source}).
-Candidate actions cannot change constraints, baseline, seeds, artifact locations,
-commands or files. The Python API is trusted host code, **not an isolation boundary**.
+Pilot JSON boundary: `python -m chip_rl.server --objective balanced`.
+Experimental controller boundary: `python -m chip_rl.cycle.server`.
+Both accept reset(task, seed) and step({rtl: source}); their timing contracts differ.
+Python controller episodes use `chip_rl.cycle.env.CycleEnv`. Observations include the
+full packaged contract. Agent reset seeds never select private evaluation workloads.
+Only trusted-host evaluation exposes replay controls. Candidate actions cannot alter
+constraints, goals, baselines, tool commands, paths or seeds.
 
-Each candidate is simulated against an independent integer model, synthesized with
-Yosys, then the mapped netlist is simulated on identical inputs. Unchanged source is
-elaborated across every relevant supported WIDTH/DEPTH/K. Checks enforce registered
-latency, storage capacity, in-order responses, stable stalls, completion, arbitration,
-reset, arithmetic extremes, full cache tag-bit aliases, and resource budgets.
-Missing tools, timeouts and unproven formal results never count as success.
+## Correctness and objectives
 
-Baselines are fixed independently of candidates. Paired offline release/consumer
-schedules measure waiting before acceptance as well as execution time. The reward
-is monotone in cell count, total completion cycles and useful offered-to-retired
-latency, with explicit area-first weights. Serial alternatives may earn more while
-being slower; read paired ratios rather than interpreting reward as throughput.
-See [contracts](docs/contracts.md), [remediation evidence](docs/remediation.md),
-[security boundary](docs/security.md), and [reference/license audit](docs/references.md).
+All public pilot paths use the same mandatory variable-length checks. Unchanged
+source is elaborated across structural variants, compared against independent models,
+synthesized, then checked again as a mapped netlist. Tests include reset after dirty
+state, signed extremes, stable stalls, progress, fairness, cache aliases, post-init
+memory updates, unused input bits and mixed arrival/operand distributions.
 
-## Limits
+Correctness and resource failures score zero. A functionally qualified design can
+also score zero when it violates the chosen goal's performance limits. The default
+**balanced** goal allows at most 2x completion cycles and 4x offered latency in every
+case. Area and latency goals have different explicit constraints. Raw paired ratios
+and all goal scores expose tradeoffs; scalar reward is not universal superiority.
+Read [pilot contracts](docs/contracts.md) and [controller contracts](docs/cycle-contracts.md).
 
-Tests are finite and publicly documented; private samples prevent simple fixed-ROM
-replay but are not a proof against adaptive overfitting. Formal helpers provide
-bounded evidence only when explicitly run. No family has an unbounded proof, and
-no family has physical validation. The optional ORFS launcher remains unvalidated;
-absent OpenROAD/PDK or unreviewed reports cannot produce verified physical results.
+The controller tasks have fixed physical-cycle protocols and an area-only reward.
+Their independent transfer/order/fairness/progress monitors supplement cycle-by-cycle
+oracles. They model small, scoped blocks, not full AXI, coherent cache or GPU systems.
 
-Compiler runs have wall/CPU/memory/file limits, isolated temporary working directories,
-and source restrictions, but this executor cannot create a dedicated OS sandbox.
-Do not give an untrusted agent filesystem/process access to evaluator code, caches,
-private artifacts or host credentials. Production use needs an external container/VM
-or separate account and source-only RPC. This limitation is returned in every result.
-Memory currently maps to registers and muxes, not SRAM macros.
+## Limits and provenance
+
+Finite workloads do not prove universal correctness or prevent all adaptive hacks.
+Formal evidence is bounded and configuration-specific; no unbounded proof is claimed.
+No family has physical validation. OpenROAD/PDK are absent, and the optional physical
+launcher remains unvalidated. Missing tools/timeouts/unproven stages never silently pass.
+
+Tools have wall/CPU/memory/file limits and private working directories, but this
+executor does not provide a dedicated OS sandbox for arbitrary candidate compilers.
+Use an external VM/container or separate account with source-only RPC before granting
+an untrusted agent access. Keep evaluator code, caches and private artifacts protected.
+Memory maps to flip-flops/muxes, not characterized SRAM macros.
+
+Original project code; no benchmark RTL or datasets were copied. See the
+[reference/license audit](docs/references.md), [security boundary](docs/security.md),
+and [v3 default-coverage correction](docs/mandatory-coverage.md). Historical evidence
+under `evidence/v2`, `evidence/v3`, `artifacts/audit` and `legacy` is not current proof.

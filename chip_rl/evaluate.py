@@ -10,6 +10,7 @@ from .corpus import commands,schedule,dirty_command
 from .contracts import specification,identity,PILOT
 from .rtl import design
 from .coverage import cases,PROFILE
+from .objectives import scores,ratios,relation
 
 def sanitize(source):
     if not isinstance(source,str):return _sanitize(source)
@@ -98,7 +99,7 @@ class TrustedEvaluator:
         self._temp=None
         if cache_root is None:
             self._temp=tempfile.TemporaryDirectory(prefix='chip-rl-v2-cache-');cache_root=self._temp.name
-        self.recipe_fingerprint=hashlib.sha256(b''.join(Path(__file__).with_name(n).read_bytes() for n in ('evaluate.py','corpus.py','tasks.py','contracts.py','_tools.py','coverage.py'))).hexdigest()
+        self.recipe_fingerprint=hashlib.sha256(b''.join(Path(__file__).with_name(n).read_bytes() for n in ('evaluate.py','corpus.py','tasks.py','contracts.py','_tools.py','coverage.py','objectives.py'))).hexdigest()
         self.root=Path(cache_root);self.root.mkdir(parents=True,exist_ok=True);self.root.chmod(0o700)
         # Include executable contents, not merely version labels, in cache identity.
         bins=[Path(tool(n)) for n in ('yosys','yosys-abc','iverilog','vvp')]
@@ -183,7 +184,7 @@ class TrustedEvaluator:
 
     def evaluate(self,c,src,*,replay_seed=None,count=None,artifacts=None,allow_experimental=False):
         started=time.monotonic();pub={'tested_correct':False,'reward':0.,'family':c.name,'contract':identity(c),'source_sha256':digest(src) if isinstance(src,str) else None,
-            'validation':'not_run','formal':'not_run','physical':'not_run','os_isolation':'not_provided','pilot_eligible':c.name in PILOT,'coverage_profile':PROFILE}
+            'validation':'not_run','formal':'not_run','physical':'not_run','os_isolation':'not_provided','pilot_eligible':c.name in PILOT,'coverage_profile':PROFILE,'objective':c.objective,'objective_eligible':False}
         private=[];cache_hits=0;baseline_hits=0
         try:
             if c.name not in PILOT and not allow_experimental:raise Rejected('experimental family excluded from pilot')
@@ -232,6 +233,9 @@ class TrustedEvaluator:
                                    'mean_offered_latency':sum(r['candidate']['offered_latency'] for r in targets)/len(targets)},
                         'paired_ratios':{k:sum(r['candidate'][k]/r['baseline'][k] for r in targets)/len(targets) for k in ('cells','cycles','offered_latency')},
                         'dimension_variants_checked':len(seen),'private_cases_checked':len(private)})
+            objectives=scores(private);pub['objectives']=objectives;pub['reward']=objectives[c.objective]['reward'];pub['objective_eligible']=objectives[c.objective]['eligible']
+            point={k:sum(ratios(x['baseline'],x['candidate'])[k] for x in targets)/len(targets) for k in ('cells','cycles','latency')}
+            pub['pareto_point']=point;pub['baseline_relation']=relation(point)
         except (Rejected,OSError,ValueError,KeyError,TypeError) as e:
             # Do not return vectors, seeds, expected values, tool logs or raw errors.
             msg=str(e);pub['validation']='rejected'
