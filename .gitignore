@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.tools/
+artifacts/*
+!artifacts/release/
+!artifacts/rollout.jsonl
+!artifacts/unit-tests.txt
+!artifacts/toolchain.json
+build/
+!artifacts/audit/

@@ -1,0 +1,5 @@
+{
+  "status": "bounded_pass",
+  "kind": "bounded_fixed_cycle_equivalence",
+  "bound": 12
+}

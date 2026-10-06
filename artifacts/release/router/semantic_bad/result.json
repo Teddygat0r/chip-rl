@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "router",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "39b7eafd4a241d461a0a51fe7f385a96eaf1841892c661a07e2a2c535023a8f7",
+  "workload_sha256": "da26604985bd28e426d9bcd535effa71a27e575fc9011175ded285317ba3de39",
+  "error": "rtl-simulation: exit 1; Mismatch index=5 expected=00000000000000000000000000000000000000000000000000000000d81f0102 actual=000000000000000000000000000000000000000000000000000000006ee60101\nFATAL: tb.sv:36: functional mismatch\n       Time: 314  Scope: tb\n",
+  "elapsed_s": 0.021
+}

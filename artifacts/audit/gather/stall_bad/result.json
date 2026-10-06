@@ -1,0 +1,24 @@
+{
+  "config": {
+    "name": "gather",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "workload_count": 128,
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "184f7b73db9ed011cd31f7c10f46ca0d205e1438abfcf4497e9e0c5bffd187ab",
+  "workload_sha256": "fe0f6909a6b4adfbb426ce21a576b00ec6e91d6a51842567fbb0a42c74aab95c",
+  "error": "rtl-simulation: exit 1; Mismatch index=0 expected=0000000000000000000000000000000000000000000000000000000000000000 actual=0000000000000000000000000000000000000000000000000000c386bbc40401\nFATAL: tb.sv:36: functional mismatch\n       Time: 264  Scope: tb\n",
+  "elapsed_s": 0.031
+}

@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "router",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "1f4c57bdd0f8138c9a4b17016573d3df1ef896c08a9b22871862285e5b971727",
+  "workload_sha256": "da26604985bd28e426d9bcd535effa71a27e575fc9011175ded285317ba3de39",
+  "error": "rtl-simulation: exit 1; FATAL: tb.sv:46: dropped work/deadline\n       Time: 300080  Scope: tb\n",
+  "elapsed_s": 0.277
+}

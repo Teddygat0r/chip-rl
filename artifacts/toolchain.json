@@ -1,0 +1,17 @@
+{
+  "installed_prefix": "/workspace/tools/root/usr",
+  "versions": {
+    "yosys": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()"
+  },
+  "debian_packages": {
+    "yosys_0.52-2_amd64.deb": "c950e58a1f554546a91602e5124eb05019a92040e57b0aaa43cf33b032ee9c40",
+    "iverilog_12.0-2+b1_amd64.deb": "febe027d2d3f5a7e570844d55758339ab5490acc09f404f214a8719d89d07056",
+    "yosys-abc_0.52-2_amd64.deb": "f54c92c5ce88959f6aedc71c7b01eaf2b39d6c8c3e5f02784b6ce24736dc50e4"
+  },
+  "physical": {
+    "status": "not_run",
+    "reason": "OpenROAD absent; apt-cache search in Debian trixie returned no openroad package; ORFS/PDK absent"
+  },
+  "formal": "Yosys SAT; SBY/EQY not installed"
+}

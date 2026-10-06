@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "gather",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "675e1af2d73dd70df21496be8d3904d96ddbcf9dc3117e4eb0334b59380364b3",
+  "workload_sha256": "fe0f6909a6b4adfbb426ce21a576b00ec6e91d6a51842567fbb0a42c74aab95c",
+  "error": "rtl-simulation: exit 1; FATAL: tb.sv:46: dropped work/deadline\n       Time: 300080  Scope: tb\n",
+  "elapsed_s": 0.279
+}

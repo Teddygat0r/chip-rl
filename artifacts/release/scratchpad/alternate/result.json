@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "scratchpad",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": true,
+  "reward": 1.111494135518195,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "802afbc6ea788899133764d9fb46a5795d2930d9e731ecfa0e4037d71b383de6",
+  "workload_sha256": "57c2f31189453e6e05c20991828b585a2756f3a32025324233c1de264fa0b15d",
+  "metrics": {
+    "transactions": 128,
+    "cycles": 234,
+    "latency_sum": 423,
+    "mean_latency": 3.3046875,
+    "throughput": 0.5470085470085471,
+    "useful_work": 305,
+    "useful_throughput": 1.3034188034188035,
+    "useful_mean_latency": 3.262295081967213
+  },
+  "cells": 104024,
+  "elapsed_s": 48.439
+}

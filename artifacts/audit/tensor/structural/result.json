@@ -1,0 +1,34 @@
+{
+  "config": {
+    "name": "tensor",
+    "width": 24,
+    "depth": 16,
+    "k": 2,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 32452843,
+  "split": "challenge",
+  "workload_count": 128,
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "1ad0343ea0bace643b44233476566e6cae7376dab95bafaef19de6b6ef9fb5d4",
+  "workload_sha256": "ca90cc177790686fb049f92bafc3b9430c9e55ecbe68719b175af135699f878b",
+  "metrics": {
+    "transactions": 128,
+    "cycles": 207,
+    "latency_sum": 389,
+    "mean_latency": 3.0390625,
+    "throughput": 0.6183574879227053,
+    "useful_work": 1024,
+    "useful_throughput": 4.946859903381642,
+    "useful_mean_latency": 3.0390625
+  },
+  "cells": 4000,
+  "elapsed_s": 0.99
+}

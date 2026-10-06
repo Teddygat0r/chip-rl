@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "accelerator",
+    "width": 24,
+    "depth": 16,
+    "k": 2,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 32452843,
+  "split": "heldout",
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "95df604080a6bf202936a478b11cdaedc99de95eb795eec47cb73f2900625ed4",
+  "workload_sha256": "2f8c86b64bdfefc8e5da45288e643b844734dd6adb1462409c59afcb749e8db7",
+  "metrics": {
+    "transactions": 144,
+    "cycles": 243,
+    "latency_sum": 457,
+    "mean_latency": 3.173611111111111,
+    "throughput": 0.5925925925925926,
+    "useful_work": 140,
+    "useful_throughput": 0.5761316872427984,
+    "useful_mean_latency": 3.5428571428571427
+  },
+  "cells": 3020,
+  "elapsed_s": 0.934
+}

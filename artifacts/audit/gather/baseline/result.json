@@ -1,0 +1,34 @@
+{
+  "config": {
+    "name": "gather",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "workload_count": 128,
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "34301a90b8e7bc54acaa55ed2cd0ce06a2a7a168e4bcddd7548f53934c13b2dd",
+  "workload_sha256": "fe0f6909a6b4adfbb426ce21a576b00ec6e91d6a51842567fbb0a42c74aab95c",
+  "metrics": {
+    "transactions": 384,
+    "cycles": 637,
+    "latency_sum": 2329,
+    "mean_latency": 6.065104166666667,
+    "throughput": 0.6028257456828885,
+    "useful_work": 246,
+    "useful_throughput": 0.38618524332810045,
+    "useful_mean_latency": 6.178861788617886
+  },
+  "cells": 44538,
+  "elapsed_s": 45.98
+}

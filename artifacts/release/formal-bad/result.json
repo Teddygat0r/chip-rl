@@ -1,0 +1,7 @@
+{
+  "status": "unproven",
+  "kind": "bounded_transaction_safety",
+  "bound": 12,
+  "width": 8,
+  "error": "formal: exit 1; async2sync.cc:110:execute$3050 when $auto$async2sync.cc:101:execute$3046.\nImport proof for assert: $auto$async2sync.cc:110:execute$3044 when $auto$async2sync.cc:101:execute$3040.\nImport proof for assert: $auto$async2sync.cc:110:execute$3038 when $auto$async2sync.cc:101:execute$3034.\nImport proof for assert: $auto$async2sync.cc:110:execute$3032 when $auto$async2sync.cc:101:execute$3028.\nImport proof for assert: $auto$async2sync.cc:110:execute$3026 when $auto$async2sync.cc:101:execute$3022.\n\nSolving problem with 59659 variables and 160031 clauses..\nERROR: Called with -verify and proof did fail!\n"
+}

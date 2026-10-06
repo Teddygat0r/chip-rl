@@ -1,0 +1,34 @@
+{
+  "config": {
+    "name": "cache",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "workload_count": 128,
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "b66400996fe69e3f31d38fe345b06a6dbe37466945df435810670db639fedb53",
+  "workload_sha256": "f08514746d2197c95c8a50e3a2a7a39623befaf63cde786bc9cbf0f0125d9fa5",
+  "metrics": {
+    "transactions": 142,
+    "cycles": 248,
+    "latency_sum": 892,
+    "mean_latency": 6.28169014084507,
+    "throughput": 0.5725806451612904,
+    "useful_work": 49,
+    "useful_throughput": 0.1975806451612903,
+    "useful_mean_latency": 6.510204081632653
+  },
+  "cells": 31576,
+  "elapsed_s": 17.513
+}

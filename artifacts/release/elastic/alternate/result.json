@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "elastic",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": true,
+  "reward": 1.2307635349775223,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "32ec03863bd7d9c9526f71fb7a5f857cb5f9b91e79c311ef4a15288f10ec9c52",
+  "workload_sha256": "8f82b91cee5496d7aff32fcc85b5ba34896be8e2e8b942f99743405e16955d27",
+  "metrics": {
+    "transactions": 128,
+    "cycles": 234,
+    "latency_sum": 423,
+    "mean_latency": 3.3046875,
+    "throughput": 0.5470085470085471,
+    "useful_work": 128,
+    "useful_throughput": 0.5470085470085471,
+    "useful_mean_latency": 3.3046875
+  },
+  "cells": 41,
+  "elapsed_s": 0.157
+}

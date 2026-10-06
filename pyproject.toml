@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "chip-rl"
+version = "0.1.0"
+description = "Ten local RTL optimization environments with fail-closed HDL evaluation"
+requires-python = ">=3.10"
+[tool.setuptools]
+packages = ["chip_rl"]
+[tool.setuptools.package-data]
+chip_rl = ["contracts.md"]

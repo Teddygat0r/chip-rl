@@ -1,0 +1,24 @@
+{
+  "config": {
+    "name": "tensor",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "workload_count": 128,
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "7ee1d72688c99d9a61a9d14a6338ebc9b2dbfe3ba746fcfa59041f07a9d55078",
+  "workload_sha256": "ece3d45f3188b8bf61a0616641c471524e03d4cddfda11ccc9dab3e38157b1de",
+  "error": "rtl-simulation: exit 1; FATAL: tb.sv:46: dropped work/deadline\n       Time: 300080  Scope: tb\n",
+  "elapsed_s": 0.279
+}

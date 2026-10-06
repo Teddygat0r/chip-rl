@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "scratchpad",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "981d45a73a01b2aa2bf011b1d7a2ad691708672438fd39e04cae1951e72b50dd",
+  "workload_sha256": "57c2f31189453e6e05c20991828b585a2756f3a32025324233c1de264fa0b15d",
+  "error": "rtl-simulation: exit 1; Mismatch index=0 expected=0000000000000000000000000000000000000000000000000000000000000001 actual=0000000000000000030e07a23c01021c4ae2f00102e745e7800303e04c310800\nFATAL: tb.sv:36: functional mismatch\n       Time: 264  Scope: tb\n",
+  "elapsed_s": 0.044
+}

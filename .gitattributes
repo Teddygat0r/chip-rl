@@ -1,0 +1,2 @@
+# Preserve byte-for-byte generated evidence, including tool/template whitespace.
+artifacts/** -whitespace

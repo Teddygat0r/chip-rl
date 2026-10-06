@@ -1,0 +1,12 @@
+test_challenge_does_not_call_training_generator (__main__.AuditTests.test_challenge_does_not_call_training_generator) ... ok
+test_contract_is_packaged (__main__.AuditTests.test_contract_is_packaged) ... ok
+test_forbidden_hierarchy_and_elaboration_features (__main__.AuditTests.test_forbidden_hierarchy_and_elaboration_features) ... ok
+test_json_external_action_boundary (__main__.AuditTests.test_json_external_action_boundary) ... ok
+test_task_specific_alternates_not_only_retiming (__main__.AuditTests.test_task_specific_alternates_not_only_retiming) ... ok
+test_resource_config_cannot_inject_hdl (__main__.InputBoundaryTests.test_resource_config_cannot_inject_hdl) ... ok
+test_seed_cannot_inject_testbench (__main__.InputBoundaryTests.test_seed_cannot_inject_testbench) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.395s
+
+OK

@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "tensor",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "7025700b538c91c0ca3e867abf874ea8dd1f1b29ce36e0a1c6313bbbec00deba",
+  "workload_sha256": "ece3d45f3188b8bf61a0616641c471524e03d4cddfda11ccc9dab3e38157b1de",
+  "error": "rtl-simulation: exit 1; Mismatch index=0 expected=00000000000000000000000000000000000000000000002020040000000bc000 actual=00000000000000000000000000000000807f80ff0100ffa0207bff7f018b4001\nFATAL: tb.sv:36: functional mismatch\n       Time: 264  Scope: tb\n",
+  "elapsed_s": 0.021
+}

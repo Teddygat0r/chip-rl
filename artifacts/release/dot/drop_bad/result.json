@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "dot",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "95be751421e67a382fa6a4c8fe15f0afac8a26254f3d64895d0ba84eb88d676e",
+  "workload_sha256": "ece3d45f3188b8bf61a0616641c471524e03d4cddfda11ccc9dab3e38157b1de",
+  "error": "rtl-simulation: exit 1; FATAL: tb.sv:46: dropped work/deadline\n       Time: 300080  Scope: tb\n",
+  "elapsed_s": 0.275
+}

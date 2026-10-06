@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "scoreboard",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 982451653,
+  "split": "heldout",
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "9856b0f79144daf0836b49024d57029389bcbf71dc2350cf260182b5c2420027",
+  "workload_sha256": "cd072ba0a0da42f01371e38e6e00bc77d601673bd2c66f7dfe3782091438ab68",
+  "metrics": {
+    "transactions": 128,
+    "cycles": 236,
+    "latency_sum": 436,
+    "mean_latency": 3.40625,
+    "throughput": 0.5423728813559322,
+    "useful_work": 123,
+    "useful_throughput": 0.5211864406779662,
+    "useful_mean_latency": 3.4471544715447155
+  },
+  "cells": 4178,
+  "elapsed_s": 4.354
+}

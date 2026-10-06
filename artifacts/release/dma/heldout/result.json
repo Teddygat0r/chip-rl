@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "dma",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 982451653,
+  "split": "heldout",
+  "correct": true,
+  "reward": 1.0,
+  "functional": "pass",
+  "synthesis": "pass",
+  "netlist": "pass",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "3bc6b9f094b86637a139ca535c2c60a86b9ee09f9be415e580bb5bf271f960c5",
+  "workload_sha256": "cbd2b81c014b211e1a3ffa1659fa5bb6e7a5a82620c85ea28708763a0fe060ef",
+  "metrics": {
+    "transactions": 128,
+    "cycles": 236,
+    "latency_sum": 436,
+    "mean_latency": 3.40625,
+    "throughput": 0.5423728813559322,
+    "useful_work": 15,
+    "useful_throughput": 0.0635593220338983,
+    "useful_mean_latency": 8.0
+  },
+  "cells": 735,
+  "elapsed_s": 0.354
+}

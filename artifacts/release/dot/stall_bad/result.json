@@ -1,0 +1,23 @@
+{
+  "config": {
+    "name": "dot",
+    "width": 16,
+    "depth": 256,
+    "k": 4,
+    "max_cells": 250000,
+    "max_cycles": 30000
+  },
+  "seed": 1,
+  "split": "train",
+  "correct": false,
+  "reward": 0.0,
+  "functional": "not_run",
+  "synthesis": "not_run",
+  "netlist": "not_run",
+  "formal": "not_run",
+  "physical": "not_run",
+  "source_sha256": "dda05de242e6b8d548d4a0741989c8fe250f0f8b9a37ce64cd8c0ae89fe0ec01",
+  "workload_sha256": "ece3d45f3188b8bf61a0616641c471524e03d4cddfda11ccc9dab3e38157b1de",
+  "error": "rtl-simulation: exit 1; Mismatch index=0 expected=000000000000000000000000000000000000000000000000000000000003c100 actual=00000000000000000000000000000000807f80ff0100ff80007fff7f01834101\nFATAL: tb.sv:36: functional mismatch\n       Time: 264  Scope: tb\n",
+  "elapsed_s": 0.018
+}
