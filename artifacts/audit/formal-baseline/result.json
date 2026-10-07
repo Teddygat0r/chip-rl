@@ -1,6 +1,0 @@
-{
-  "status": "bounded_pass",
-  "kind": "bounded_transaction_safety",
-  "bound": 12,
-  "width": 8
-}

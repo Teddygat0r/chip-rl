@@ -1,0 +1,48 @@
+{
+  "families_total": 20,
+  "functional_and_synthesis_families": 20,
+  "pilot_families": 6,
+  "experimental_families": 14,
+  "new_family": "cdc_fifo",
+  "cdc_default_and_heldout_runs_and_rejections": [
+    8,
+    12
+  ],
+  "cdc_positive_configuration_checks": 32,
+  "cdc_api_accepted": 12,
+  "cdc_schema_rejections": 9,
+  "cdc_budget_rejections": 2,
+  "pilot_designs_and_mutants": [
+    16,
+    71
+  ],
+  "cycle_designs_and_mutants": [
+    13,
+    28
+  ],
+  "expansion_api_valid_and_rejected": [
+    78,
+    330
+  ],
+  "pilot_api_valid_and_rejected": [
+    18,
+    237
+  ],
+  "cycle_api_valid_and_rejected": [
+    8,
+    4
+  ],
+  "unit_tests": 83,
+  "new_bounded_formal_design_variants": 4,
+  "formal_bound": 24,
+  "formal_scope": "width4/depth2 event-enable digital abstraction, initial coordinated reset; no unbounded/liveness/analog proof",
+  "corrupt_formal_counterexample": true,
+  "one_stage_digital_model_passes_but_structural_qualification_rejects": true,
+  "physical_families": 0,
+  "physical_cdc_safety_verified": false,
+  "unbounded_formal_families": 0,
+  "trained_policies": 0,
+  "os_isolation": "not_provided",
+  "pushed": false,
+  "crc_original_failure": "Root cause unknown: original private seed and tool logs not retained. Three captured replays passed; not a reliability claim."
+}

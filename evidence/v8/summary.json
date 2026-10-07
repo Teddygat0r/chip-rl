@@ -1,0 +1,46 @@
+{
+  "families_total": 19,
+  "new_families": 0,
+  "pilot_families": 6,
+  "experimental_families": 13,
+  "deepened_families": [
+    "ecc",
+    "coalesce",
+    "histogram"
+  ],
+  "selected_designs_and_mutants": [
+    9,
+    35
+  ],
+  "selected_api_valid_and_rejected": [
+    27,
+    105
+  ],
+  "deep_valid_configuration_checks_and_rejections": [
+    18,
+    32
+  ],
+  "other_api_valid_and_rejected": [
+    51,
+    186
+  ],
+  "pilot_valid_designs_and_rejected_mutants": [
+    16,
+    71
+  ],
+  "unit_tests": 71,
+  "selected_schema_override_rejections": 9,
+  "other_schema_override_rejections": 18,
+  "new_alternatives": [
+    "coalesce:representatives",
+    "histogram:parallel_bins"
+  ],
+  "bounded_formal_ecc_designs_with_successful_attempt": 3,
+  "formal_limit": "Width8,bound8,capacity<=2 asserted,liveness not proved. Installed baseline attempt timed out; byte-identical same-budget retry passed. Both retained. Historical timeouts unchanged.",
+  "physical_families": 0,
+  "unbounded_formal_families": 0,
+  "trained_policies": 0,
+  "os_isolation": "not_provided",
+  "pushed": false,
+  "fixed_cycle_regression": "Prior v7/v6 results retained; v8 changed the transaction driver, not the fixed-cycle simulator. No new full cycle-suite run claimed."
+}

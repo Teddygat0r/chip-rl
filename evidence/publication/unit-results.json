@@ -1,0 +1,7 @@
+{
+  "command": "python -m unittest discover -s tests",
+  "tests": 85,
+  "passed": true,
+  "wall_seconds": 8.645,
+  "scope": "publication tree, unchanged stable runtime"
+}

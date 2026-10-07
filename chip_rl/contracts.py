@@ -6,7 +6,7 @@ from .objectives import PROFILES
 PILOT=('elastic','dot','scratchpad','tensor','cache','gather')
 EXPERIMENTAL=('dma','router','scoreboard','accelerator')
 LOGIC_LEVEL_LIMIT={'elastic':24,'dot':72,'scratchpad':160,'tensor':80,'cache':96,'gather':160,
-                   'dma':128,'router':160,'scoreboard':128,'accelerator':160}
+                   'scan':160,'topk':160,'histogram':160,'ecc':96,'crc':128,'freelist':160,'permute':96,'coalesce':160,'retire':128,'dma':128,'router':160,'scoreboard':128,'accelerator':160}
 VERSION='pareto-cycle-v4'
 def specification(c):
     return {'version':VERSION,'config':asdict(c),'status':'pilot_candidate' if c.name in PILOT else 'experimental_excluded',

@@ -1,6 +1,0 @@
-{
-  "status": "unproven",
-  "kind": "bounded_fixed_cycle_equivalence",
-  "bound": 12,
-  "error": "equivalence: exit 1; for assert: $auto$miter.cc:269:create_miter_equiv$126 when 1'1.\n\nSetting up time step 11:\nImport set-constraint: \\in_rst = 1'0\nFinal constraint equation: \\in_rst = 1'0\nImported 43 cells to SAT database.\nImport proof for assert: $auto$miter.cc:269:create_miter_equiv$126 when 1'1.\n\nSetting up time step 12:\nImport set-constraint: \\in_rst = 1'0\nFinal constraint equation: \\in_rst = 1'0\nImported 43 cells to SAT database.\nImport proof for assert: $auto$miter.cc:269:create_miter_equiv$126 when 1'1.\n\nSolving problem with 7514 variables and 20305 clauses..\nERROR: Called with -verify and proof did fail!\n"
-}

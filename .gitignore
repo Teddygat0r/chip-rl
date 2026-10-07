@@ -9,3 +9,10 @@ artifacts/*
 !artifacts/toolchain.json
 build/
 !artifacts/audit/
+
+# Private evaluator outputs and release transport files
+*.bundle
+*.tar.gz
+*-private/
+*.vvp
+*.log

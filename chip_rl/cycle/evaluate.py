@@ -1,5 +1,6 @@
 """Experimental cycle-exact evaluator. Every passing result runs RTL AND netlist."""
 import json,secrets,tempfile,re,hashlib,time
+from ..audit import journal
 from pathlib import Path
 from dataclasses import replace,asdict
 from ..evaluate import TrustedEvaluator,tool,TOOLS,run,Rejected,digest
@@ -8,6 +9,7 @@ from .rtl import design
 
 def simulate(q,c,src,sd,seed,out=None):
  rows,stats=trace(c,seed,live=512+seed%257)
+ if len(rows)>c.max_cycles:raise Rejected('cycle budget')
  with tempfile.TemporaryDirectory(prefix='chip-cycle-') as td:
   d=Path(td);(d/'candidate.sv').write_text(src);(d/'netlist.v').write_text((sd/'netlist.v').read_text())
   (d/'vectors.hex').write_text(''.join(f'{(rst|(v<<1)|(x<<2)|(y<<514)):0193x}\n' for rst,v,x,y in rows))
@@ -36,6 +38,7 @@ def simulate(q,c,src,sd,seed,out=None):
 
 class CycleEvaluator:
  def __init__(self,cache=None):self.q=TrustedEvaluator(cache)
+ @journal
  def evaluate(self,c,src,*,replay_seed=None,artifacts=None):
   if artifacts:Path(artifacts).mkdir(parents=True,exist_ok=True);Path(artifacts).chmod(0o700)
   start=time.monotonic();r={'tested_correct':False,'reward':0.,'family':c.name,'status':'experimental_cycle_controller','objective':'fixed_cycle_area','contract':digest('experimental-fixed-cycle-v1:'+json.dumps(asdict(c),sort_keys=True)),'pilot_eligible':False,'formal':'not_run','physical':'not_run','os_isolation':'not_provided','source_sha256':digest(src) if isinstance(src,str) else None}

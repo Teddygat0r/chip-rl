@@ -1,10 +1,12 @@
 """Regression exploits discovered in the v1 viability audit (never valid actions)."""
+import re
 from .rtl import design
 from .tasks import Config,Model
 from .corpus import commands
 
 def mutant(c,label):
     s=design(c)
+    if label=='reset_priority':return re.sub(r'if\s*\(\s*rst\s*\)', 'if(rst && !in_valid)',s)
     if label=='padding':return s.replace('data[0]<=y;',"data[0]<=y ^ ({255'b0,in_data[511]}<<255);")
     if label=='ignore_late_writes':
         s=s.replace('integer st;', 'integer st;reg [15:0] accepted_count;').replace('valid<=0;','valid<=0;accepted_count<=0;').replace('if(fire) begin ', 'if(fire) begin accepted_count<=accepted_count+1; ')
@@ -51,7 +53,7 @@ def mutant(c,label):
     raise ValueError(label)
 
 def labels(name):
-    result=['padding','zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop']
+    result=['padding','zero','duplicate','bypass','hardcode','rom','negedge','divergence','late_drop','reset_priority']
     if name in ('scratchpad','gather'):result+=['no_reset','ignore_late_writes']
     if name=='scratchpad':result+=['unfair']
     if name in ('dot','tensor'):result+=['narrow']

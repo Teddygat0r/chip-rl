@@ -1,0 +1,37 @@
+{
+  "new_experimental_families": 3,
+  "functional_and_synthesis_families_total": 16,
+  "pilot_families": 6,
+  "experimental_families": 10,
+  "new_designs_and_rejections": [
+    8,
+    32
+  ],
+  "new_api_passes_and_rejections": [
+    24,
+    96
+  ],
+  "schema_override_rejections": 9,
+  "structural_cases": 4,
+  "old_expansion_api_passes_and_rejections": [
+    27,
+    90
+  ],
+  "old_pilot_api_passes_and_rejections": [
+    18,
+    219
+  ],
+  "old_cycle_designs_and_rejections": [
+    13,
+    28
+  ],
+  "new_bounded_formal_families": 1,
+  "new_bounded_formal_valid_designs": 2,
+  "pipeline_formal_status": "unproven",
+  "unbounded_formal_families": 0,
+  "physical_families": 0,
+  "trained_policies": 0,
+  "unit_tests": 61,
+  "os_isolation": "not_provided",
+  "pushed": false
+}

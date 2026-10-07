@@ -1,0 +1,23 @@
+{
+  "new_experimental_families": 3,
+  "new_valid_designs": 9,
+  "new_mutants_rejected": 30,
+  "new_api_valid_checks": 27,
+  "new_api_bad_rejected": 90,
+  "schema_override_rejections": 9,
+  "new_structural_cases": 6,
+  "new_bounded_formal_families": 1,
+  "new_unbounded_formal_families": 0,
+  "physical_families": 0,
+  "trained_policies": 0,
+  "pilot_families_unchanged": 6,
+  "total_experimental_families": 7,
+  "total_runnable_families": 13,
+  "unit_tests": 54,
+  "old_pilot_api_rejections": 219,
+  "old_pilot_baseline_api_passes": 18,
+  "old_cycle_valid_designs": 13,
+  "old_cycle_bad_rejected": 28,
+  "os_sandbox": "not_provided",
+  "pushed": false
+}

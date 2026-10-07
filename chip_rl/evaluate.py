@@ -2,6 +2,7 @@
 Only source text enters from an agent. Replay seeds/artifact paths are host-only.
 """
 import fcntl,hashlib,json,math,os,re,secrets,shutil,tempfile,time
+from .audit import journal
 from pathlib import Path
 from dataclasses import replace,asdict
 from ._tools import Rejected,tool,run,sanitize as _sanitize,TOOLS
@@ -68,7 +69,7 @@ def bench(c,xs,seed):
       rst=0;in_valid=1;in_data=512'h{dirty_command(c):x};out_ready=1;
       repeat(4)begin #5;clk=1;#5;clk=0;end
       {"in_data=512'hdeadbeef000002;repeat(8)begin #5;clk=1;#5;clk=0;end" if c.name=='cache' else ''}
-      rst=1;in_valid=0;repeat(3)begin #5;clk=1;#5;clk=0;end rst=0;
+      rst=1;in_valid=1;in_data=512'h{'f'*128};repeat(3)begin #5;clk=1;#5;clk=0;end rst=0;
       while(received<{len(xs)} && cycle<{limit})begin
         if(sent<{len(xs)})begin in_valid=(cycle>=releases[sent]);in_data=inputs[sent];end else in_valid=0;
         out_ready=consumers[cycle];#4;
@@ -182,6 +183,7 @@ class TrustedEvaluator:
                     target=Path(out);target.parent.mkdir(parents=True,exist_ok=True);shutil.copytree(d,target)
                     (target/'private-replay.json').write_text(json.dumps({'config':asdict(c),'seed':seed,'count':count})+'\n')
 
+    @journal
     def evaluate(self,c,src,*,replay_seed=None,count=None,artifacts=None,allow_experimental=False):
         started=time.monotonic();pub={'tested_correct':False,'reward':0.,'family':c.name,'contract':identity(c),'source_sha256':digest(src) if isinstance(src,str) else None,
             'validation':'not_run','formal':'not_run','physical':'not_run','os_isolation':'not_provided','pilot_eligible':c.name in PILOT,'coverage_profile':PROFILE,'objective':c.objective,'objective_eligible':False}

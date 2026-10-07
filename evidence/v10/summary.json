@@ -1,0 +1,35 @@
+{
+  "families_total": 19,
+  "pilot_families": 6,
+  "experimental_families": 13,
+  "new_families": 0,
+  "selected_designs_and_mutants": [
+    6,
+    28
+  ],
+  "selected_api_valid_and_rejected": [
+    18,
+    84
+  ],
+  "other_api_valid_and_rejected": [
+    60,
+    246
+  ],
+  "long_valid_configurations_and_adversarial_rejections": [
+    18,
+    45
+  ],
+  "unit_tests": 79,
+  "schema_rejections": 27,
+  "new_long_budget_override_rejections": 4,
+  "old_evaluator_faults_accepted_then_rejected": 7,
+  "new_formal_checks": 0,
+  "physical_families": 0,
+  "unbounded_formal_families": 0,
+  "trained_policies": 0,
+  "os_isolation": "not_provided",
+  "pushed": false,
+  "legacy_hardware_regression": "Root pilots and four fixed-cycle families unchanged; prior evidence inherited, not rerun.",
+  "initial_crc_api_reset_failure": "Generic baseline qualification failed; underlying cause not retained and remains unknown. Two later reset diagnostics and final captured API matrix passed; initial failure preserved.",
+  "next_architecture_recommendation": "Dual-clock asynchronous FIFO / CDC bridge; assessed, not implemented."
+}

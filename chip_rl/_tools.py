@@ -23,7 +23,13 @@ def limits():
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 
 def run(cmd, cwd, label, timeout=120):
-    log=Path(cwd)/(label+'.log')
+    from .audit import tool_log
+    retained=tool_log(label)
+    local_log=Path(cwd)/(label+'.log')
+    log=retained or local_log
+    if retained:
+        if local_log.exists() or local_log.is_symlink():local_log.unlink()
+        local_log.symlink_to(retained.resolve())
     with log.open('w') as f:
         p=subprocess.Popen(cmd,cwd=cwd,stdout=f,stderr=subprocess.STDOUT,
                            env={'PATH':str(TOOLS/'bin')+':/usr/bin:/bin','HOME':str(cwd),'LANG':'C'},

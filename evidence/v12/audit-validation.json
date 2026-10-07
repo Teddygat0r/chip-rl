@@ -1,0 +1,8 @@
+{
+  "unit_tests": 85,
+  "default_crc_reset_passed": true,
+  "real_synthesis_failure_rejected": true,
+  "failure_source_and_seed_retained": true,
+  "full_synthesis_log_survives_temporary_directory_cleanup": true,
+  "original_crc_anomaly": "still unresolved"
+}

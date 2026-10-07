@@ -1,0 +1,52 @@
+{
+  "families_total": 19,
+  "pilot_families": 6,
+  "experimental_families": 13,
+  "new_families": 0,
+  "selected_designs_and_mutants": [
+    9,
+    41
+  ],
+  "selected_api_valid_and_rejected": [
+    27,
+    123
+  ],
+  "deep_valid_configuration_checks_and_rejections": [
+    18,
+    44
+  ],
+  "other_api_valid_and_rejected": [
+    51,
+    186
+  ],
+  "unit_tests": 73,
+  "reset_control_combinations": 4,
+  "interruption_accepted_counts": [
+    1,
+    2
+  ],
+  "hold_clocks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "reset_probe_pairs_per_configuration": 80,
+  "selected_schema_rejections": 9,
+  "other_schema_rejections": 18,
+  "synchronous_reset_variants_accepted": 3,
+  "other_api_build": "initial_v9; unused qualification driver is the only runtime difference from final v9",
+  "new_formal_checks": 0,
+  "physical_families": 0,
+  "unbounded_formal_families": 0,
+  "trained_policies": 0,
+  "os_isolation": "not_provided",
+  "pushed": false,
+  "legacy_regression": "Root pilot and fixed-cycle code unchanged from v8; previous results inherited, not rerun."
+}
