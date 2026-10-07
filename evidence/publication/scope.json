@@ -81,7 +81,7 @@
     "chip_rl/tasks.py": "ecdc9415829e65494492063c723c04481a38dd0b30048194c36a5ef0e37a9bf3"
   },
   "policy": "Source/docs/tests/scripts plus aggregate summaries only. No new private replay artifacts, raw logs, seeds, archives or internal history copied.",
-  "files": 165,
+  "files": 166,
   "excluded_diagnostic_script": "Historic fixed-seed CRC diagnostic kept private; automatic journaling remains included.",
   "publication_strategy": "One audited snapshot commit atop the already-public v4 branch; internal experiment history not transferred.",
   "unit_tests_passed": 85
