@@ -1,0 +1,7 @@
+# V20 bounded final-source layout audit
+
+Preserve v18/v19 commits, archives and manifests. Audit legal competing RTL forms, persistent masked word writes, reset clearing/cancellation, ordered duplicate stores, and attempted extra storage/ports. Candidate mapper attacks and trusted-host engine mutation controls must be reported separately. Same-author tests remain labeled; no agent-training/independent study is authorized.
+
+Prospective caps:80 layout evaluator calls,180 mapper synthesis commands,720 HDL simulations including direct engine mutation controls,30s per synthesis/compile/simulation command. Existing90s CPU/3GiB address-space/64MiB tool-file limits remain.43 aggregate evaluator calls on unchanged existing22 families. No SAT campaign, new tools, paid services, uploads, credentials, security changes or push. Stop new evaluation batches below300MiB free; verified archived raw duplicates may be reclaimed while retaining archives/parts/manifests.
+
+Reproduce issues first on v19. Add permanent directed checks and valid-source regressions, then freeze the complete runtime. Run the full acceptance/fault/API/example/replay matrix on that exact final installed source; no carry-forward-only substitute. Use the same fixed configuration/seed/constraints for architecture comparisons, retain unscored verification separately from reward, and explicitly test reward neutrality. Reserve budget for recoverable failures; do not extend caps. Package exact sources, vectors, tool logs and failed attempts with a clean local commit.

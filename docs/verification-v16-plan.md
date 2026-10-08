@@ -1,0 +1,13 @@
+# V16 prospective component-verification plan
+
+Base f42d095ddc0550d66b3d98bf073ce3a51e744862 and all v15 artifacts remain unchanged. No new family, reward change, external independence claim, physical workaround, installation or push.
+
+Develop exact signed INT8 product/range checks; prove finite-width accumulator addition under explicit legal-prefix bounds; check actual folded RTL with a documented multiplier cutpoint and independently check operand routing. Retain original/instrumented sources and assumptions. Abstract products must lie within the independently checked INT8 product range. Bounded reset/occupancy/prefix/stall/completion checks must never be labeled an unbounded implementation proof. Mutation controls must expose routing, arithmetic, reset and progress failures. Unsupported source transformations must fail closed.
+
+Budget: at most32 SAT invocations, each30s solver/45s wall, at most960 solver seconds; at most12 exhaustive simulation invocations; at most40 relevant full evaluator calls plus44 aggregate calls. Setup failures and timeouts consume invocation budget. Stop launching with less than300MiB free. Use existing90s CPU/3GiB per-tool resource limits. No synthesis/SAT cache reuse for proof outcomes. Archive every launch and failed setup.
+
+Implement a practical sealed evaluator lifecycle: evaluator owner commits private plan digest, candidate owner commits source digest before scoring, one-shot source-only evaluation emits restricted receipts and keeps detailed diagnostics private. Validate tamper/replay/override rejection. This local author can access plan and source, so only the mechanism is tested, not external blindness or a secure OS boundary. An independent party must own private fixtures, storage and execution for genuinely independent evaluation.
+
+After freezing runtime, run source/installed tests, affected arithmetic alternatives and mutants, mechanism integration and all22-family baseline/fault regression. Preserve previous assumptions/errors and report counts, runtime/resource limits, bounded scope, physical blocker and next task.
+
+Prospective integration amendment: review found the initial sealed runtime commitment covered Python files but omitted contract Markdown and tool executable contents. Preserve the four-slot preliminary mechanism run; add both bindings and test tampering. Allow two additional full evaluator calls (new total cap42, not44) for a final valid/bad sealed batch under the corrected commitment. No additional SAT invocation is authorized by this amendment. Existing arithmetic/aggregate regressions remain applicable because all104 pre-v16 runtime files stay byte-identical.

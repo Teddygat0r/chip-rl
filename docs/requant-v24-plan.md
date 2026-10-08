@@ -1,0 +1,9 @@
+# Requantization: frozen scope and budgets
+
+Publication candidate f9d71379e85e73e8663aa41b3f703a41299b2158 remains unchanged in its original worktree. Requantization is absent from the 24-family inventory: exact dot/tensor accumulation and approximate softmax normalization do not cover programmable integer rescaling, signed ties-to-even rounding, zero-point addition and saturation.
+
+Before HDL/numerical work: caps of 50 evaluator calls including failures/API/replay, 100 synthesis invocations, 600 HDL simulation invocations, 20000 independent numerical comparisons. At most two simultaneous evaluations; synthesis 60s/HDL 45s wall, CPU 90s, address space 3GiB, tool output 64MiB. Reserve numerical sweeps before execution; do not repeat automatically. Stop new batches at caps or below 300MiB free and report unfinished obligations. Existing local tools only; no external services, spending, push, upload or security changes.
+
+N=1..4 signed INT32 accumulators; shared unsigned 16-bit scale, shift 0..47, signed INT8 zero point and mask. Active output = saturate_INT8(round_ties_even(accumulator * scale / 2**shift) + zero_point); inactive and unused lanes exactly zero. No numerical tolerance. Development N2,4; heldout N1,3 with distinct traffic/mask distributions. Source-only actions; fixed constraints, private workloads and parallel baseline. Registered, ordered exactly-once ready/valid responses, stable output under stalls, synchronous reset cancellation and bounded progress. Legitimate alternatives: serial shared multiplier and registered parallel products.
+
+Correctness, performance eligibility and reward reported separately. Inclusion requires measured cell/cycle or logic-depth tradeoff, boundary-mutant rejection, installed API and replay, and exact-final validation. Generic synthesis/cycle proxies only. No new physical/general formal proof or independent learning/isolation claim.
