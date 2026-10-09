@@ -1,0 +1,194 @@
+{
+  "phase": "phase2_freeze_before_public_calls",
+  "family": "hadamard_int8",
+  "file_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "__main__.py": "e3da231473221541f3027a9a4433832707bd4ba31394aa8ffbe1809bcdd8a7f3",
+    "contracts.md": "45a0e23c7a7961bec232f92b461ac9bdfdf1d7ea7e98a342c8bc074c70d4794d",
+    "env.py": "5ee8a376dfbb04acb12303be229bb0b0df97c9226c606d4f58281c6d7a875c39",
+    "evaluate.py": "f19842adc79ae3b960eb034c15a7bcc029f1dbed01f7a886ed3363e8ffb29839",
+    "exact_check.py": "0e6d3c5218351fad00939d05e6c9d64c8a3dc1277988100a5dbad620db35d199",
+    "frozen_sources.json": "f33d93f90ee956b4d9c7f257c0ce07edf8d499058458325eead251b41198fae0",
+    "oracle.py": "227839cde38aa926f5f81c4ac4c74212570649cc5f6e9a1c43c6120cbc8a23c0",
+    "rtl.py": "78d0c907ca269fea69c262db4aae97e1ae8d8f676618907abe58c27c64a1c3d7",
+    "scoring.py": "390b7be2d6ac204501550fe4f5a78125892867b7f44ba880b4b1d22d39ea1b29",
+    "server.py": "50ca954a6880afecc7e0e42f7629ff40f07b02f092654afa96ca227b7d1f5e38",
+    "simulation.py": "76f8332f5fd5a90233ad4bd12be79f3bf60d3bf8ddf5b47e8b12efff9dae5049",
+    "spec.py": "ecf1231e2eeef335f73b430c4d170153612a36c1c35c786dfdceae3c15266e1b",
+    "synthesis.py": "d3b2c97adc277385a690de8b22510b2517d004c11e3f4fd8f024874abdb49ce7",
+    "workloads.py": "524a76e0da675da7ffd24ee960c963970730d7f8a300eb90b02b09c4524bc7c7"
+  },
+  "reference_sha256": {
+    "serial_butterfly": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+    "stage_parallel": "d8e58b4b8a9837099f2d86ab62a9fa8c96717a42906c316138ce6655ba7dd74b"
+  },
+  "contract_identity_sha256": "27b00401a2052b2bbf4bb97024bb631257fecdbeabd42b514f97ce1740159459",
+  "seed_sha256": {
+    "development": "3bb14b8edbaab5e6ec311c436698a904bfb7b66966ef2bb42805f070086ee90e",
+    "heldout": "2b726b6ad330dc485e6d2a8e7557486949afc49acd01cd9a5d4d949e406fd9ce"
+  },
+  "host_cross_check": {
+    "1:development": {
+      "directed_and_random_count": 77,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "1:heldout": {
+      "directed_and_random_count": 93,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "2:development": {
+      "directed_and_random_count": 85,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "2:heldout": {
+      "directed_and_random_count": 101,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "4:development": {
+      "directed_and_random_count": 101,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "4:heldout": {
+      "directed_and_random_count": 117,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "8:development": {
+      "directed_and_random_count": 133,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "8:heldout": {
+      "directed_and_random_count": 149,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "16:development": {
+      "directed_and_random_count": 197,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    },
+    "16:heldout": {
+      "directed_and_random_count": 213,
+      "labels": [
+        "alternating",
+        "basis",
+        "constant",
+        "full_negative_bound",
+        "full_positive_bound",
+        "ignored_a",
+        "ignored_b",
+        "impulse",
+        "ramp",
+        "random",
+        "zero"
+      ]
+    }
+  },
+  "extra_random_full_range_blocks_per_n": 1000,
+  "public_calls_planned": 4
+}

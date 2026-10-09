@@ -1,0 +1,34 @@
+{
+  "integrated_source_scope": [
+    "chip_rl/block_rle",
+    "tests/test_block_rle.py",
+    "scripts/check_block_rle_negative_controls_v1.py",
+    "docs/block-rle-v1-phase1.md",
+    "docs/block-rle-v1-phase2.md",
+    "pyproject.toml minimal registration"
+  ],
+  "repository_unittest": {
+    "ran": 228,
+    "passed": 228,
+    "failed": 0,
+    "errors": 0,
+    "log": "main-unit-suite.log"
+  },
+  "wheel": {
+    "built_from": "temporary source copy of main",
+    "block_rle_entries": 15,
+    "contract_data_present": true,
+    "frozen_hash_data_present": true
+  },
+  "packaged_smoke": {
+    "import": true,
+    "oracle_roundtrip": true,
+    "env_reset_step_cached": true,
+    "jsonl_server_validation": true,
+    "new_synthesis_or_simulation": false
+  },
+  "frozen_rtl_sha256": {
+    "serial": "5768a73b8ad3e0b8cab1592f0227f94765cfde3ef55828eeca2049f63f3e87b9",
+    "chunked4": "35e4ff8f63b14f5679f4ddee44ca67a1f2865c571ef0f59ff3a3f56c25c75366"
+  }
+}

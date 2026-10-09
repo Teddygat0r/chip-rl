@@ -1,0 +1,1041 @@
+{
+  "schema_version": 1,
+  "snapshot": "current local source tree",
+  "published_checkpoint": {
+    "family_count": 25,
+    "root_commit": "4e3d4f07ebc3b84daedb0317e4801ae64b005b39"
+  },
+  "counts": {
+    "total": 33,
+    "pilot": 6,
+    "experimental": 27
+  },
+  "scope_note": "A family is a distinct task exposed by a public reset/step API and JSON-lines server. Evidence is finite and version-scoped; listed historical paths may be absent from this source snapshot. This inventory is not a fresh 33-family simulation sweep or physical qualification.",
+  "families": [
+    {
+      "family": "elastic",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"elastic\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "dot",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"dot\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "scratchpad",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"scratchpad\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "tensor",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"tensor\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "cache",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"cache\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "gather",
+      "tier": "pilot",
+      "public_api": {
+        "python": "chip_rl.env.ChipEnv",
+        "jsonl_module": "chip_rl.server",
+        "action": "rtl",
+        "constructor": "ChipEnv(name=\"gather\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/rtl.py"
+      },
+      "contract": "chip_rl/contracts.md",
+      "qualification": "Independent transaction model, RTL/mapped checks, bounded service and pilot objective gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/summary.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "dma",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.cycle.env.CycleEnv",
+        "jsonl_module": "chip_rl.cycle.server",
+        "action": "rtl",
+        "constructor": "CycleEnv(name=\"dma\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/cycle/rtl.py"
+      },
+      "contract": "chip_rl/cycle/contracts.md",
+      "qualification": "Fixed-cycle protocol/model checks, synthesis, conditional generic-cell proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "router",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.cycle.env.CycleEnv",
+        "jsonl_module": "chip_rl.cycle.server",
+        "action": "rtl",
+        "constructor": "CycleEnv(name=\"router\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/cycle/rtl.py"
+      },
+      "contract": "chip_rl/cycle/contracts.md",
+      "qualification": "Fixed-cycle protocol/model checks, synthesis, conditional generic-cell proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "scoreboard",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.cycle.env.CycleEnv",
+        "jsonl_module": "chip_rl.cycle.server",
+        "action": "rtl",
+        "constructor": "CycleEnv(name=\"scoreboard\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/cycle/rtl.py"
+      },
+      "contract": "chip_rl/cycle/contracts.md",
+      "qualification": "Fixed-cycle protocol/model checks, synthesis, conditional generic-cell proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "accelerator",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.cycle.env.CycleEnv",
+        "jsonl_module": "chip_rl.cycle.server",
+        "action": "rtl",
+        "constructor": "CycleEnv(name=\"accelerator\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name))",
+        "source": "chip_rl/cycle/rtl.py"
+      },
+      "contract": "chip_rl/cycle/contracts.md",
+      "qualification": "Fixed-cycle protocol/model checks, synthesis, conditional generic-cell proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "permute",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"permute\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "coalesce",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"coalesce\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "retire",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"retire\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "ecc",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"ecc\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "crc",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"crc\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "freelist",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"freelist\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "scan",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"scan\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "topk",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"topk\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "histogram",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.expansion.env.ExpansionEnv",
+        "jsonl_module": "chip_rl.expansion.server",
+        "action": "rtl",
+        "constructor": "ExpansionEnv(name=\"histogram\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "design(Config(name), alt=\"baseline\")",
+        "source": "chip_rl/expansion/rtl.py"
+      },
+      "contract": "chip_rl/expansion/contracts.md",
+      "qualification": "Independent task model, RTL/mapped checks, conditional task objectives.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "cdc_fifo",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.cdc.env.CDCEnv",
+        "jsonl_module": "chip_rl.cdc.server",
+        "action": "architecture,sync_stages",
+        "constructor": "CDCEnv()",
+        "reset": "reset(seed=1)",
+        "step": "step({\"architecture\": \"binary_gray\", \"sync_stages\": 2})"
+      },
+      "baseline": {
+        "reference": "Choice(architecture=\"binary_gray\", sync_stages=2)",
+        "source": "chip_rl/cdc/rtl.py"
+      },
+      "contract": "chip_rl/cdc/spec.py",
+      "qualification": "Digital multi-clock FIFO checks and paired proxy reward; no analog metastability or physical CDC signoff.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "mshr",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.memory.env.MemoryEnv",
+        "jsonl_module": "chip_rl.memory.server",
+        "action": "rtl",
+        "constructor": "MemoryEnv(name=\"mshr\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "ring",
+        "source": "chip_rl/memory/rtl.py"
+      },
+      "contract": "chip_rl/memory/spec.py",
+      "qualification": "Tagged/external-memory model, RTL/mapped checks, conditional proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "tlb",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.memory.env.MemoryEnv",
+        "jsonl_module": "chip_rl.memory.server",
+        "action": "rtl",
+        "constructor": "MemoryEnv(name=\"tlb\")",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "blocking",
+        "source": "chip_rl/memory/rtl.py"
+      },
+      "contract": "chip_rl/memory/spec.py",
+      "qualification": "Tagged/external-memory model, RTL/mapped checks, conditional proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/aggregate.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "layout",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.layout.env.LayoutEnv",
+        "jsonl_module": "chip_rl.layout.server",
+        "action": "rtl",
+        "constructor": "LayoutEnv()",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "row_major",
+        "source": "chip_rl/layout/rtl.py"
+      },
+      "contract": "chip_rl/layout/contracts.md",
+      "qualification": "Correctness, persistence and cancellation checks before service/mapper-cost reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/additional.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "softmax",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.softmax.env.SoftmaxEnv",
+        "jsonl_module": "chip_rl.softmax.server",
+        "action": "rtl",
+        "constructor": "SoftmaxEnv()",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "full_serial",
+        "source": "chip_rl/softmax/rtl.py"
+      },
+      "contract": "chip_rl/softmax/contracts.md",
+      "qualification": "Quantized numerical/error checks, RTL/mapped checks and conditional proxy reward.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/additional.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "requant",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.requant.env.RequantEnv",
+        "jsonl_module": "chip_rl.requant.server",
+        "action": "rtl",
+        "constructor": "RequantEnv()",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "parallel",
+        "source": "chip_rl/requant/rtl.py"
+      },
+      "contract": "chip_rl/requant/contracts.md",
+      "qualification": "Exact integer requantization, RTL/mapped and service qualification.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/additional.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "fused_dot_requant",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.fused.env.FusedEnv",
+        "jsonl_module": "chip_rl.fused.server",
+        "action": "rtl",
+        "constructor": "FusedEnv(k=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/fused/rtl.py"
+      },
+      "contract": "chip_rl/fused/contracts.md",
+      "qualification": "Exact signed INT8 fused dot/bias/requant, RTL/mapped, stream/progress and balanced proxy gates.",
+      "evidence": [],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/additional.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "sparse24_dot_requant",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.sparse24.env.Sparse24Env",
+        "jsonl_module": "chip_rl.sparse24.server",
+        "action": "rtl",
+        "constructor": "Sparse24Env(g=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/sparse24/rtl.py"
+      },
+      "contract": "chip_rl/sparse24/contracts.md",
+      "qualification": "Compressed-selector/dense-oracle exactness, scalar decoder probes, RTL/mapped and balanced proxy gates.",
+      "evidence": [
+        {
+          "path": "evidence/v34/summary.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": "evidence/v33/additional.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": []
+    },
+    {
+      "family": "block_quant",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.block_quant.env.BlockQuantEnv",
+        "jsonl_module": "chip_rl.block_quant.server",
+        "action": "rtl",
+        "constructor": "BlockQuantEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/block_quant/rtl.py"
+      },
+      "contract": "chip_rl/block_quant/contracts.md",
+      "qualification": "Exact signed INT16 block exponent/INT8 rounding; fixed area, cycle and II gates for conditional balanced proxy reward.",
+      "evidence": [
+        {
+          "path": "evidence/v38/summary.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [
+        {
+          "path": "evidence/v37/inventory.json",
+          "available_in_snapshot": false
+        }
+      ],
+      "local_reports": [
+        "docs/block-quant-reward-v37.md",
+        "docs/block-quant-sensitivity-v38.md"
+      ]
+    },
+    {
+      "family": "integer_rms",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.integer_rms.env.IntegerRmsEnv",
+        "jsonl_module": "chip_rl.integer_rms.server",
+        "action": "rtl",
+        "constructor": "IntegerRmsEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/integer_rms/rtl.py"
+      },
+      "contract": "chip_rl/integer_rms/contracts.md",
+      "qualification": "Exact integer normalization; five-N RTL/mapped arithmetic/protocol and fixed area, cycle and II gates.",
+      "evidence": [
+        {
+          "path": "evidence/integer_rms/serial_comb_root_v1/summary.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [],
+      "local_reports": [
+        "docs/integer-rms-v1-phase2.md",
+        "docs/integer-rms-serial-comb-root-phase2.md"
+      ],
+      "reward_rule": {
+        "required_scored_N": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "verified_pair_required": true,
+        "area_ratio_max": 4,
+        "completion_ratio_max": 1,
+        "stream_ii_limit": "2*N+24",
+        "qualified_reward": "max(0, 1 - exp(mean(log(area_ratio * completion_ratio))/2))",
+        "unqualified_reward": 0
+      }
+    },
+    {
+      "family": "block_rle",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.block_rle.env.BlockRleEnv",
+        "jsonl_module": "chip_rl.block_rle.server",
+        "action": "rtl",
+        "constructor": "BlockRleEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/block_rle/rtl.py"
+      },
+      "contract": "chip_rl/block_rle/contracts.md",
+      "qualification": "Exact byte-run canonical encoding; five-N RTL/mapped checks and fixed area, cycle and II gates.",
+      "evidence": [
+        {
+          "path": "evidence/block-rle-v1/phase2-compact-summary.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/block-rle-v1/main-integration-checks.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [],
+      "local_reports": [
+        "docs/block-rle-v1-phase2.md"
+      ],
+      "reward_rule": {
+        "required_scored_N": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "verified_pair_required": true,
+        "area_ratio_max": 4,
+        "completion_ratio_max": 1,
+        "stream_ii_limit": "N+6",
+        "qualified_reward": "max(0, 1 - exp(mean(log(area_ratio * completion_ratio))/2))",
+        "unqualified_reward": 0
+      }
+    },
+    {
+      "family": "block_for",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.block_for.env.BlockForEnv",
+        "jsonl_module": "chip_rl.block_for.server",
+        "action": "rtl",
+        "constructor": "BlockForEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/block_for/rtl.py"
+      },
+      "contract": "chip_rl/block_for/contracts.md",
+      "qualification": "Exact unsigned-byte frame-of-reference encoding; five-N RTL/mapped checks and fixed area, cycle and II gates.",
+      "evidence": [
+        {
+          "path": "evidence/block-for-v1/compact-summary.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/block-for-shiftpack-v1/compact-summary.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [],
+      "local_reports": [
+        "docs/block-for-v1-phase2.md",
+        "docs/block-for-shiftpack-phase2.md"
+      ],
+      "reward_rule": {
+        "required_scored_N": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "verified_pair_required": true,
+        "area_ratio_max": 4,
+        "completion_ratio_max": 1,
+        "stream_ii_limit": "2*N+6",
+        "qualified_reward": "max(0, 1 - exp(mean(log(area_ratio * completion_ratio))/2))",
+        "unqualified_reward": 0
+      }
+    },
+    {
+      "family": "bf16_quant",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.bf16_quant.env.Bf16QuantEnv",
+        "jsonl_module": "chip_rl.bf16_quant.server",
+        "action": "rtl",
+        "constructor": "Bf16QuantEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial",
+        "source": "chip_rl/bf16_quant/rtl.py"
+      },
+      "contract": "chip_rl/bf16_quant/contracts.md",
+      "qualification": "Exact raw BF16-to-INT8 block quantization with custom NaN/Inf policy, source/mapped checks and conditional balanced proxy reward. Host exhaustive is host-only, not RTL exhaustive.",
+      "evidence": [
+        {
+          "path": "evidence/bf16-quant-v1/summary.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/bf16-quant-v1/integration-verification.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [],
+      "local_reports": [
+        "docs/bf16-quant-v1-phase2.md"
+      ],
+      "reward_rule": {
+        "required_scored_N": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "verified_pair_required": true,
+        "area_ratio_max": 4,
+        "completion_ratio_max": 1,
+        "stream_ii_limit": "N+6",
+        "qualified_reward": "max(0, 1 - exp(mean(log(area_ratio * completion_ratio))/2))",
+        "unqualified_reward": 0
+      }
+    },
+    {
+      "family": "hadamard_int8",
+      "tier": "experimental",
+      "public_api": {
+        "python": "chip_rl.hadamard_int8.env.HadamardEnv",
+        "jsonl_module": "chip_rl.hadamard_int8.server",
+        "action": "rtl",
+        "constructor": "HadamardEnv(n=4)",
+        "reset": "reset(seed=1)",
+        "step": "step({\"rtl\": source})"
+      },
+      "baseline": {
+        "reference": "serial_butterfly",
+        "source": "chip_rl/hadamard_int8/rtl.py"
+      },
+      "contract": "chip_rl/hadamard_int8/contracts.md",
+      "qualification": "Exact INT8-to-INT16 unnormalized Sylvester Hadamard transform, N=1,2,4,8,16. Direct-parity oracle and butterfly cross-check; source/mapped finite replay and conditional proxy reward.",
+      "evidence": [
+        {
+          "path": "evidence/hadamard-int8-v1/qualification.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/hadamard-int8-v1/control-results.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/hadamard-int8-v1/freeze-manifest.json",
+          "available_in_snapshot": true
+        },
+        {
+          "path": "evidence/hadamard-int8-v1/integration-verification.json",
+          "available_in_snapshot": true
+        }
+      ],
+      "historical_evidence": [],
+      "local_reports": [
+        "docs/hadamard-int8-v1-phase2.md"
+      ],
+      "reward_rule": {
+        "required_scored_N": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "verified_pair_required": true,
+        "area_ratio_max": 4,
+        "completion_ratio_max": 1,
+        "stream_ii_limit": "(N//2)*log2(N)+6",
+        "qualified_reward": "max(0, 1 - exp(mean(log(area_ratio * completion_ratio))/2))",
+        "unqualified_reward": 0
+      }
+    }
+  ],
+  "excluded_from_family_count": [
+    {
+      "name": "quality",
+      "role": "scored profiles of existing dot, tensor and tlb families",
+      "source": "chip_rl/quality/spec.py"
+    },
+    {
+      "name": "history.check",
+      "role": "long-history CRC and retirement verification modes",
+      "source": "chip_rl/history/evaluate.py"
+    },
+    {
+      "name": "serial_comb_root",
+      "role": "integer_rms reference variant",
+      "source": "chip_rl/integer_rms/rtl.py"
+    },
+    {
+      "name": "serial_shiftpack",
+      "role": "block_for reference variant",
+      "source": "chip_rl/block_for/rtl.py"
+    },
+    {
+      "name": "block_quant variants",
+      "role": "references in the block_quant family",
+      "source": "chip_rl/block_quant/rtl.py"
+    },
+    {
+      "name": "chunked4 (bf16_quant)",
+      "role": "BF16 quantization reference variant",
+      "source": "chip_rl/bf16_quant/rtl.py"
+    },
+    {
+      "name": "stage_parallel (hadamard_int8)",
+      "role": "Hadamard transform reference variant",
+      "source": "chip_rl/hadamard_int8/rtl.py"
+    }
+  ],
+  "source_unit_suite": {
+    "tests": 240,
+    "passed": 240,
+    "scope": "full source unittest discovery after Hadamard MAIN integration; not a fresh 33-family public-API RTL/mapped sweep",
+    "evidence": "evidence/hadamard-int8-v1/integration-verification.json"
+  }
+}

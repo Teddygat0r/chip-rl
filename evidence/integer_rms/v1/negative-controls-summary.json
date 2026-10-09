@@ -1,0 +1,80 @@
+[
+  {
+    "mutation": "omit_epsilon",
+    "mutant_source_sha256": "604c76c6644a8c00109202956e3d7fc4e8417421255c3c5c0d34a0f742d9b7d3",
+    "witness_lanes": [
+      2,
+      2,
+      2,
+      0
+    ],
+    "oracle_output_hex": "0000000000000000000000000000000000000000000000000000010001000100",
+    "cells": 8090,
+    "stages": {
+      "rtl": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: rtl-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      },
+      "mapped": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: mapped-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      }
+    }
+  },
+  {
+    "mutation": "narrow_abs",
+    "mutant_source_sha256": "62454a4d3f9a2556aca6285a6b5aa6a0b0c23e79851c83059036c58e7b67d848",
+    "witness_lanes": [
+      -32768,
+      0,
+      0,
+      0
+    ],
+    "oracle_output_hex": "000000000000000000000000000000000000000000000000000000000000fe00",
+    "cells": 8025,
+    "stages": {
+      "rtl": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: rtl-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      },
+      "mapped": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: mapped-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      }
+    }
+  },
+  {
+    "mutation": "truncate_ties",
+    "mutant_source_sha256": "ab2fe60a3cf17e7dfa9b6206702f509dc7219259a1036b4bac8d6fdb5ea6c8ec",
+    "witness_lanes": [
+      1024,
+      3,
+      0,
+      0
+    ],
+    "oracle_output_hex": "0000000000000000000000000000000000000000000000000000000000020200",
+    "cells": 7953,
+    "stages": {
+      "rtl": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: rtl-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      },
+      "mapped": {
+        "screened": true,
+        "compiled": true,
+        "numerically_detected": true,
+        "log_tail": "FATAL: mapped-tb.sv:14: arithmetic mismatch\n       Time: 81  Scope: tb\n"
+      }
+    }
+  }
+]

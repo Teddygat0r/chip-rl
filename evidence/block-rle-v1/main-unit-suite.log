@@ -1,0 +1,6 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py:940: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/chip-rl-v2-cache-yl0gwmcf'>
+  _warnings.warn(warn_message, ResourceWarning)
+----------------------------------------------------------------------
+Ran 228 tests in 12.256s
+
+OK

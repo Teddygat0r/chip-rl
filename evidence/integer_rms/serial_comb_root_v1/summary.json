@@ -1,0 +1,206 @@
+{
+  "task": "integer_rms serial_comb_root qualification",
+  "scored_Ns": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "formal": "not_run",
+  "physical": "not_run",
+  "rows": [
+    {
+      "split": "development",
+      "reference": "serial",
+      "source_sha256": "0a7241139699cbd77852761dc6969fade0ccaf1a71b9baef09590b5f581cb7a3",
+      "recipe_sha256": "b329539388e75a30a82915ffa9a2dcb19e1d4eb5e066d0b03b518fdfeec36aca",
+      "contract_sha256": "57372ddabaf9db17b1e1662cdbbb11f8e6c24ca14dc0a1ce945b9526ed00ebc2",
+      "reward": 0.0,
+      "tested_correct": true,
+      "reward_qualified": true,
+      "constraint_failures": [],
+      "per_n": [
+        {
+          "N": 1,
+          "cells": 8156,
+          "logic_depth": 325,
+          "workload_cycles": 1929,
+          "saturated_ii": 21.0
+        },
+        {
+          "N": 2,
+          "cells": 8188,
+          "logic_depth": 325,
+          "workload_cycles": 2503,
+          "saturated_ii": 23.0
+        },
+        {
+          "N": 4,
+          "cells": 8193,
+          "logic_depth": 325,
+          "workload_cycles": 3161,
+          "saturated_ii": 27.0
+        },
+        {
+          "N": 8,
+          "cells": 8202,
+          "logic_depth": 325,
+          "workload_cycles": 4683,
+          "saturated_ii": 35.0
+        },
+        {
+          "N": 16,
+          "cells": 8197,
+          "logic_depth": 325,
+          "workload_cycles": 8419,
+          "saturated_ii": 51.0
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "reference": "serial_comb_root",
+      "source_sha256": "c7f72191ad6883f3543594544143517b88728883f32520f0b776a289d258d873",
+      "recipe_sha256": "b329539388e75a30a82915ffa9a2dcb19e1d4eb5e066d0b03b518fdfeec36aca",
+      "contract_sha256": "57372ddabaf9db17b1e1662cdbbb11f8e6c24ca14dc0a1ce945b9526ed00ebc2",
+      "reward": 0.30065142036385295,
+      "tested_correct": true,
+      "reward_qualified": true,
+      "constraint_failures": [],
+      "per_n": [
+        {
+          "N": 1,
+          "cells": 9455,
+          "logic_depth": 325,
+          "workload_cycles": 482,
+          "saturated_ii": 5.0
+        },
+        {
+          "N": 2,
+          "cells": 9487,
+          "logic_depth": 325,
+          "workload_cycles": 785,
+          "saturated_ii": 7.0
+        },
+        {
+          "N": 4,
+          "cells": 9492,
+          "logic_depth": 325,
+          "workload_cycles": 1265,
+          "saturated_ii": 11.0
+        },
+        {
+          "N": 8,
+          "cells": 9498,
+          "logic_depth": 325,
+          "workload_cycles": 2875,
+          "saturated_ii": 19.0
+        },
+        {
+          "N": 16,
+          "cells": 9496,
+          "logic_depth": 325,
+          "workload_cycles": 5862,
+          "saturated_ii": 35.0
+        }
+      ]
+    },
+    {
+      "split": "heldout",
+      "reference": "serial",
+      "source_sha256": "0a7241139699cbd77852761dc6969fade0ccaf1a71b9baef09590b5f581cb7a3",
+      "recipe_sha256": "b329539388e75a30a82915ffa9a2dcb19e1d4eb5e066d0b03b518fdfeec36aca",
+      "contract_sha256": "57372ddabaf9db17b1e1662cdbbb11f8e6c24ca14dc0a1ce945b9526ed00ebc2",
+      "reward": 0.0,
+      "tested_correct": true,
+      "reward_qualified": true,
+      "constraint_failures": [],
+      "per_n": [
+        {
+          "N": 1,
+          "cells": 8156,
+          "logic_depth": 325,
+          "workload_cycles": 2697,
+          "saturated_ii": 21.0
+        },
+        {
+          "N": 2,
+          "cells": 8188,
+          "logic_depth": 325,
+          "workload_cycles": 3191,
+          "saturated_ii": 23.0
+        },
+        {
+          "N": 4,
+          "cells": 8193,
+          "logic_depth": 325,
+          "workload_cycles": 3649,
+          "saturated_ii": 27.0
+        },
+        {
+          "N": 8,
+          "cells": 8202,
+          "logic_depth": 325,
+          "workload_cycles": 5731,
+          "saturated_ii": 35.0
+        },
+        {
+          "N": 16,
+          "cells": 8197,
+          "logic_depth": 325,
+          "workload_cycles": 9496,
+          "saturated_ii": 51.0
+        }
+      ]
+    },
+    {
+      "split": "heldout",
+      "reference": "serial_comb_root",
+      "source_sha256": "c7f72191ad6883f3543594544143517b88728883f32520f0b776a289d258d873",
+      "recipe_sha256": "b329539388e75a30a82915ffa9a2dcb19e1d4eb5e066d0b03b518fdfeec36aca",
+      "contract_sha256": "57372ddabaf9db17b1e1662cdbbb11f8e6c24ca14dc0a1ce945b9526ed00ebc2",
+      "reward": 0.2857661278153255,
+      "tested_correct": true,
+      "reward_qualified": true,
+      "constraint_failures": [],
+      "per_n": [
+        {
+          "N": 1,
+          "cells": 9455,
+          "logic_depth": 325,
+          "workload_cycles": 734,
+          "saturated_ii": 5.0
+        },
+        {
+          "N": 2,
+          "cells": 9487,
+          "logic_depth": 325,
+          "workload_cycles": 1086,
+          "saturated_ii": 7.0
+        },
+        {
+          "N": 4,
+          "cells": 9492,
+          "logic_depth": 325,
+          "workload_cycles": 1696,
+          "saturated_ii": 11.0
+        },
+        {
+          "N": 8,
+          "cells": 9498,
+          "logic_depth": 325,
+          "workload_cycles": 2983,
+          "saturated_ii": 19.0
+        },
+        {
+          "N": 16,
+          "cells": 9496,
+          "logic_depth": 325,
+          "workload_cycles": 7013,
+          "saturated_ii": 35.0
+        }
+      ]
+    }
+  ]
+}

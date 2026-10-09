@@ -1,0 +1,146 @@
+{
+  "purpose": "hadamard_int8_33rd_family_MAIN_integration",
+  "changed_files_except_this_manifest": [
+    {
+      "path": "chip_rl.egg-info/PKG-INFO",
+      "sha256": "615eb123bf384039da3105ae4fa71f955e919dcb88a8922ba77ad921785759af",
+      "bytes": 142,
+      "note": "regenerated during isolated wheel build"
+    },
+    {
+      "path": "chip_rl.egg-info/SOURCES.txt",
+      "sha256": "65643f1ec2b483e5d03c3125fc460bb58a81751bf87f87076dc26212ad1330ab",
+      "bytes": 8418,
+      "note": "regenerated during isolated wheel build"
+    },
+    {
+      "path": "chip_rl/hadamard_int8/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "chip_rl/hadamard_int8/__main__.py",
+      "sha256": "e3da231473221541f3027a9a4433832707bd4ba31394aa8ffbe1809bcdd8a7f3",
+      "bytes": 32
+    },
+    {
+      "path": "chip_rl/hadamard_int8/contracts.md",
+      "sha256": "45a0e23c7a7961bec232f92b461ac9bdfdf1d7ea7e98a342c8bc074c70d4794d",
+      "bytes": 2190
+    },
+    {
+      "path": "chip_rl/hadamard_int8/env.py",
+      "sha256": "5ee8a376dfbb04acb12303be229bb0b0df97c9226c606d4f58281c6d7a875c39",
+      "bytes": 2093
+    },
+    {
+      "path": "chip_rl/hadamard_int8/evaluate.py",
+      "sha256": "f19842adc79ae3b960eb034c15a7bcc029f1dbed01f7a886ed3363e8ffb29839",
+      "bytes": 5690
+    },
+    {
+      "path": "chip_rl/hadamard_int8/exact_check.py",
+      "sha256": "0e6d3c5218351fad00939d05e6c9d64c8a3dc1277988100a5dbad620db35d199",
+      "bytes": 2538
+    },
+    {
+      "path": "chip_rl/hadamard_int8/frozen_sources.json",
+      "sha256": "f33d93f90ee956b4d9c7f257c0ce07edf8d499058458325eead251b41198fae0",
+      "bytes": 181
+    },
+    {
+      "path": "chip_rl/hadamard_int8/oracle.py",
+      "sha256": "227839cde38aa926f5f81c4ac4c74212570649cc5f6e9a1c43c6120cbc8a23c0",
+      "bytes": 1279
+    },
+    {
+      "path": "chip_rl/hadamard_int8/rtl.py",
+      "sha256": "78d0c907ca269fea69c262db4aae97e1ae8d8f676618907abe58c27c64a1c3d7",
+      "bytes": 2517
+    },
+    {
+      "path": "chip_rl/hadamard_int8/scoring.py",
+      "sha256": "390b7be2d6ac204501550fe4f5a78125892867b7f44ba880b4b1d22d39ea1b29",
+      "bytes": 2746
+    },
+    {
+      "path": "chip_rl/hadamard_int8/server.py",
+      "sha256": "50ca954a6880afecc7e0e42f7629ff40f07b02f092654afa96ca227b7d1f5e38",
+      "bytes": 2062
+    },
+    {
+      "path": "chip_rl/hadamard_int8/simulation.py",
+      "sha256": "76f8332f5fd5a90233ad4bd12be79f3bf60d3bf8ddf5b47e8b12efff9dae5049",
+      "bytes": 13483
+    },
+    {
+      "path": "chip_rl/hadamard_int8/spec.py",
+      "sha256": "ecf1231e2eeef335f73b430c4d170153612a36c1c35c786dfdceae3c15266e1b",
+      "bytes": 1548
+    },
+    {
+      "path": "chip_rl/hadamard_int8/synthesis.py",
+      "sha256": "d3b2c97adc277385a690de8b22510b2517d004c11e3f4fd8f024874abdb49ce7",
+      "bytes": 1774
+    },
+    {
+      "path": "chip_rl/hadamard_int8/workloads.py",
+      "sha256": "524a76e0da675da7ffd24ee960c963970730d7f8a300eb90b02b09c4524bc7c7",
+      "bytes": 3291
+    },
+    {
+      "path": "docs/hadamard-int8-v1-phase2.md",
+      "sha256": "150c91d95ed7b7ac762ce1ec508d70af2215be5e52582b2ad2c0fdee79371246",
+      "bytes": 6172
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/control-results.json",
+      "sha256": "87715d070e8ca413412a00abe07c3e7204f460b59a51999dc130b896d3ebc930",
+      "bytes": 1086
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/control-witnesses.json",
+      "sha256": "d8659733255d3eb07f04885005e783f8a3baa9049815db95769d6afe07cc7c65",
+      "bytes": 1043
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/freeze-manifest.json",
+      "sha256": "75ebe2b8e55d6ea2e8735ba7519c982894bc914f9f8b00260b55c4760b5b8e03",
+      "bytes": 5270
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/integration-verification.json",
+      "sha256": "b33e5a13eb41f0f24477d1812f8392830990ee95a63ce4d66260c91b79c25ba5",
+      "bytes": 1576
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/phase1-historical.json",
+      "sha256": "cd002201b2fca78443bbce04a2ccaa386921632b4ec522a5a0a98b4734743cf4",
+      "bytes": 779
+    },
+    {
+      "path": "evidence/hadamard-int8-v1/qualification.json",
+      "sha256": "948b12d4fd58ea1b88175348c57d5c470966797c819ce1df69f2597b85436e65",
+      "bytes": 20198
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "762bc9d020f7ad275eef057a6f765fa6ad5ff4b606520becb26c436c200db8e8",
+      "bytes": 1361
+    },
+    {
+      "path": "tests/test_hadamard_int8.py",
+      "sha256": "8b41cb3c38a75f62bbaf7bb57822674d9ac247730b03fbea1cd37c396bb3016d",
+      "bytes": 3782
+    }
+  ],
+  "other_family_and_test_files_verified_unchanged": 283,
+  "private_replay_material_not_copied_to_MAIN": true,
+  "inventory_docs_owned_by_separate_worker": [
+    "README.md",
+    "docs/current-status.md",
+    "docs/task-inventory.md",
+    "docs/README.md",
+    "evidence/current-inventory.json"
+  ]
+}

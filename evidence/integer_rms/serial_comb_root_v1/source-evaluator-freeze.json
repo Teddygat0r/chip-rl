@@ -1,0 +1,27 @@
+{
+  "reference_source_sha256": {
+    "serial": "0a7241139699cbd77852761dc6969fade0ccaf1a71b9baef09590b5f581cb7a3",
+    "chunked4": "6058b594e112a61539694a2b15afd05713d21fd0f4d0f77c1ac5b12eb67a823e",
+    "serial_comb_root": "c7f72191ad6883f3543594544143517b88728883f32520f0b776a289d258d873"
+  },
+  "contract_identity_sha256": "57372ddabaf9db17b1e1662cdbbb11f8e6c24ca14dc0a1ce945b9526ed00ebc2",
+  "recipe_file_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "__main__.py": "e3da231473221541f3027a9a4433832707bd4ba31394aa8ffbe1809bcdd8a7f3",
+    "arithmetic_check.py": "938cfed0eba44edb979c6713214d135f6105cee6fbaee74450ee75cd9aa618b5",
+    "contracts.md": "761c624d239be592913aee7999181437edbc02b1ea275974fa209b8c84ec4b83",
+    "env.py": "bb98990ed224e15b8c57fb559f5f2bdb1850aba70004933fd4f4b91a9642fa61",
+    "evaluate.py": "04f97ff5279cbf51584372faf0bb9cd17158bc09c3f264abb6987837963ef8e4",
+    "oracle.py": "2864988c870a328ddd645dff22eb86061653e147c95157117ae6fa2b8fd18ade",
+    "rtl.py": "ef9b2faa5f5295579c22bc72bab9dbe33b9611971bb78d79e9ea6604f4a7e725",
+    "scoring.py": "585eea53f5cbba7869abb3cf02c8ff5cca0ad04b9bdca171ecafe8cb39fd89be",
+    "server.py": "b641e6c38eff3ecdd3ef06acda93b7e37464c83738b4e6ddeae445f99961e09b",
+    "simulation.py": "ead947a730fe878e804ab5207d4b41cb43e54aa8023664a18da7d40ed4cbfe06",
+    "spec.py": "4c56e5015a02964494ef40bccc924082187fd5a04f99a74a25a2bbb3fd67c89e",
+    "synthesis.py": "a626bc89c14e6951f64795ddc9d8fea9cad9867013f401512b3078ac87d19eb5",
+    "workloads.py": "fe27c30f4e963862c2b00eab37324314b9bdacf7cb885ed0f1b8927ffab69a24"
+  },
+  "development_seed_sha256": "3b3d4c0f16c99e41ce47ba5e8655c0c60f7a7a2e279343610a3b9ddc7a55741d",
+  "heldout_seed_sha256": "80e9685e2e292ddc264db2cac2b8ae2ad0af8d919a89665bdfda4a1f3d4c61a6",
+  "previous_seed_reused": false
+}

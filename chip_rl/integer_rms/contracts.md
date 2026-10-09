@@ -1,0 +1,11 @@
+# Exact integer RMS-inspired normalization (experimental)
+
+This family defines an exact integer microbenchmark, not floating-point model RMSNorm. Compile-time N is one of 1, 2, 4, 8, 16. The candidate uses clk/rst and ready-valid input/output with a 512-bit input and 256-bit output. Active signed INT16 lanes are input bits 16*i+:16 for i<N. Inactive lanes and input bits 256..511 are ignored.
+
+Compute S=sum(x_i*x_i) exactly in at least 35 unsigned bits, M=floor(S/N)+1, D=floor(sqrt(M)) exactly, and y_i=clamp_int16(round-to-nearest-ties-even(x_i*256/D)). Round symmetrically with magnitude and remainder. D>=1. Output y_i in bits 16*i+:16. Inactive output lanes are zero. There is no metadata.
+
+One request is accepted on a rising edge with reset low and in_valid/in_ready high. Its sole ordered registered response appears at least one later edge. A blocked output is valid and bitwise stable. Synchronous active-high reset suppresses handshakes and cancels all in-flight and blocked work at the active edge; the next request must work. Consumer-not-ready cycles do not count toward the maximum 8*N+160 ready-high service opportunities after acceptance, including consumption. The separate whole-run watchdog uses request_count*(8*N+160)+1 ready-high opportunities after the final release.
+
+The trusted Python oracle uses arbitrary integers, math.isqrt, and divmod. Directed arithmetic checks and scored mixed traffic run against source RTL and synthesized mapped netlists. Protocol tests include 257-cycle output stall, reset while output is visibly blocked, then recovery. Exact order, no loss or duplicates, reset, progress, and RTL/mapped agreement are correctness conditions.
+
+The scored configurations are all five N values. Every candidate is paired against the frozen serial baseline on identical work. Correctness is separate from qualification: each N requires generic cell ratio <=4, workload completion cycles <=baseline, and saturated acceptance II <=2*N+24. If every gate passes, reward is max(0,1-exp(mean(log(area_ratio*cycle_ratio))/2)); otherwise a correct candidate remains visibly correct and unqualified with zero reward. These generic cells/cycles are proxies, not formal verification, physical timing, routed area, power, or model-quality claims.

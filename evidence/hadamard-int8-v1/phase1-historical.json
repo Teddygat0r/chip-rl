@@ -1,0 +1,13 @@
+{
+  "status": "historical_superseded_prequalification",
+  "description": "Initial Phase 1 stage-unrolled references passed N=1,4 arithmetic/protocol smokes, then were replaced before Phase 2 with explicitly shared arithmetic datapaths. These results are not the scored references.",
+  "initial_unrolled_reference_sha256": {
+    "serial_butterfly": "4cdb43ab6fd41d4f2c16248f951fa71a1670fa8bad8a44eb6adfbe940242c487",
+    "stage_parallel": "b50fbc9e7faad94075319598b7c326ffe2bedc690c73a58aac13329b3c81d035"
+  },
+  "qualified_reference_sha256": {
+    "serial_butterfly": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+    "stage_parallel": "d8e58b4b8a9837099f2d86ab62a9fa8c96717a42906c316138ce6655ba7dd74b"
+  },
+  "phase2_qualification": "qualification.json"
+}

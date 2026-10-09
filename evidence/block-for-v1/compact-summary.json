@@ -1,0 +1,388 @@
+{
+  "family_tree_sha256": "8843f27e5a32e48fb1391d6994b7e7da3dc536990ab1607a6f1f81658356f3db",
+  "candidate_sha256": {
+    "serial": "6e070e3d9868b0f7139950359ca9ca6ecf0a79cea22755c7226ee988828dc2f6",
+    "chunked4": "2303f60c81ed9dbdea4157612dcbe1f07409b3b1ed8be63e5b0e3559a8622dff"
+  },
+  "evaluate_py_sha256": "f017dabd51aa0bf86ab27c6447d70b970f819bd00ef1a809b0f8a7c0cc68ef06",
+  "contract_sha256": "6528033f246a8ba7c85e65c7d4ffac0aaa9aa0386d3726178232a7caa41adfd4",
+  "scoring_py_sha256": "1a93aeb322cabe7f18582066e46342cee2a6ccb09ab5176c910080bb58af33da",
+  "workloads_py_sha256": "5ce47cef5b7bd5dc23ad163bea4815116fb1f9ba9c06095f87f7a6f64e3ccd97",
+  "seed_sha256": {
+    "development": "90aa512c85b7ae14c6190ac31437a42dd50539a1ba2620bad075c9f8cad856b3",
+    "heldout": "c580c5dc570f038fec997c148db9dc7f47c97b1f5c15621f66c391a70dda87cd"
+  },
+  "tool_versions": {
+    "yosys": "0.52",
+    "iverilog": "12"
+  },
+  "qualification": [
+    {
+      "split": "development",
+      "architecture": "serial",
+      "tested_correct": true,
+      "reward_qualified": true,
+      "reward": 0.0,
+      "scored_cases": [
+        {
+          "N": 1,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 5.0,
+          "stream_ii_limit": 8,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 2,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 7.0,
+          "stream_ii_limit": 10,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 4,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 11.0,
+          "stream_ii_limit": 14,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 8,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 19.0,
+          "stream_ii_limit": 22,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 16,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 35.0,
+          "stream_ii_limit": 38,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        }
+      ],
+      "constraint_failures": []
+    },
+    {
+      "split": "development",
+      "architecture": "chunked4",
+      "tested_correct": true,
+      "reward_qualified": true,
+      "reward": 0.0,
+      "scored_cases": [
+        {
+          "N": 1,
+          "area_ratio": 1.3205374280230326,
+          "completion_ratio": 1.0,
+          "stream_ii": 5.0,
+          "stream_ii_limit": 8,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 2,
+          "area_ratio": 1.9562547966231774,
+          "completion_ratio": 0.8993028659953525,
+          "stream_ii": 6.0,
+          "stream_ii_limit": 10,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 4,
+          "area_ratio": 3.0611068408916218,
+          "completion_ratio": 0.9965034965034965,
+          "stream_ii": 8.0,
+          "stream_ii_limit": 14,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 8,
+          "area_ratio": 3.061130334486736,
+          "completion_ratio": 0.6261440976296644,
+          "stream_ii": 13.0,
+          "stream_ii_limit": 22,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 16,
+          "area_ratio": 3.0619707467282526,
+          "completion_ratio": 0.6540928919681807,
+          "stream_ii": 23.0,
+          "stream_ii_limit": 38,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        }
+      ],
+      "constraint_failures": []
+    },
+    {
+      "split": "heldout",
+      "architecture": "serial",
+      "tested_correct": true,
+      "reward_qualified": true,
+      "reward": 0.0,
+      "scored_cases": [
+        {
+          "N": 1,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 5.0,
+          "stream_ii_limit": 8,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 2,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 7.0,
+          "stream_ii_limit": 10,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 4,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 11.0,
+          "stream_ii_limit": 14,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 8,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 19.0,
+          "stream_ii_limit": 22,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 16,
+          "area_ratio": 1.0,
+          "completion_ratio": 1.0,
+          "stream_ii": 35.0,
+          "stream_ii_limit": 38,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        }
+      ],
+      "constraint_failures": []
+    },
+    {
+      "split": "heldout",
+      "architecture": "chunked4",
+      "tested_correct": true,
+      "reward_qualified": true,
+      "reward": 0.0,
+      "scored_cases": [
+        {
+          "N": 1,
+          "area_ratio": 1.3205374280230326,
+          "completion_ratio": 1.0,
+          "stream_ii": 5.0,
+          "stream_ii_limit": 8,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 2,
+          "area_ratio": 1.9562547966231774,
+          "completion_ratio": 0.8162044589450789,
+          "stream_ii": 6.0,
+          "stream_ii_limit": 10,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 4,
+          "area_ratio": 3.0611068408916218,
+          "completion_ratio": 0.9953371592539455,
+          "stream_ii": 8.0,
+          "stream_ii_limit": 14,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 8,
+          "area_ratio": 3.061130334486736,
+          "completion_ratio": 0.6512641673931997,
+          "stream_ii": 13.0,
+          "stream_ii_limit": 22,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        },
+        {
+          "N": 16,
+          "area_ratio": 3.0619707467282526,
+          "completion_ratio": 0.6667350918608231,
+          "stream_ii": 23.0,
+          "stream_ii_limit": 38,
+          "constraints": {
+            "area_ratio_at_most_4": true,
+            "completion_ratio_at_most_1": true,
+            "stream_ii_at_most_2N_plus_6": true
+          },
+          "constraints_passed": true
+        }
+      ],
+      "constraint_failures": []
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutant": "wrong_width",
+      "witness": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "expected_hex": "0000000000000000000000000000000000000000000000000000000000088200",
+      "rtl_hex": "0000000000000000000000000000000000000000000000000000000000000100",
+      "mapped_hex": "0000000000000000000000000000000000000000000000000000000000000100",
+      "mutant_sha256": "e93e44b57c77ad6dee21d6093d6aeebf2b4b3a8daba8b21217ea7aabc3e235bd",
+      "cells": 2570,
+      "compiled_and_synthesized": true,
+      "rtl_numerical_mismatch": true,
+      "mapped_numerical_mismatch": true
+    },
+    {
+      "mutant": "signed_minmax",
+      "witness": [
+        128,
+        255,
+        0,
+        127
+      ],
+      "expected_hex": "000000000000000000000000000000000000000000000000000007f00ff80800",
+      "rtl_hex": "00000000000000000000000000000000000000000000000000000ff807f00880",
+      "mapped_hex": "00000000000000000000000000000000000000000000000000000ff807f00880",
+      "mutant_sha256": "35029ed73293c2b86135f00201142e1de52e6dd1f1fb5cddd208bd0b86a2b767",
+      "cells": 2608,
+      "compiled_and_synthesized": true,
+      "rtl_numerical_mismatch": true,
+      "mapped_numerical_mismatch": true
+    },
+    {
+      "mutant": "packing_position",
+      "witness": [
+        3,
+        4,
+        6,
+        3
+      ],
+      "expected_hex": "0000000000000000000000000000000000000000000000000000000000034203",
+      "rtl_hex": "0000000000000000000000000000000000000000000000000000000000068203",
+      "mapped_hex": "0000000000000000000000000000000000000000000000000000000000068203",
+      "mutant_sha256": "e4733b4e7acd417d61efe6541eac1d315a1e7c7630102e0bf94fe1ce0f194039",
+      "cells": 2618,
+      "compiled_and_synthesized": true,
+      "rtl_numerical_mismatch": true,
+      "mapped_numerical_mismatch": true
+    }
+  ],
+  "full_unittest": {
+    "tests": 232,
+    "passed": true,
+    "fixture_sha256": "1e14b5a03f01277ae32e60596c1a597363dd32d739068f1a09a6a0899ae30415"
+  },
+  "wheel_jsonl_smoke": {
+    "installed_wheel_jsonl_reset": true,
+    "installed_wheel_jsonl_source_step": true,
+    "step_correct": true,
+    "step_qualified": true,
+    "step_reward": 0.0
+  },
+  "formal": "not_run",
+  "physical": "not_run"
+}

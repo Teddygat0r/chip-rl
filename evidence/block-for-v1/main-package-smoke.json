@@ -1,0 +1,12 @@
+{
+  "main_installed_wheel_import": true,
+  "contracts_and_frozen_hashes_packaged": true,
+  "jsonl_reset_source_step": true,
+  "correct": true,
+  "qualified": true,
+  "reward": 0.0,
+  "invocation": "cache-backed for existing development serial seed, separate from four fresh Phase 2 tool runs",
+  "reset_candidate_simulation_cache_hits": 5,
+  "reset_baseline_aliased_to_candidate": true,
+  "fresh_tool_runs_for_main_api_smoke": 0
+}

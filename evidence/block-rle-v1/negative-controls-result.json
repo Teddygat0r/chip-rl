@@ -1,0 +1,50 @@
+[
+  {
+    "mutation": "off_by_one_length",
+    "stage": "rtl",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4080
+  },
+  {
+    "mutation": "off_by_one_length",
+    "stage": "mapped",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4080
+  },
+  {
+    "mutation": "merge_nonadjacent_repeat",
+    "stage": "rtl",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4093
+  },
+  {
+    "mutation": "merge_nonadjacent_repeat",
+    "stage": "mapped",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4093
+  },
+  {
+    "mutation": "nonzero_unused_output",
+    "stage": "rtl",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4066
+  },
+  {
+    "mutation": "nonzero_unused_output",
+    "stage": "mapped",
+    "synthesis": "pass",
+    "compile": "pass",
+    "outcome": "detected_wrong_answer",
+    "cells": 4066
+  }
+]

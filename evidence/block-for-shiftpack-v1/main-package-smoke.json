@@ -1,0 +1,12 @@
+{
+  "main_installed_wheel_import": true,
+  "all_three_frozen_sources_packaged": true,
+  "jsonl_reset_shiftpack_step": true,
+  "correct": true,
+  "qualified": true,
+  "reward": 0.275663803501057,
+  "reset_candidate_cache_hits": 5,
+  "shiftpack_step_candidate_cache_hits": 5,
+  "shiftpack_step_baseline_cache_hits": 5,
+  "api_smoke_fresh_tool_runs": 0
+}

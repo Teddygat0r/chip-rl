@@ -1,0 +1,9 @@
+# Exact block run-length encoding (experimental)
+
+N is compile-time 1, 2, 4, 8, or 16. The 512-bit input carries N active unsigned bytes at bits 8*i+:8; all other input bits are ignored. The 256-bit output encodes maximal runs of adjacent equal active bytes in input order. Run j has value in bits 13*j+:8 and unsigned length 1..16 in bits 13*j+8+:5. The run count occupies bits 208..212. Unused run slots and bits 213..255 must be zero. Each accepted input produces exactly one ordered output. Runs never merge across blocks.
+
+One request is accepted on a rising edge with reset low and in_valid/in_ready high. Its registered response appears at least one later edge. A blocked output is valid and bitwise stable. Synchronous active-high reset suppresses handshakes and cancels in-flight and blocked work at the active edge. Consumer-not-ready cycles do not count toward the maximum 4*N+64 ready-high service opportunities after acceptance, including consumption. The whole-run bound is request_count*(4*N+64)+1 ready-high opportunities after final release.
+
+The trusted host oracle constructs a Python list of maximal runs, packs it, and separately decodes the result. Source RTL and synthesized netlist receive directed exact checks and mixed-traffic protocol checks. The 257-cycle blocked-output stall, reset during visibly blocked output, and recovery are required. Exact order, no loss or duplicate, reset, progress and RTL/mapped agreement are correctness conditions.
+
+All five N values are scored once each against the serial baseline on identical work. Each requires generic cell area ratio <=4, workload completion cycles <=baseline, and saturated acceptance II <=N+6. Correct but gate-failing candidates remain correct and unqualified with zero reward. Qualified reward is max(0,1-exp(mean(log(area_ratio*cycle_ratio))/2)). Cells and cycles are generic proxies only; no formal, physical, routed timing, power or model-quality claim is made.

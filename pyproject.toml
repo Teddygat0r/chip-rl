@@ -3,11 +3,11 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "chip-rl"
-version = "0.27.0"
+version = "0.37.0"
 description = "Constrained RTL pilot with private paired HDL evaluation"
 requires-python = ">=3.10"
 [tool.setuptools]
-packages = ["chip_rl", "chip_rl.cycle", "chip_rl.expansion", "chip_rl.qualification", "chip_rl.history", "chip_rl.cdc", "chip_rl.memory", "chip_rl.quality", "chip_rl.layout", "chip_rl.softmax", "chip_rl.requant"]
+packages = ["chip_rl", "chip_rl.cycle", "chip_rl.expansion", "chip_rl.qualification", "chip_rl.history", "chip_rl.cdc", "chip_rl.memory", "chip_rl.quality", "chip_rl.layout", "chip_rl.softmax", "chip_rl.requant", "chip_rl.fused", "chip_rl.sparse24", "chip_rl.block_quant", "chip_rl.integer_rms", "chip_rl.block_rle", "chip_rl.block_for", "chip_rl.bf16_quant", "chip_rl.hadamard_int8"]
 [tool.setuptools.package-data]
 chip_rl = ["contracts.md"]
 "chip_rl.cycle" = ["contracts.md"]
@@ -17,3 +17,14 @@ chip_rl = ["contracts.md"]
 "chip_rl.softmax" = ["contracts.md"]
 
 "chip_rl.requant" = ["contracts.md"]
+
+"chip_rl.fused" = ["contracts.md"]
+"chip_rl.sparse24" = ["contracts.md"]
+"chip_rl.block_quant" = ["contracts.md"]
+
+"chip_rl.integer_rms" = ["contracts.md", "frozen_sources.json"]
+
+"chip_rl.block_rle" = ["contracts.md", "frozen_sources.json"]
+"chip_rl.block_for" = ["contracts.md", "frozen_sources.json"]
+"chip_rl.bf16_quant" = ["contracts.md", "frozen_sources.json"]
+"chip_rl.hadamard_int8" = ["contracts.md", "frozen_sources.json"]

@@ -1,0 +1,71 @@
+{
+  "wrong_sign": {
+    "structural_cells": 4607,
+    "source": {
+      "actual": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    },
+    "mapped": {
+      "actual": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    }
+  },
+  "wrong_order": {
+    "structural_cells": 4717,
+    "source": {
+      "actual": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    },
+    "mapped": {
+      "actual": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    }
+  },
+  "narrow_accumulator": {
+    "structural_cells": 3401,
+    "source": {
+      "actual": [
+        -4,
+        0,
+        0,
+        0
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    },
+    "mapped": {
+      "actual": [
+        -4,
+        0,
+        0,
+        0
+      ],
+      "compiled": true,
+      "wrong_value_mismatch": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "base_commit": "b043df42225ba2ba60464dfdbac40042dcd5b178",
+  "candidate_sources": {
+    "serial": {
+      "sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "bytes": 1907
+    },
+    "parallel": {
+      "sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9",
+      "bytes": 1982
+    },
+    "chunked4": {
+      "sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8",
+      "bytes": 2459
+    }
+  },
+  "seed_selection": "new single 128-bit host seed generated on dot cloud computer before migration evaluation; original v38 seed_1 unavailable and not replayed",
+  "private_seed_file": "/workspace/scratch/9c7ac8638990/chip-rl-v39-private/seed-selection.json",
+  "seed_sha256": "58ca6b1f771106118129349afc52ca370029970b2b1d1fc147c904b1e1d28872",
+  "new_Ns": [
+    3,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "existing_scored_Ns": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "gate_policy": "unchanged per-case area <=4x, completion <=1x, II <=2N+3; original five-point aggregate unchanged",
+  "migration_origin": "saved chip-rl environment to dot cloud computer",
+  "previous_plan_status": "Original v39 predeclaration was never run; no evaluation calls or synthesis processes were started in the old environment.",
+  "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+}

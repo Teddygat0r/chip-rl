@@ -1,0 +1,79 @@
+{
+  "designs": {
+    "serial": {
+      "antenna_net_pin_violations": [
+        [
+          "0",
+          "net"
+        ],
+        [
+          "0",
+          "pin"
+        ]
+      ],
+      "core_area_um2": 14099.1,
+      "core_bbox_um": "( 10.070 11.200 ) ( 129.960 128.800 ) um",
+      "detailed_route_violations": 0,
+      "die_area_um2": 19600,
+      "effective_initial_place_density": 0.6,
+      "finish_elapsed_total_s": 200,
+      "finish_peak_mb": 1178,
+      "gds_bytes": 4309326,
+      "gds_sha256": "a62f5a172a16baae553fe9c07b8c946089c53ef48d22fcf80c19ad13e14b159d",
+      "hold_tns_ns": 0,
+      "hold_worst_slack_ns": 0.0962301,
+      "klayout_reference_drc": {
+        "cpu_s_approx": 1802,
+        "elapsed_s_approx": 1805,
+        "max_sampled_tree_rss_mb": 520.4,
+        "report_present": false,
+        "status": "timed_out_incomplete"
+      },
+      "reported_critical_path_delay_ns": 20.2078,
+      "requested_place_density": 0.55,
+      "route_elapsed_s": 134,
+      "route_peak_mb": 1178,
+      "setup_tns_ns": 0,
+      "setup_worst_slack_ns": 59.7922,
+      "stdcell_area_um2": 7794.86
+    },
+    "serial_comb_root": {
+      "antenna_net_pin_violations": [
+        [
+          "0",
+          "net"
+        ],
+        [
+          "0",
+          "pin"
+        ]
+      ],
+      "core_area_um2": 14099.1,
+      "core_bbox_um": "( 10.070 11.200 ) ( 129.960 128.800 ) um",
+      "detailed_route_violations": 0,
+      "die_area_um2": 19600,
+      "effective_initial_place_density": 0.7,
+      "finish_elapsed_total_s": 226,
+      "finish_peak_mb": 1026,
+      "gds_bytes": 5128648,
+      "gds_sha256": "e735553ffa924defd92fe77b5242151e8262395c70911c98c20c428fe999aaa0",
+      "hold_tns_ns": 0,
+      "hold_worst_slack_ns": 0.10459,
+      "klayout_reference_drc": {
+        "cpu_s_at_cap": 1797.58,
+        "elapsed_s": 1805.3,
+        "max_sampled_tree_rss_mb": 559.8,
+        "report_present": false,
+        "status": "timed_out_incomplete"
+      },
+      "reported_critical_path_delay_ns": 20.1445,
+      "requested_place_density": 0.55,
+      "route_elapsed_s": 139,
+      "route_peak_mb": 1026,
+      "setup_tns_ns": 0,
+      "setup_worst_slack_ns": 59.8555,
+      "stdcell_area_um2": 9087.09
+    }
+  },
+  "freeze_sha256": "4cbd70606225c95ea1b953357ffc3abb717aa0ea483e96cee3ba22d8ab7e1ad9"
+}

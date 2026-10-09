@@ -1,0 +1,41 @@
+[
+  {
+    "architecture": "serial_shiftpack",
+    "N": 1,
+    "source_sha256": "44257a380dd543c478981454a43a9b848ac6bbabae30f6d6e94576b7083322cb",
+    "exact_vectors": 117,
+    "cells": 1352,
+    "logic_depth": 17,
+    "workload_cycles": 647,
+    "stream_ii": 5.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 1.01
+  },
+  {
+    "architecture": "serial_shiftpack",
+    "N": 4,
+    "source_sha256": "44257a380dd543c478981454a43a9b848ac6bbabae30f6d6e94576b7083322cb",
+    "exact_vectors": 182,
+    "cells": 1365,
+    "logic_depth": 17,
+    "workload_cycles": 2006,
+    "stream_ii": 11.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 1.36
+  },
+  {
+    "architecture": "serial_shiftpack",
+    "N": 16,
+    "source_sha256": "44257a380dd543c478981454a43a9b848ac6bbabae30f6d6e94576b7083322cb",
+    "exact_vectors": 218,
+    "cells": 1370,
+    "logic_depth": 17,
+    "workload_cycles": 7794,
+    "stream_ii": 35.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 2.67
+  }
+]

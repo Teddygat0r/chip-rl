@@ -1,0 +1,68 @@
+{
+  "wrong_sign": {
+    "input": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "correct": [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "mutant_expected": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "source_sha256": "9e18bc27e2a33ef36879249773ed86019311d248ccee39afe0bd7efd5bbd25d0",
+    "mathematical_witness_confirmed": true
+  },
+  "wrong_order": {
+    "input": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "correct": [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "mutant_expected": [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "source_sha256": "0169c6344d41e240e0320dd1fe0a0ab8c8c394087612791134332c6d3cd37706",
+    "mathematical_witness_confirmed": true
+  },
+  "narrow_accumulator": {
+    "input": [
+      127,
+      127,
+      127,
+      127
+    ],
+    "correct": [
+      508,
+      0,
+      0,
+      0
+    ],
+    "mutant_expected": [
+      -4,
+      0,
+      0,
+      0
+    ],
+    "source_sha256": "3c4d6a199ec2fa4f94148718d576b47500e61f76e6d4dc516bf873c93ca55f01",
+    "mathematical_witness_confirmed": true
+  }
+}

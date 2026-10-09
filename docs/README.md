@@ -1,34 +1,14 @@
-# Read the current project
+# Documentation and evidence index
 
-This guide describes local v27: **25 families, six pilots and nineteen experimental**. The added [requantization experiment](requant-v24.md) is separately qualified; the v23 publication candidate remains unchanged. “Pilot” is a repository category, not a claim of training readiness. The last published `codex/verified-20-family-checkpoint` (5f8890a) contains 20 families; newer local reports and these guides have not been pushed. Historical reports describe their own frozen versions.
+Start with [current status](current-status.md) for qualification scope, [task inventory](task-inventory.md) for all 33 families, and the [machine-readable inventory](../evidence/current-inventory.json) for source/evidence paths. The [prior 25-family checkpoint](https://github.com/Teddygat0r/chip-rl/tree/codex/verified-25-family-checkpoint) remains on its separate branch. Historical report counts apply to their own versions.
 
-Read these in order:
+## Recent family results
 
-1. [Task inventory](task-inventory.md): choose a family and find its actual implementation, contract and evidence.
-2. [Contracts](contracts.md): understand the six pilot interfaces, correctness gates, eligibility and paired rewards; use each inventory row's contract for other APIs.
-3. [Verified walkthrough](walkthrough.md): install locally, evaluate existing elastic RTL and inspect the result and private replay journal.
-4. [Viability assessment](viability-v12.md): understand measured tradeoffs and the missing evidence for a learning advantage; it is a v12 assessment, not a new v23 experiment.
+- Integer RMS: [v1 Phase 1](integer-rms-v1-phase1.md), [v1 qualification](integer-rms-v1-phase2.md), [combinational-root Phase 1](integer-rms-serial-comb-root-phase1.md), [combinational-root qualification](integer-rms-serial-comb-root-phase2.md), [compact evidence](../evidence/integer_rms/serial_comb_root_v1/summary.json)
+- Block RLE: [Phase 1](block-rle-v1-phase1.md), [qualification](block-rle-v1-phase2.md), [compact evidence](../evidence/block-rle-v1/phase2-compact-summary.json)
+- Block FOR: [Phase 1](block-for-v1-phase1.md), [qualification](block-for-v1-phase2.md), [shiftpack Phase 1](block-for-shiftpack-phase1.md), [shiftpack qualification](block-for-shiftpack-phase2.md), [v1 evidence](../evidence/block-for-v1/compact-summary.json), [shiftpack evidence](../evidence/block-for-shiftpack-v1/compact-summary.json)
+- BF16-to-INT8 quantization: [contract](../chip_rl/bf16_quant/contracts.md), [Phase 2 report](bf16-quant-v1-phase2.md), [compact evidence](../evidence/bf16-quant-v1/summary.json), [MAIN integration check](../evidence/bf16-quant-v1/integration-verification.json)
+- Hadamard INT8 transform: [contract](../chip_rl/hadamard_int8/contracts.md), [Phase 2 report](hadamard-int8-v1-phase2.md), [qualification](../evidence/hadamard-int8-v1/qualification.json), [arithmetic controls](../evidence/hadamard-int8-v1/control-results.json), [MAIN integration check](../evidence/hadamard-int8-v1/integration-verification.json)
+- Block quantization: [v36 measurement-only](block-quant-v36.md), [v37 conditional reward](block-quant-reward-v37.md), [v38 sensitivity](block-quant-sensitivity-v38.md), [v38 evidence](../evidence/v38/summary.json)
 
-Read the [cross-family reset audit](reset-audit-v27.md) for six repaired false acceptances in elastic, MSHR and router and the residual inventory. The [v26 requantization repair](requant-reset-v26.md) remains preserved and has a baseline/exploit regression.
-
-## How an evaluation works
-
-The trusted host selects the task, structural/workload coverage, objective and limits. An agent resets an episode, observes its contract and source, and submits complete RTL in `step({'rtl': source})`; CDC instead accepts constrained architecture parameters. The evaluator checks the candidate with independent reference models, real RTL simulation and synthesis/mapped replay where required, then compares feasible performance with a fixed paired baseline. See [pilot environment](../chip_rl/env.py), [evaluator](../chip_rl/evaluate.py), and the inventory for the other environment classes.
-
-`reset(seed)` identifies the agent episode; it does not choose private evaluation seeds. Replay seeds and artifact paths belong to trusted-host tools. Typical reset returns `(observation, info)` and step returns `(observation, reward, terminated, truncated, info)`; the exact observation and action schema are API-specific. There is no single interchangeable CLI or universal hardware port layout for all families.
-
-## Read results precisely
-
-| Term | Meaning and limit |
-|---|---|
-| `tested_correct` | Passed the executed finite functional/structural checks; not a proof over every input or lifetime. |
-| Eligibility | A correct design may violate the selected performance goal and earn zero; pilot `objective_eligible` and quality profile `objectives` are different schemas. |
-| Reward | A task/profile-specific score against a paired baseline; inspect raw metrics and constraints, not just the scalar. Baseline is normally 1. No universal formula applies to every API. |
-| Simulated cycles | Workload completion/latency in a digital model, not achieved clock frequency or routed timing. |
-| Cells/depth | Generic mapped synthesis proxies, not SRAM-macro area, physical area, power or silicon readiness. |
-| Bounded formal | A particular harness/configuration and finite horizon; absent or timed-out runs are not proofs. |
-| Exact-instance proof | The [v18 K16 dot refinement](refinement-v18.md) applies to its pinned RTL, parameters and assumptions; it does not prove an entire family, mapped netlist or physical implementation. |
-
-Current v23 evidence (private evaluation artifact retained locally) records final regression across the prior 24 families and detailed softmax qualification. Earlier alternate/mutant/formal evidence remains scoped to its historical report. There is **no routed physical validation, demonstrated OS isolation against a same-UID shell agent, independently executed v23 evaluation, or trained-policy learning advantage**. The sealed protocol is not itself an OS sandbox. Do not expose private artifacts or writable judge files to an untrusted agent.
-
-Optional depth: [fixed-cycle controllers](cycle-contracts.md), [trust boundary](security.md), [sealed protocol](sealed-evaluator.md), [exact-instance proof](refinement-v18.md), and [latest softmax audit](softmax-review-v23.md). Start with these topics rather than reading every version report. [References and licenses](references.md) covers external sources; historical `validation.md` and `v1-viability-study.md` are not current qualification summaries.
+Historical v33/v35/v37 raw paths referenced in [current status](current-status.md) are absent from this snapshot. They are retained as historical citations, not presented as current local raw evidence. The post-Hadamard [240/240 source unit result](../evidence/hadamard-int8-v1/integration-verification.json) is not a fresh 33-family simulation sweep. Physical integer RMS evaluation remains open.

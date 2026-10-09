@@ -1,0 +1,14 @@
+{
+  "status": "stopped_at_original_resource_guard_before_N15_chunked4",
+  "reason": "Original 1,000,000,000-byte guard plus 80,000,000-byte next-call reserve stopped safely before the final call.",
+  "completed_evaluator_invocations": 32,
+  "last_completed_N": 15,
+  "last_completed_design": "parallel",
+  "new_allocated_bytes": 951578624,
+  "simulation_logs": 768,
+  "simulation_cache_hits": 126,
+  "new_synthesis_builds": 47,
+  "verified_simulation_caches": 192,
+  "original_log": "../../v39-run.log",
+  "recovery": "Rerun same seed and frozen candidates with 4 GB aggregate cap; no design or gate changes."
+}

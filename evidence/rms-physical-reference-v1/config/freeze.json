@@ -1,0 +1,16 @@
+{
+  "purpose": "Fixed identical Nangate45 physical comparison of N=4 integer_rms serial versus serial_comb_root. No methodology tuning after results.",
+  "tools": {
+    "orfs_revision": "87b01b74b92d6e77edcdbe86949ee7eb6017ac7d",
+    "openroad_version": "26Q2-1164-g08f67ee5ec",
+    "yosys_version": "0.69+260-gdcd59343b (OSS CAD Suite 2026-10-08)",
+    "klayout_version": "0.30.0"
+  },
+  "floorplan_um": {"die": [0,0,140,140], "core": [10,10,130,130]},
+  "place_density": 0.55,
+  "clock_period_ns": 100,
+  "input_output_delay_ns": 20,
+  "nangate_site_um": [0.19,1.4],
+  "resource_caps": {"cpu_threads":2,"rss_gb_per_tool":3,"disk_free_reserve_gb":5},
+  "lvs": "Not run; open-source reference flow, not foundry signoff."
+}

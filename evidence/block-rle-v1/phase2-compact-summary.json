@@ -1,0 +1,344 @@
+{
+  "development-chunked4": {
+    "tested_correct": true,
+    "reward_qualified": true,
+    "reward": 0.0,
+    "mean_log_area_cycle_product": 0.7427482790706241,
+    "cases": [
+      {
+        "N": 1,
+        "area_ratio": 3.612990196078431,
+        "completion_ratio": 1.0,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 7,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 2,
+        "area_ratio": 3.6122549019607844,
+        "completion_ratio": 0.672289156626506,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 8,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 4,
+        "area_ratio": 3.6124601422614666,
+        "completion_ratio": 0.5549242424242424,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 10,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 8,
+        "area_ratio": 3.612760736196319,
+        "completion_ratio": 0.49643947100712105,
+        "stream_ii": 4.0,
+        "stream_ii_limit": 14,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 16,
+        "area_ratio": 3.6120795482445374,
+        "completion_ratio": 0.3598790322580645,
+        "stream_ii": 6.0,
+        "stream_ii_limit": 22,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      }
+    ]
+  },
+  "development-serial": {
+    "tested_correct": true,
+    "reward_qualified": true,
+    "reward": 0.0,
+    "mean_log_area_cycle_product": 0.0,
+    "cases": [
+      {
+        "N": 1,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 7,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 2,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 4.0,
+        "stream_ii_limit": 8,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 4,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 6.0,
+        "stream_ii_limit": 10,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 8,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 10.0,
+        "stream_ii_limit": 14,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 16,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 18.0,
+        "stream_ii_limit": 22,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      }
+    ]
+  },
+  "heldout-chunked4": {
+    "tested_correct": true,
+    "reward_qualified": true,
+    "reward": 0.0,
+    "mean_log_area_cycle_product": 0.807051607731991,
+    "cases": [
+      {
+        "N": 1,
+        "area_ratio": 3.612990196078431,
+        "completion_ratio": 1.0,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 7,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 2,
+        "area_ratio": 3.6122549019607844,
+        "completion_ratio": 0.7113564668769716,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 8,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 4,
+        "area_ratio": 3.6124601422614666,
+        "completion_ratio": 0.6810344827586207,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 10,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 8,
+        "area_ratio": 3.612760736196319,
+        "completion_ratio": 0.5309278350515464,
+        "stream_ii": 4.0,
+        "stream_ii_limit": 14,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 16,
+        "area_ratio": 3.6120795482445374,
+        "completion_ratio": 0.35739928201037097,
+        "stream_ii": 6.0,
+        "stream_ii_limit": 22,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      }
+    ]
+  },
+  "heldout-serial": {
+    "tested_correct": true,
+    "reward_qualified": true,
+    "reward": 0.0,
+    "mean_log_area_cycle_product": 0.0,
+    "cases": [
+      {
+        "N": 1,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 3.0,
+        "stream_ii_limit": 7,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 2,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 4.0,
+        "stream_ii_limit": 8,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 4,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 6.0,
+        "stream_ii_limit": 10,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 8,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 10.0,
+        "stream_ii_limit": 14,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      },
+      {
+        "N": 16,
+        "area_ratio": 1.0,
+        "completion_ratio": 1.0,
+        "stream_ii": 18.0,
+        "stream_ii_limit": 22,
+        "constraints": {
+          "area_ratio_at_most_4": true,
+          "completion_ratio_at_most_1": true,
+          "stream_ii_at_most_N_plus_6": true
+        },
+        "constraints_passed": true
+      }
+    ]
+  },
+  "negative_controls": [
+    {
+      "mutation": "off_by_one_length",
+      "stage": "rtl",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4080
+    },
+    {
+      "mutation": "off_by_one_length",
+      "stage": "mapped",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4080
+    },
+    {
+      "mutation": "merge_nonadjacent_repeat",
+      "stage": "rtl",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4093
+    },
+    {
+      "mutation": "merge_nonadjacent_repeat",
+      "stage": "mapped",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4093
+    },
+    {
+      "mutation": "nonzero_unused_output",
+      "stage": "rtl",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4066
+    },
+    {
+      "mutation": "nonzero_unused_output",
+      "stage": "mapped",
+      "synthesis": "pass",
+      "compile": "pass",
+      "outcome": "detected_wrong_answer",
+      "cells": 4066
+    }
+  ]
+}

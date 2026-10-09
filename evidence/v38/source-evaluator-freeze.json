@@ -1,0 +1,38 @@
+{
+  "freeze_before_three_new_seeds": true,
+  "base_commit": "8459b17a2f64a08f5a2d4092ead7672e978a4120",
+  "candidate_sources": {
+    "serial": {
+      "sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "bytes": 1907
+    },
+    "parallel": {
+      "sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9",
+      "bytes": 1982
+    },
+    "chunked4": {
+      "sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8",
+      "bytes": 2459
+    }
+  },
+  "evaluator_and_contract_files_sha256": {
+    "chip_rl/block_quant/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "chip_rl/block_quant/__main__.py": "e3da231473221541f3027a9a4433832707bd4ba31394aa8ffbe1809bcdd8a7f3",
+    "chip_rl/block_quant/arithmetic_check.py": "22a175c55a44594478f7cac90782850ac34687e5ab3a8993f3dad8b5e54aa400",
+    "chip_rl/block_quant/contracts.md": "307b28a2463d07ad1b23f6f19289a25aa5de32be59a3582e46244500fe144fc1",
+    "chip_rl/block_quant/env.py": "e99b49839f31a26add641b434662501fcaf22bcf374c11159f0d76221be7d694",
+    "chip_rl/block_quant/evaluate.py": "415633abe66566f7e4eb72781bef20978ba92ae469bf9f1f32ea0457511dd952",
+    "chip_rl/block_quant/oracle.py": "59d4c41c1f124e6175a95e17fdab6e4fd323945309daabb7a7fc33b47d24f30d",
+    "chip_rl/block_quant/rtl.py": "93143e35af1e13d4023eb19df0cae01c90816da0f5d277faedd5303d2ec3c2d5",
+    "chip_rl/block_quant/scoring.py": "2315c5212ba1348ad21ba4ebd6555ab8264caf35b93d4908c495aeb66f3872f8",
+    "chip_rl/block_quant/server.py": "5a66f06dd1c655a1a5bbb185fecd2b0247576a98679e9e6f1fc5388c1627275a",
+    "chip_rl/block_quant/simulation.py": "ae26e373b492d409c9bf29a3666eb64729ebf8e43212366750132c5d94c07180",
+    "chip_rl/block_quant/spec.py": "af77368927a56bd6cc15486250ad812d347243c422c0a5b985b8116f8d93b978",
+    "chip_rl/block_quant/synthesis.py": "878fa2a03d6b8d90ac8938a4a5dc624f70a67dc77d770419909e6a7234564bd3",
+    "chip_rl/block_quant/workloads.py": "3f2fcac085e86a10e42f9bcf24685064b3d2fd3ab0e283f89a2c2aff2fa9db3b"
+  },
+  "contract_sha256": "5d1a3f480791746fce4bdffd2338abb37bf012b36f5a7b619f9c0c632a2dc727",
+  "recipe_sha256": "7511859c54b4b3141dfd3cfe41a3adc39974de34d64f254796f545e902fd78ae",
+  "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+  "policy": "Three new host seeds; frozen architecture, oracle, evaluator, scoring, constraints and workload generator. No adaptation to results."
+}

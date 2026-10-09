@@ -1,0 +1,20 @@
+{
+  "references": {
+    "serial": "5768a73b8ad3e0b8cab1592f0227f94765cfde3ef55828eeca2049f63f3e87b9",
+    "chunked4": "35e4ff8f63b14f5679f4ddee44ca67a1f2865c571ef0f59ff3a3f56c25c75366"
+  },
+  "evaluator_contract_files": {
+    "spec.py": "135cf05229728f4aab8cdf13d7bace11cbc9c32b7e530734b969182d28ce1e8f",
+    "contracts.md": "4e57e5deaf057e8dc881f81a29ef817bfbd812677b949e458777f1c51da154f8",
+    "oracle.py": "05cac857072dbf521431c40004abed351e19dc7e257ec678237c1068a3af491f",
+    "workloads.py": "c228c6385b475f38355a92200370debc0898c95ad26cb55c629f4cb264579b54",
+    "simulation.py": "bba452b6b940a7aef037d722e70dd91621e9adf74fa75764929995a7c6d56a25",
+    "synthesis.py": "47f4fe55f84c44ec17e0c2882b33e984a3e38b8d1e92d5e7590748a2b71bb0b9",
+    "exact_check.py": "170941dd195aee82c85a4f93efb9ffb3821d173e8148e2d330621749ccdb80bc",
+    "evaluate.py": "a3f213a62d1eab1e7a32580e35d48505996e79833c4066569f35a88c8ea42198",
+    "scoring.py": "5beff0b9b35f513fda3d27d2e45e177cb4c187a01bd3aa8f4f0ff15365e263fa",
+    "env.py": "adf9b24a6d66c33535007ca29f9f9c8e5b8a0a2a092ac52a82126f99c1cc7cbb",
+    "server.py": "298ee4b74e3e7bb835334a3dd0b722305636ffcff7c91e775e24132c691e1199"
+  },
+  "phase": "predeclared_before_full_evaluation"
+}

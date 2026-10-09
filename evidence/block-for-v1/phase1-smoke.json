@@ -1,0 +1,74 @@
+[
+  {
+    "architecture": "serial",
+    "N": 1,
+    "source_sha256": "6e070e3d9868b0f7139950359ca9ca6ecf0a79cea22755c7226ee988828dc2f6",
+    "exact_vectors": 117,
+    "cells": 2605,
+    "workload_cycles": 647,
+    "stream_ii": 5.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 1.78
+  },
+  {
+    "architecture": "serial",
+    "N": 4,
+    "source_sha256": "6e070e3d9868b0f7139950359ca9ca6ecf0a79cea22755c7226ee988828dc2f6",
+    "exact_vectors": 182,
+    "cells": 2602,
+    "workload_cycles": 2006,
+    "stream_ii": 11.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 2.24
+  },
+  {
+    "architecture": "serial",
+    "N": 16,
+    "source_sha256": "6e070e3d9868b0f7139950359ca9ca6ecf0a79cea22755c7226ee988828dc2f6",
+    "exact_vectors": 218,
+    "cells": 2598,
+    "workload_cycles": 7794,
+    "stream_ii": 35.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 3.76
+  },
+  {
+    "architecture": "chunked4",
+    "N": 1,
+    "source_sha256": "2303f60c81ed9dbdea4157612dcbe1f07409b3b1ed8be63e5b0e3559a8622dff",
+    "exact_vectors": 117,
+    "cells": 3440,
+    "workload_cycles": 647,
+    "stream_ii": 5.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 2.04
+  },
+  {
+    "architecture": "chunked4",
+    "N": 4,
+    "source_sha256": "2303f60c81ed9dbdea4157612dcbe1f07409b3b1ed8be63e5b0e3559a8622dff",
+    "exact_vectors": 182,
+    "cells": 7965,
+    "workload_cycles": 1995,
+    "stream_ii": 8.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 4.09
+  },
+  {
+    "architecture": "chunked4",
+    "N": 16,
+    "source_sha256": "2303f60c81ed9dbdea4157612dcbe1f07409b3b1ed8be63e5b0e3559a8622dff",
+    "exact_vectors": 218,
+    "cells": 7955,
+    "workload_cycles": 5098,
+    "stream_ii": 23.0,
+    "long_stall_seen": true,
+    "reset_blocked_seen": true,
+    "seconds": 5.63
+  }
+]

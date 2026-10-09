@@ -1,0 +1,32 @@
+{
+  "verification": "main-integration",
+  "source_suite": {
+    "command": "CHIP_RL_TOOLS=<Yosys 0.52 / Icarus 12 prefix> PYTHONPATH=. python -m unittest discover -s tests",
+    "tests_run": 235,
+    "failures": 0,
+    "errors": 0,
+    "status": "pass"
+  },
+  "installed_wheel": {
+    "built_from": "isolated copy of MAIN source and pyproject.toml",
+    "import_status": "pass",
+    "contract_and_frozen_sources_included": true,
+    "direct_env_reset_step": "pass",
+    "jsonl_reset_step": "pass",
+    "cache_only": true,
+    "serial_candidate_hits": 5,
+    "chunked_candidate_hits": 5,
+    "chunked_baseline_hits": 5,
+    "fresh_tool_logs": 0
+  },
+  "preservation": {
+    "other_family_and_test_source_files_byte_compared": 266,
+    "other_family_and_test_source_files_match": true,
+    "historical_v34_summary_sha256": "1e14b5a03f01277ae32e60596c1a597363dd32d739068f1a09a6a0899ae30415"
+  },
+  "scored_evidence": "summary.json",
+  "limitations": [
+    "Wheel and API smoke reused already-qualified cache; they did not rerun synthesis or simulation",
+    "Full source suite is unit tests, not a full 32-family qualification sweep"
+  ]
+}

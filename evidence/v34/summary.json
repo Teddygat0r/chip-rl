@@ -1,0 +1,115 @@
+{
+  "scope": "combinational selected activation, first/second weight operands, and reserved-zero enable only",
+  "source_sha256": {
+    "rtl_file_sha256": "279dd129ed7bb0dd5379bd8e6f273acdd80619d38bdb12ebce900ac7ae21d63f",
+    "serial_source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+    "pipeline_source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+  },
+  "extracted_expression_sha256": {
+    "function": "e6ed397cae7d1e3c588c9bc376b28d3861298780a360305d48f67c50514ead68",
+    "serial_activation": "c4e5c25123bf5894c935383243380674bd57c7c35c7aa46fd42fbb35a11b4cc8",
+    "serial_weight": "8696a363b3728348c068ecd1932d19128c35bb2b00d41bbccbb7c4babbbca093",
+    "serial_guard": "09059c698e31d65845e025d9ea6d5b31abeb0cfdc15a09a9dd66d996efe1261c",
+    "pipeline_guard": "624cfed2c843ed65f6afe4b07164a3cb26a5de9b9ab262a561e6ce398e30645a",
+    "pipeline_a0": "b2de8bd268ab5c22a64883c33ef6f84321e5a22f449b7cca68e421409279f7aa",
+    "pipeline_w0": "a330ea7df184bed79a1f8e26819511b15a5ae321e81c47a3dfecb1399fd8ecd7",
+    "pipeline_a1": "c1e2d1e52222505ad843a125257096eda93224a8f5a8b6bfeb1b6adad1a8d1f1",
+    "pipeline_w1": "47f36a8c4e12eedc488f89c1f721b975279804c50e0840bfaa6c79c7cc642b7b"
+  },
+  "oracle_sha256": "f808163538364be1293fb0ac2c6c74f1dee2e3c9ac13ecf91240697b1ed9255a",
+  "tool": {
+    "name": "Yosys",
+    "version": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+    "executable_sha256": "0e2b5c8f3ba616fa9ac5b05830e86181577ebf60d99401c10993885ff656e3ab"
+  },
+  "assumptions": [
+    "all top-level bits are defined binary values (-set-def-inputs)",
+    "no restrictions on selector, activations, weights, other slot bits or index",
+    "combinational proof; no -seq or time bound"
+  ],
+  "coverage": {
+    "serial": "all 8 selectors, arbitrary signed 8-bit activation bit patterns, both index[0] weight positions and all other slot/index bits",
+    "pipeline": "all 8 group positions j=0..7, all 8 selectors per position, both weight positions and arbitrary 512-bit command"
+  },
+  "proof_invocations": 3,
+  "cap": {
+    "invocations": 4,
+    "wall_seconds_each": 120
+  },
+  "results": {
+    "serial": {
+      "outcome": "proved",
+      "returncode": 0,
+      "command": [
+        "/workspace/tools/root/usr/bin/yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -formal -sv serial.sv; prep -top proof_serial -flatten; check -assert; sat -verify -prove mismatch 0 -set-def-inputs -timeout 110 -show-inputs -show-outputs -dump_vcd serial-counterexample.vcd"
+      ],
+      "harness_sha256": "afdd4d9fc7bc4c13b4add645d73f5bf205d587ac20ea9b70d2ed76a00d05e809",
+      "log_sha256": "9329e78adc6ce8768a9b97cfdb5fc31a046a3ce446cba1a00fff867409212e9f",
+      "counterexample_vcd_sha256": null
+    },
+    "pipeline": {
+      "outcome": "proved",
+      "returncode": 0,
+      "command": [
+        "/workspace/tools/root/usr/bin/yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -formal -sv pipeline.sv; prep -top proof_pipeline -flatten; check -assert; sat -verify -prove mismatch 0 -set-def-inputs -timeout 110 -show-inputs -show-outputs -dump_vcd pipeline-counterexample.vcd"
+      ],
+      "harness_sha256": "dec817669c136ce749259791a5581fd42a9e72b37708b4673de0bcac874424db",
+      "log_sha256": "764b632a3166004a814ce6b932190961f9a300baabbec2484242bebdcf5c76d1",
+      "counterexample_vcd_sha256": null
+    },
+    "mutant": {
+      "outcome": "counterexample",
+      "returncode": 1,
+      "command": [
+        "/workspace/tools/root/usr/bin/yosys",
+        "-Q",
+        "-T",
+        "-p",
+        "read_verilog -formal -sv mutant.sv; prep -top proof_serial -flatten; check -assert; sat -verify -prove mismatch 0 -set-def-inputs -timeout 110 -show-inputs -show-outputs -dump_vcd mutant-counterexample.vcd"
+      ],
+      "harness_sha256": "f54606425e73147fecbf0bb802d04f775fb088e387c2057596c68b2df4eee6bf",
+      "log_sha256": "cfaacdc454444876b9a0b7071061d7998264a9f4d3615c4dbb1c21614bae9ebf",
+      "counterexample_vcd_sha256": "851a91b3fe63a13e8568081d7674a4ca48c2d79e048cd02283d3b47d0aefb36f"
+    }
+  },
+  "counterexample_private_path": "/tmp/chip-rl-v34-decoder-private/mutant-counterexample.vcd",
+  "formal_scope": "decoder operands and enable only; not MAC arithmetic, requantization, handshakes, reset, full-candidate equivalence or physical evaluation",
+  "counterexample_example": {
+    "selector": 1,
+    "index": 1,
+    "second_weight_position": true,
+    "activations": [
+      0,
+      34,
+      -128,
+      0
+    ],
+    "weights": [
+      -1,
+      122
+    ],
+    "dense_expected_selected_activation": -128,
+    "mutant_selected_activation": 0
+  },
+  "classification_note": "The first driver expected a FAIL! line; Yosys 0.52 -verify instead emitted proof did fail. Existing log/VCD reclassified without a new solver invocation.",
+  "private_archive": {
+    "path": "/workspace/chip-rl-v34-decoder-private.tar.gz",
+    "sha256": "15fb7fbc49a94aa582cf66dcc5851b9f96164c33fd8c5232643a8e8dac93c721",
+    "verified_files": 7
+  },
+  "proof_driver_sha256": "d9a43bdcb4c682ca353f3f73b72bb48ee20ce2c229d118f69e7e3d6db2c773f7",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests",
+    "passed": 210,
+    "failed": 0,
+    "log_sha256": "8cd70e3f215e92a16f282619fb82a831e5eed77ceb5e4b84d2f2d94145c5fef1"
+  }
+}
