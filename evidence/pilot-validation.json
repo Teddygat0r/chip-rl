@@ -1,0 +1,119 @@
+{
+  "schema": "chip-rl-pilot-validation-v1",
+  "checkpoint_date_utc": "2026-10-11",
+  "scope": "local reference scaffold checkpoint; no model or blind model-heldout study",
+  "canonical_train_panel": {
+    "registry": "evidence/pilot-reference-panel/canonical-v2/registry.json",
+    "registry_canonical_sha256": "b428f5a19e16565e9e9a171f2eda78300f5b892867df524eed48f2ad5fb02c44",
+    "report": "evidence/pilot-reference-panel/canonical-v2/report.json",
+    "registered_cases": 37,
+    "completed_cases": 37,
+    "tested_correct_cases": 37,
+    "failed_cases": 0,
+    "validation": "finite_source_and_mapped_pass",
+    "total_wall_time_s": 182.262248,
+    "total_cpu_time_s": 175.610124,
+    "mean_wall_s_per_registered_case_descriptive": 4.926007,
+    "mean_cpu_s_per_registered_case_descriptive": 4.74622,
+    "cost_scope": "not a model rollout cost or a marginal cold evaluator benchmark",
+    "model_token_count": null,
+    "model_cost_usd": null,
+    "physical": "not measured in canonical panel",
+    "formal": "not run",
+    "split": "train"
+  },
+  "superseded_panel_attempt": {
+    "record": "evidence/pilot-reference-panel/superseded.json",
+    "attempted_cases": 2,
+    "included_in_canonical_results": false,
+    "reason": "configuration-varying parameter defaults in emitted source text"
+  },
+  "sized_hadamard": {
+    "summary": "evidence/pilot-hadamard-sized/summary.json",
+    "measured_N": [
+      1,
+      2,
+      4
+    ],
+    "dev_or_test_parameter_run": false,
+    "N4_baseline_cells": 4717,
+    "N4_sized_cells": 1379,
+    "N4_baseline_cycles": 666,
+    "N4_sized_cycles": 666
+  },
+  "package_verification": {
+    "full_unittest": {
+      "tests_run": 278,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_s": 13.57,
+      "status": "pass",
+      "note": "local verification log not retained as tracked evidence"
+    },
+    "wheel": {
+      "distribution": "chip_rl",
+      "version": "0.37.0",
+      "sha256": "98a1906cc8f8651d83053a6d1a53c8f51b15cccfc07ec6155a0f10abdc28b850",
+      "built": "pass",
+      "fresh_environment_install": "pass",
+      "installed_hadamard_N1_run_case": "pass",
+      "installed_smoke_cells": 26,
+      "full_installed_RTL_campaign": "not_run"
+    }
+  },
+  "physical_calibration": {
+    "manifest": "evidence/pilot-physical-calibration/manifest.json",
+    "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+    "results": "evidence/pilot-physical-calibration/results.json",
+    "joined": "evidence/pilot-physical-calibration/joined.json",
+    "analysis": "evidence/pilot-physical-calibration/analysis.json",
+    "critical_path_scope": "evidence/pilot-physical-calibration/critical-path-scope.json",
+    "registered_designs": 10,
+    "post_route_reports": 10,
+    "finite_pre_route_checked": 10,
+    "zero_reported_detailed_route_violations": 10,
+    "paired_direction_agreement": {
+      "agree": 4,
+      "pairs": 5
+    },
+    "pooled_spearman_rho_descriptive": 0.7818181818181819,
+    "pooled_spearman_n": 10,
+    "pooled_correlation_calibration_evidence": false,
+    "max_setup_path_scope": "I/O-to-I/O for all ten designs",
+    "physical_latency_or_fmax_validated": false,
+    "hadamard_N4_post_route_area_um2": {
+      "serial_butterfly": 5210.94,
+      "sized_serial_butterfly": 2042.88
+    },
+    "status": "exploratory_completed",
+    "signoff": "not_claimed"
+  },
+  "pending": {
+    "independent_human_RTL_review": true,
+    "model_difficulty_measurement": true,
+    "weight_updated_policy_training": true,
+    "train_dev_test_blind_model_campaign": true,
+    "physical_proxy_validation": true
+  },
+  "private_replay_policy": "Private replay seeds, vectors, traces and raw logs remain out of this public validation record.",
+  "frozen_reference_dev_test_qualification": {
+    "registry": "evidence/pilot-reference-holdout-qualification/registry.json",
+    "registry_canonical_sha256": "56e1c78c0fcf5e02f09310fcc437455ae755419d7313e5e1a055c749047c60db",
+    "summary": "evidence/pilot-reference-holdout-qualification/summary.json",
+    "registered_cases": 65,
+    "attempted_cases": 65,
+    "tested_correct_cases": 65,
+    "failed_cases": 0,
+    "dev_cases_passed": 24,
+    "test_cases_passed": 41,
+    "source_tuning_after_freeze": false,
+    "scope": "frozen authored and legacy reference correctness only; finite source and mapped checks",
+    "model_evaluation": false,
+    "learned_generalization_evidence": false,
+    "future_model_feedback": "prohibited"
+  },
+  "publication": {
+    "new_push": false,
+    "status": "local_working_artifacts_only"
+  }
+}

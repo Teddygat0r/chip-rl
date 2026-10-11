@@ -1,0 +1,123 @@
+{
+  "constraints": {
+    "clock_ns": 20,
+    "input_delay_ns": 4,
+    "output_delay_ns": 4,
+    "reset_timed": true
+  },
+  "observation": "The first reported maximum-delay setup path is I/O-to-I/O in all ten post-route finish reports. These reported paths do not establish core path ranking or achievable core Fmax.",
+  "physical_results_sha256": "e1df42c58745313fc18d12bfa8bf2953a57df51e85f6316ad717712a74f7fc25",
+  "rows": [
+    {
+      "case": "gather-DEPTH16-legacy_baseline",
+      "finish_report_sha256": "410bb6157917c9df7abd598bd4d17a4a87ba84c3d19f32bf5f8ee3a94fe37ac3",
+      "first_max_path_endpoint": "out_valid (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "5dcbafa7c53fdf5521fa6a756db3d187be29514511a129acaae496b277ad81d8"
+    },
+    {
+      "case": "gather-DEPTH16-static_decoded",
+      "finish_report_sha256": "e2cf546d46d380f35697664a1f2790cf160237ff362fb703a081ffb865262831",
+      "first_max_path_endpoint": "out_valid (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "f533edbe3c3623b896113eb169526fe8c3c0580424a22f5e1e25a48aecedaeda"
+    },
+    {
+      "case": "mshr-ENTRIES2-ring",
+      "finish_report_sha256": "627fe32781e4a706af74d2cbec70cbd9150290f40738d19b8932c5ec455e94ee",
+      "first_max_path_endpoint": "req_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "req_addr[15] (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f"
+    },
+    {
+      "case": "mshr-ENTRIES2-shift",
+      "finish_report_sha256": "25cc93a13a3eb6a4a429a130a366eb40b8e23f2c3b96d915b1d461f9f0434436",
+      "first_max_path_endpoint": "req_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "req_addr[15] (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8"
+    },
+    {
+      "case": "sparse24-G2-serial",
+      "finish_report_sha256": "a6042917df9a8b465e3cc6a7e18e94026ae2713d528e50bfbd0c00337d75fda1",
+      "first_max_path_endpoint": "in_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec"
+    },
+    {
+      "case": "sparse24-G2-pipeline",
+      "finish_report_sha256": "af8203dc7819a455ac668c1c752fe98271fefa37e00a281756857a8df1164ad8",
+      "first_max_path_endpoint": "in_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "out_ready (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+    },
+    {
+      "case": "block_quant-N4-serial",
+      "finish_report_sha256": "4c0acafe490d76992d3e1503fd09e38c8cd15dab6965278cba0e39d2d189969f",
+      "first_max_path_endpoint": "in_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32"
+    },
+    {
+      "case": "block_quant-N4-chunked4",
+      "finish_report_sha256": "4b093e731d46fc5d873866cb27b9b2af88a8fe6a934cf669e1ed41bbcf1c86ae",
+      "first_max_path_endpoint": "out_valid (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+    },
+    {
+      "case": "hadamard_int8-N4-serial_butterfly",
+      "finish_report_sha256": "0926a4238927b509ac510965614e79f38ed4c9a8fede3cd69c35f1a13952251d",
+      "first_max_path_endpoint": "in_ready (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80"
+    },
+    {
+      "case": "hadamard_int8-N4-sized_serial_butterfly",
+      "finish_report_sha256": "ef9c9c6805ca9a64e12041bc253cd359294f87e7f2f1c3499db765cbcbbc4606",
+      "first_max_path_endpoint": "out_valid (output port clocked by clk)",
+      "first_max_path_startpoint": "rst (input port clocked by clk)",
+      "path_group": "clk",
+      "path_scope": "input_port_to_output_port",
+      "path_type": "max",
+      "report_section": "finish report_checks -path_delay max",
+      "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b"
+    }
+  ],
+  "schema": "pilot-physical-critical-path-scope-v1"
+}

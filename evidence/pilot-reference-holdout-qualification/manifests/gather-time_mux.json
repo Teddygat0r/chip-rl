@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-10-11T08:23:00.662169+00:00",
+  "family": "gather",
+  "parameter": "DEPTH",
+  "plan": {
+    "dev": [
+      64
+    ],
+    "test": [
+      128,
+      256
+    ],
+    "train": [
+      16,
+      32
+    ]
+  },
+  "schema": "chip-rl-pilot-source-freeze-v1",
+  "source_sha256": "f3ec288b8c856b80053ff531c4ff30c4c1b5229e46a08709828d8beac156697b"
+}

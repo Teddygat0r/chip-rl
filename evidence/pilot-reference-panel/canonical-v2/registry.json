@@ -1,0 +1,337 @@
+{
+  "created_at_utc": "2026-10-11T08:06:44.941175+00:00",
+  "execution": "one case at a time; no source tuning; no resume",
+  "measurement_scope": "generic cells, finite cycles and stream II where defined",
+  "measurement_script_sha256": "9ac51bbe4e85018ecd21cc1a3989e33e8ab749f635240da4016505da9d104c14",
+  "model_cost_usd": "unavailable_no_model_calls",
+  "model_token_count": "unavailable_no_model_calls",
+  "pairing": "same private seed for all references within one family/config",
+  "pairing_ids": {
+    "block_quant:1": "d4d1da223cefde48d3c6295310d757a8",
+    "block_quant:2": "fd9e48d3e9647d4fa729e13f2fa4d8cd",
+    "block_quant:4": "7159772c7b28dab5232632ce6144fc4f",
+    "block_quant:8": "0dfc19317acc20eb831ca378534ce521",
+    "gather:16": "0bedbbc554731c4a24580363c13e8ba5",
+    "gather:32": "9fc5a89537cdf7aa8b88e46ddd9bed5b",
+    "hadamard_int8:1": "c486d52e1e2f1eb514e7afede4f1b893",
+    "hadamard_int8:2": "7b54144d8634db25d3e3299a10eef5fd",
+    "hadamard_int8:4": "cc40c28ce5e0378dd48201119b712462",
+    "mshr:2": "7f819c6b0623fed21caa01d52e1a5c13",
+    "mshr:4": "6b95a9eb6b9534f2585e89eb863f9c72",
+    "sparse24:1": "4d71daec39017b20acd9f7808fd4d59f",
+    "sparse24:2": "39f0648f4fbf6ac722d9dcf9cd84cb50",
+    "sparse24:4": "400d43752e2b673b9172955db28635a3"
+  },
+  "plan": [
+    {
+      "config": 16,
+      "family": "gather",
+      "paired_runner_legacy_baseline_sha256": "ef9302269f23cf111142fde9ec0e5123168d05a79e3b7f6e03cd359493e3ce3c",
+      "parameter": "DEPTH",
+      "references": [
+        {
+          "label": "legacy_baseline",
+          "role": "legacy_reference",
+          "source_sha256": "5dcbafa7c53fdf5521fa6a756db3d187be29514511a129acaae496b277ad81d8"
+        },
+        {
+          "label": "time_mux",
+          "role": "authored_reference",
+          "source_sha256": "f3ec288b8c856b80053ff531c4ff30c4c1b5229e46a08709828d8beac156697b"
+        },
+        {
+          "label": "static_decoded",
+          "role": "authored_reference",
+          "source_sha256": "f533edbe3c3623b896113eb169526fe8c3c0580424a22f5e1e25a48aecedaeda"
+        }
+      ]
+    },
+    {
+      "config": 32,
+      "family": "gather",
+      "paired_runner_legacy_baseline_sha256": "c9f1f1607c7dc54402fbf653d2ded99b4b59795430df0015fe7ac9f95e160d79",
+      "parameter": "DEPTH",
+      "references": [
+        {
+          "label": "legacy_baseline",
+          "role": "legacy_reference",
+          "source_sha256": "5dcbafa7c53fdf5521fa6a756db3d187be29514511a129acaae496b277ad81d8"
+        },
+        {
+          "label": "time_mux",
+          "role": "authored_reference",
+          "source_sha256": "f3ec288b8c856b80053ff531c4ff30c4c1b5229e46a08709828d8beac156697b"
+        },
+        {
+          "label": "static_decoded",
+          "role": "authored_reference",
+          "source_sha256": "f533edbe3c3623b896113eb169526fe8c3c0580424a22f5e1e25a48aecedaeda"
+        }
+      ]
+    },
+    {
+      "config": 2,
+      "family": "mshr",
+      "paired_runner_legacy_baseline_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+      "parameter": "ENTRIES",
+      "references": [
+        {
+          "label": "ring",
+          "role": "legacy_reference",
+          "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f"
+        },
+        {
+          "label": "shift",
+          "role": "authored_reference",
+          "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8"
+        }
+      ]
+    },
+    {
+      "config": 4,
+      "family": "mshr",
+      "paired_runner_legacy_baseline_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+      "parameter": "ENTRIES",
+      "references": [
+        {
+          "label": "ring",
+          "role": "legacy_reference",
+          "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f"
+        },
+        {
+          "label": "shift",
+          "role": "authored_reference",
+          "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8"
+        }
+      ]
+    },
+    {
+      "config": 1,
+      "family": "sparse24",
+      "paired_runner_legacy_baseline_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+      "parameter": "G",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec"
+        },
+        {
+          "label": "pipeline",
+          "role": "authored_reference",
+          "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+        }
+      ]
+    },
+    {
+      "config": 2,
+      "family": "sparse24",
+      "paired_runner_legacy_baseline_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+      "parameter": "G",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec"
+        },
+        {
+          "label": "pipeline",
+          "role": "authored_reference",
+          "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+        }
+      ]
+    },
+    {
+      "config": 4,
+      "family": "sparse24",
+      "paired_runner_legacy_baseline_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+      "parameter": "G",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec"
+        },
+        {
+          "label": "pipeline",
+          "role": "authored_reference",
+          "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+        }
+      ]
+    },
+    {
+      "config": 1,
+      "family": "block_quant",
+      "paired_runner_legacy_baseline_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32"
+        },
+        {
+          "label": "chunked4",
+          "role": "authored_reference",
+          "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+        },
+        {
+          "label": "parallel",
+          "role": "authored_reference",
+          "source_sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9"
+        }
+      ]
+    },
+    {
+      "config": 2,
+      "family": "block_quant",
+      "paired_runner_legacy_baseline_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32"
+        },
+        {
+          "label": "chunked4",
+          "role": "authored_reference",
+          "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+        },
+        {
+          "label": "parallel",
+          "role": "authored_reference",
+          "source_sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9"
+        }
+      ]
+    },
+    {
+      "config": 4,
+      "family": "block_quant",
+      "paired_runner_legacy_baseline_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32"
+        },
+        {
+          "label": "chunked4",
+          "role": "authored_reference",
+          "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+        },
+        {
+          "label": "parallel",
+          "role": "authored_reference",
+          "source_sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9"
+        }
+      ]
+    },
+    {
+      "config": 8,
+      "family": "block_quant",
+      "paired_runner_legacy_baseline_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial",
+          "role": "legacy_reference",
+          "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32"
+        },
+        {
+          "label": "chunked4",
+          "role": "authored_reference",
+          "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+        },
+        {
+          "label": "parallel",
+          "role": "authored_reference",
+          "source_sha256": "dcfaeb768aa9688f8fa7ca5968c2d5771f0bc8d1fdb132c9c2a255ff96fc92f9"
+        }
+      ]
+    },
+    {
+      "config": 1,
+      "family": "hadamard_int8",
+      "paired_runner_legacy_baseline_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial_butterfly",
+          "role": "legacy_reference",
+          "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80"
+        },
+        {
+          "label": "stage_parallel",
+          "role": "authored_reference",
+          "source_sha256": "d8e58b4b8a9837099f2d86ab62a9fa8c96717a42906c316138ce6655ba7dd74b"
+        },
+        {
+          "label": "sized_serial_butterfly",
+          "role": "authored_reference",
+          "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b"
+        }
+      ]
+    },
+    {
+      "config": 2,
+      "family": "hadamard_int8",
+      "paired_runner_legacy_baseline_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial_butterfly",
+          "role": "legacy_reference",
+          "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80"
+        },
+        {
+          "label": "stage_parallel",
+          "role": "authored_reference",
+          "source_sha256": "d8e58b4b8a9837099f2d86ab62a9fa8c96717a42906c316138ce6655ba7dd74b"
+        },
+        {
+          "label": "sized_serial_butterfly",
+          "role": "authored_reference",
+          "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b"
+        }
+      ]
+    },
+    {
+      "config": 4,
+      "family": "hadamard_int8",
+      "paired_runner_legacy_baseline_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+      "parameter": "N",
+      "references": [
+        {
+          "label": "serial_butterfly",
+          "role": "legacy_reference",
+          "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80"
+        },
+        {
+          "label": "stage_parallel",
+          "role": "authored_reference",
+          "source_sha256": "d8e58b4b8a9837099f2d86ab62a9fa8c96717a42906c316138ce6655ba7dd74b"
+        },
+        {
+          "label": "sized_serial_butterfly",
+          "role": "authored_reference",
+          "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b"
+        }
+      ]
+    }
+  ],
+  "plan_sha256": "97bfbf6fcb25b389b990e204a76f66cbfe8a7a0840924781803867f5a7f5981f",
+  "recipe_sha256_by_family": {
+    "block_quant": "ee26884cdb68925cbff11e0f2152e0886f461e8d702509674f0dd8505746150f",
+    "gather": "cbfc22bb61eb7bf97ee4e3a30ab46ec08c1cb2b7bf6c8dc8329f836e29b82500",
+    "hadamard_int8": "9d3dcbf3af0162d8d4a35a35b9b4e831deda0e3fcb6cb827a32b7b84b228b117",
+    "mshr": "b2516b327a2e4db6cfdabf236ce9b5a982dac1f0074548cbad45505f80068a58",
+    "sparse24": "bbedfe1c3a9f52f4df6e667469cf6e953e8728361841ec742fb3e883f0cf89b2"
+  },
+  "schema": "chip-rl-pilot-reference-panel-v1",
+  "split": "train",
+  "stage": "pre_measurement_freeze",
+  "study_inputs_sha256": "30d5e4f7623d238351d5d3928484a64dbaa68f77fdea07a646d34673df331577",
+  "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8"
+}

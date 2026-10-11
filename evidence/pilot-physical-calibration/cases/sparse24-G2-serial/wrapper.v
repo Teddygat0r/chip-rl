@@ -1,0 +1,14 @@
+module physical_top(
+  input clk,
+  input rst,
+  input in_valid,
+  output in_ready,
+  input [173:0] in_data,
+  output out_valid,
+  input out_ready,
+  output [31:0] out_data
+);
+wire [31:0] full_out;
+candidate #(.G(2)) core (.clk(clk),.rst(rst),.in_valid(in_valid),.in_ready(in_ready),.in_data({2'b0,in_data[173:112],336'b0,in_data[111:0]}),.out_valid(out_valid),.out_ready(out_ready),.out_data(full_out));
+assign out_data = full_out;
+endmodule

@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-10-11T08:23:00.662754+00:00",
+  "family": "block_quant",
+  "parameter": "N",
+  "plan": {
+    "dev": [
+      3,
+      5,
+      6,
+      7
+    ],
+    "test": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "train": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "schema": "chip-rl-pilot-source-freeze-v1",
+  "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8"
+}

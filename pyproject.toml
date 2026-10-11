@@ -7,7 +7,7 @@ version = "0.37.0"
 description = "Constrained RTL pilot with private paired HDL evaluation"
 requires-python = ">=3.10"
 [tool.setuptools]
-packages = ["chip_rl", "chip_rl.cycle", "chip_rl.expansion", "chip_rl.qualification", "chip_rl.history", "chip_rl.cdc", "chip_rl.memory", "chip_rl.quality", "chip_rl.layout", "chip_rl.softmax", "chip_rl.requant", "chip_rl.fused", "chip_rl.sparse24", "chip_rl.block_quant", "chip_rl.integer_rms", "chip_rl.block_rle", "chip_rl.block_for", "chip_rl.bf16_quant", "chip_rl.hadamard_int8"]
+packages = ["chip_rl", "chip_rl.cycle", "chip_rl.expansion", "chip_rl.qualification", "chip_rl.history", "chip_rl.cdc", "chip_rl.memory", "chip_rl.quality", "chip_rl.layout", "chip_rl.softmax", "chip_rl.requant", "chip_rl.fused", "chip_rl.sparse24", "chip_rl.block_quant", "chip_rl.integer_rms", "chip_rl.block_rle", "chip_rl.block_for", "chip_rl.bf16_quant", "chip_rl.hadamard_int8", "chip_rl.pilot"]
 [tool.setuptools.package-data]
 chip_rl = ["contracts.md"]
 "chip_rl.cycle" = ["contracts.md"]

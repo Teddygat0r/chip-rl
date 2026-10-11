@@ -1,0 +1,80 @@
+{
+  "config": 2,
+  "family": "mshr",
+  "label": "ring",
+  "pairing_id": "7f819c6b0623fed21caa01d52e1a5c13",
+  "parameter": "ENTRIES",
+  "preregistration_error": null,
+  "returned_result_sha256": "51a62ca613c1f9af0f39e9dcb467405e137e97026dba0989195f26ac4d97e30e",
+  "role": "legacy_reference",
+  "runner_result": {
+    "baseline_role": "legacy_reference",
+    "baseline_source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+    "config": 2,
+    "contract_sha256": "ed29a7cbdceb929ea995600de3d934960fd62e75e3c390eb930a34e8d31c6b81",
+    "cpu_time_s": 3.066069,
+    "cpu_time_scope": "runner_and_spawned_tools",
+    "error": null,
+    "family": "mshr",
+    "formal": "not_run",
+    "frozen_manifest_sha256": null,
+    "holdout_kind": "parameter_holdout",
+    "measurement_scope": "generic_cells_and_finite_simulation",
+    "metrics": {
+      "baseline": {
+        "cells": 1097,
+        "cycles": 5007,
+        "invalidations": 0,
+        "latency_sum": 25623,
+        "logic_depth": 19,
+        "maximum_latency": 183,
+        "memory_reads": 284,
+        "out_of_order_returns": 49,
+        "peak_pending": 2,
+        "stage_wall_time_s": {
+          "source_mapped_simulation": 2.458975,
+          "synthesis": 0.633091
+        },
+        "transactions": 640,
+        "vectors_sha256": "f1ef0640f8ca3cb9c483a7e0b9bacc939132881ac064db51557227605ff10aac"
+      },
+      "baseline_reused_candidate": true,
+      "candidate": {
+        "cells": 1097,
+        "cycles": 5007,
+        "invalidations": 0,
+        "latency_sum": 25623,
+        "logic_depth": 19,
+        "maximum_latency": 183,
+        "memory_reads": 284,
+        "out_of_order_returns": 49,
+        "peak_pending": 2,
+        "stage_wall_time_s": {
+          "source_mapped_simulation": 2.458975,
+          "synthesis": 0.633091
+        },
+        "transactions": 640,
+        "vectors_sha256": "f1ef0640f8ca3cb9c483a7e0b9bacc939132881ac064db51557227605ff10aac"
+      },
+      "ratios": {
+        "cells": 1.0,
+        "cycles": 1.0,
+        "latency_sum": 1.0,
+        "memory_reads": 1.0
+      }
+    },
+    "parameter": "ENTRIES",
+    "physical": "not_run",
+    "recipe_sha256": "b2516b327a2e4db6cfdabf236ce9b5a982dac1f0074548cbad45505f80068a58",
+    "schema": "chip-rl-pilot-case-v1",
+    "seed_id": "12d6df79b2e2f9acd89bcd8920ad2e0d",
+    "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+    "split": "train",
+    "tested_correct": true,
+    "tool_fingerprint": "9f09818abb592bcd94083f044465209e067389983ec3f90f93ca78a8070e7ac8",
+    "validation": "finite_source_and_mapped_pass",
+    "wall_time_s": 3.150022,
+    "workload_replays": 1
+  },
+  "tested_correct": true
+}

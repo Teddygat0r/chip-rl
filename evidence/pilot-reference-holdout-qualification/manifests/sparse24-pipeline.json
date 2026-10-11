@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-10-11T08:23:00.662609+00:00",
+  "family": "sparse24",
+  "parameter": "G",
+  "plan": {
+    "dev": [
+      3,
+      5
+    ],
+    "test": [
+      6,
+      7,
+      8
+    ],
+    "train": [
+      1,
+      2,
+      4
+    ]
+  },
+  "schema": "chip-rl-pilot-source-freeze-v1",
+  "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224"
+}

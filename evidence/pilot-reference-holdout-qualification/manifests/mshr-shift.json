@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-10-11T08:23:00.662428+00:00",
+  "family": "mshr",
+  "parameter": "ENTRIES",
+  "plan": {
+    "dev": [
+      6
+    ],
+    "test": [
+      8
+    ],
+    "train": [
+      2,
+      4
+    ]
+  },
+  "schema": "chip-rl-pilot-source-freeze-v1",
+  "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8"
+}

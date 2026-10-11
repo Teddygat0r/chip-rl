@@ -1,0 +1,13 @@
+{
+  "schema": "chip-rl-pilot-reference-panel-supersession-v1",
+  "status": "superseded_incomplete_do_not_analyze",
+  "registered_cases": 37,
+  "attempted_cases": 2,
+  "attempted_case_files": [
+    "cases/gather-16-legacy_baseline.json",
+    "cases/gather-16-time_mux.json"
+  ],
+  "reason": "The first registry emitted gather reference source with configuration-specific parameter defaults. The protocol requires identical source bytes across structural configurations. The run was stopped before the next case; its registry and attempted case objects remain preserved.",
+  "replacement": "canonical-v2/registry.json",
+  "interpretation": "No panel conclusion or Pareto frontier is drawn from this incomplete attempt."
+}

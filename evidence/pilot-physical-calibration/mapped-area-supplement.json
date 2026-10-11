@@ -1,0 +1,77 @@
+{
+  "schema": "pilot-physical-mapped-area-supplement-v1",
+  "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+  "method": "Post-run extraction from frozen ORFS synth_stat.txt; regex for unique Chip area for module physical_top; no synthesis rerun or physical retuning. Source reports remain private.",
+  "rows": [
+    {
+      "case": "gather-DEPTH16-legacy_baseline",
+      "source_sha256": "5dcbafa7c53fdf5521fa6a756db3d187be29514511a129acaae496b277ad81d8",
+      "mapped_stdcell_area_um2": 8955.954,
+      "synth_stat_sha256": "6958d85ab5fd9efeca6b8b25dd2c18c69ddcd66c3ae017b65441d9ead68199f1",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "gather-DEPTH16-static_decoded",
+      "source_sha256": "f533edbe3c3623b896113eb169526fe8c3c0580424a22f5e1e25a48aecedaeda",
+      "mapped_stdcell_area_um2": 9070.334,
+      "synth_stat_sha256": "958a62fa91d6fd70060bc5badea2268e85b7fa6d2cce82cfbbf38d71e6597a37",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "mshr-ENTRIES2-ring",
+      "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+      "mapped_stdcell_area_um2": 4072.726,
+      "synth_stat_sha256": "ca04a20fb031ae8db567bc2c86baf839a8aba081beef911ac89d88681f2a8b5b",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "mshr-ENTRIES2-shift",
+      "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8",
+      "mapped_stdcell_area_um2": 3937.598,
+      "synth_stat_sha256": "ce30f16bf58bd3557c95586d8eb1629b4197a785f8df101e64d0dff3dd513ac5",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "sparse24-G2-serial",
+      "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+      "mapped_stdcell_area_um2": 10163.86,
+      "synth_stat_sha256": "724a2684c00fcfb3150cfda6dfe8f6bb961fed6336dfe3eaebf24f384d77a305",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "sparse24-G2-pipeline",
+      "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224",
+      "mapped_stdcell_area_um2": 11045.916,
+      "synth_stat_sha256": "8d39be1e6b41a79dad2a9d70b13234bd2aafae82a1ca419e80d2bd20d18aa8d7",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "block_quant-N4-serial",
+      "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "mapped_stdcell_area_um2": 2016.812,
+      "synth_stat_sha256": "239273f013cd395ec650964004851a5d95749694aac71903d8f9fce09db748c5",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "block_quant-N4-chunked4",
+      "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8",
+      "mapped_stdcell_area_um2": 4147.206,
+      "synth_stat_sha256": "e418cbc906e0bf3ff6e9c00a17ae5887779eb9262f92a106caae6c0d6f6b5d84",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "hadamard_int8-N4-serial_butterfly",
+      "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+      "mapped_stdcell_area_um2": 5093.102,
+      "synth_stat_sha256": "b312f1d057e3ef457e379686bd2a49fea379ce10fa5c429cfaca0b9cf10d20e5",
+      "status": "parsed_unique"
+    },
+    {
+      "case": "hadamard_int8-N4-sized_serial_butterfly",
+      "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b",
+      "mapped_stdcell_area_um2": 1949.248,
+      "synth_stat_sha256": "416a355e22f31535d7f2786f257d32a8b185a4700f8b6138ee0d68b76f580dde",
+      "status": "parsed_unique"
+    }
+  ]
+}

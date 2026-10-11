@@ -1,0 +1,824 @@
+{
+  "schema": "pilot-physical-results-v1",
+  "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+  "cases": [
+    {
+      "case": "gather-DEPTH16-legacy_baseline",
+      "family": "gather",
+      "config": 16,
+      "reference_name": "legacy_baseline",
+      "is_baseline": true,
+      "source_sha256": "5dcbafa7c53fdf5521fa6a756db3d187be29514511a129acaae496b277ad81d8",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "6f17ce59e159c0fc3fdaa97a81153c5a",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 8996.92,
+      "setup_slack_ns": 11.7869,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 8996.92,
+        "setup_slack_ns": 11.7869,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.105072,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.2131,
+        "route_violation_count": 0,
+        "route_wirelength_um": 78743,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.67,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.638122,
+        "detail_route_resources": {
+          "elapsed_s": 152.11,
+          "cpu_s": 287.49,
+          "peak_rss_kib": 1024136
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 222.457,
+      "cpu_s": 391.164,
+      "peak_rss_kib": 1041024,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 7.838,
+          "peak_rss_kib": 163640,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 204.448,
+          "peak_rss_kib": 1041024,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 7.231,
+          "peak_rss_kib": 269004,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "gather.TrustedEvaluator._simulate",
+        "replays": [
+          {
+            "band": "target_short",
+            "commands": 232
+          },
+          {
+            "band": "target_long",
+            "commands": 1486
+          }
+        ]
+      }
+    },
+    {
+      "case": "gather-DEPTH16-static_decoded",
+      "family": "gather",
+      "config": 16,
+      "reference_name": "static_decoded",
+      "is_baseline": false,
+      "source_sha256": "f533edbe3c3623b896113eb169526fe8c3c0580424a22f5e1e25a48aecedaeda",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "6f17ce59e159c0fc3fdaa97a81153c5a",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 8988.14,
+      "setup_slack_ns": 11.76,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 8988.14,
+        "setup_slack_ns": 11.76,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.107514,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.24,
+        "route_violation_count": 0,
+        "route_wirelength_um": 78160,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.67,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.637499,
+        "detail_route_resources": {
+          "elapsed_s": 181.55,
+          "cpu_s": 346.06,
+          "peak_rss_kib": 1216680
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 243.664,
+      "cpu_s": 436.225,
+      "peak_rss_kib": 1233612,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 5.23,
+          "peak_rss_kib": 118124,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 227.938,
+          "peak_rss_kib": 1233612,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 7.634,
+          "peak_rss_kib": 276944,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "gather.TrustedEvaluator._simulate",
+        "replays": [
+          {
+            "band": "target_short",
+            "commands": 232
+          },
+          {
+            "band": "target_long",
+            "commands": 1486
+          }
+        ]
+      }
+    },
+    {
+      "case": "mshr-ENTRIES2-ring",
+      "family": "mshr",
+      "config": 2,
+      "reference_name": "ring",
+      "is_baseline": true,
+      "source_sha256": "789d870c43e4d5b7046a69b3d32cf5fd680409fa481ea952f537de9cf1c30b4f",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "a9d24735f367a9ca589199e87b38f009",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 4337.13,
+      "setup_slack_ns": 11.556,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 4337.13,
+        "setup_slack_ns": 11.556,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.0913706,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.444,
+        "route_violation_count": 0,
+        "route_wirelength_um": 26443,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.307618,
+        "detail_route_resources": {
+          "elapsed_s": 39.16,
+          "cpu_s": 72.34,
+          "peak_rss_kib": 916868
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 82.752,
+      "cpu_s": 132.316,
+      "peak_rss_kib": 933624,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 3.614,
+          "peak_rss_kib": 109360,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 70.91,
+          "peak_rss_kib": 933624,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 5.022,
+          "peak_rss_kib": 215416,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "memory.simulation.simulate",
+        "passed": true
+      }
+    },
+    {
+      "case": "mshr-ENTRIES2-shift",
+      "family": "mshr",
+      "config": 2,
+      "reference_name": "shift",
+      "is_baseline": false,
+      "source_sha256": "ef60acf5c137d8917393122942c6d91878d7395d6a5329e26e71a8f0681b28c8",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "a9d24735f367a9ca589199e87b38f009",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 4241.9,
+      "setup_slack_ns": 11.5405,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 4241.9,
+        "setup_slack_ns": 11.5405,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.100687,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.4595,
+        "route_violation_count": 0,
+        "route_wirelength_um": 23857,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.300864,
+        "detail_route_resources": {
+          "elapsed_s": 33.07,
+          "cpu_s": 59.67,
+          "peak_rss_kib": 909184
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 74.547,
+      "cpu_s": 117.355,
+      "peak_rss_kib": 925840,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 3.819,
+          "peak_rss_kib": 102380,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 63.054,
+          "peak_rss_kib": 925840,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 4.42,
+          "peak_rss_kib": 227320,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "memory.simulation.simulate",
+        "passed": true
+      }
+    },
+    {
+      "case": "sparse24-G2-serial",
+      "family": "sparse24",
+      "config": 2,
+      "reference_name": "serial",
+      "is_baseline": true,
+      "source_sha256": "33cf23c0d6c0ce1ee2346d52bd49f730639d64b22292518011aa3d0e62fec7ec",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "603d38850fe4c79a33e571d3eb136d1f",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 10129.3,
+      "setup_slack_ns": 11.8141,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 10129.3,
+        "setup_slack_ns": 11.8141,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.0974419,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.1859,
+        "route_violation_count": 0,
+        "route_wirelength_um": 66805,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.78,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.718436,
+        "detail_route_resources": {
+          "elapsed_s": 186.12,
+          "cpu_s": 352.35999999999996,
+          "peak_rss_kib": 1062668
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 274.898,
+      "cpu_s": 482.316,
+      "peak_rss_kib": 1079812,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 18.081,
+          "peak_rss_kib": 132280,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 245.424,
+          "peak_rss_kib": 1079812,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 8.642,
+          "peak_rss_kib": 271748,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "sparse24.decoder_check+simulation",
+        "passed": true
+      }
+    },
+    {
+      "case": "sparse24-G2-pipeline",
+      "family": "sparse24",
+      "config": 2,
+      "reference_name": "pipeline",
+      "is_baseline": false,
+      "source_sha256": "6f3c8f31edc429e46181185960efa18c0e61020ecdcf8478c6c4c897fbf6f224",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "603d38850fe4c79a33e571d3eb136d1f",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 11010,
+      "setup_slack_ns": 11.7029,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 11010,
+        "setup_slack_ns": 11.7029,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.106799,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.2971,
+        "route_violation_count": 0,
+        "route_wirelength_um": 65771,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.84,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.780903,
+        "detail_route_resources": {
+          "elapsed_s": 185.05,
+          "cpu_s": 334.25,
+          "peak_rss_kib": 1046060
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 280.547,
+      "cpu_s": 477.035,
+      "peak_rss_kib": 1062940,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 17.064,
+          "peak_rss_kib": 134476,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 252.668,
+          "peak_rss_kib": 1062940,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 8.836,
+          "peak_rss_kib": 282640,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "sparse24.decoder_check+simulation",
+        "passed": true
+      }
+    },
+    {
+      "case": "block_quant-N4-serial",
+      "family": "block_quant",
+      "config": 4,
+      "reference_name": "serial",
+      "is_baseline": true,
+      "source_sha256": "40b9fdc14f4d2e9e70da3c2eabdbaa891495218d6ae5f72d43419d058b6f1d32",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "ed097d499adfe7c26d19c9630dd19170",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 2136.25,
+      "setup_slack_ns": 11.8334,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 2136.25,
+        "setup_slack_ns": 11.8334,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.105048,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.1666,
+        "route_violation_count": 0,
+        "route_wirelength_um": 16176,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.151517,
+        "detail_route_resources": {
+          "elapsed_s": 42.36,
+          "cpu_s": 67.99000000000001,
+          "peak_rss_kib": 890668
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 76.306,
+      "cpu_s": 112.246,
+      "peak_rss_kib": 907596,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 6.029,
+          "peak_rss_kib": 110684,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 65.275,
+          "peak_rss_kib": 907596,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 4.018,
+          "peak_rss_kib": 191064,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "block_quant.arithmetic_check+simulation",
+        "passed": true
+      }
+    },
+    {
+      "case": "block_quant-N4-chunked4",
+      "family": "block_quant",
+      "config": 4,
+      "reference_name": "chunked4",
+      "is_baseline": false,
+      "source_sha256": "8fda0e3d643b5fcb9909ef89615459cac08cf792d6b5aab795cca84b2c5a0ed8",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "ed097d499adfe7c26d19c9630dd19170",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 4129.65,
+      "setup_slack_ns": 11.8058,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 4129.65,
+        "setup_slack_ns": 11.8058,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.102212,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.1942,
+        "route_violation_count": 0,
+        "route_wirelength_um": 40978,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.292902,
+        "detail_route_resources": {
+          "elapsed_s": 92.11,
+          "cpu_s": 169.15,
+          "peak_rss_kib": 961108
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 145.729,
+      "cpu_s": 243.226,
+      "peak_rss_kib": 978000,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 10.445,
+          "peak_rss_kib": 123948,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 128.155,
+          "peak_rss_kib": 978000,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 5.825,
+          "peak_rss_kib": 232676,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "block_quant.arithmetic_check+simulation",
+        "passed": true
+      }
+    },
+    {
+      "case": "hadamard_int8-N4-serial_butterfly",
+      "family": "hadamard_int8",
+      "config": 4,
+      "reference_name": "serial_butterfly",
+      "is_baseline": true,
+      "source_sha256": "f5a78eb0f073af7fb514b2f35e8e42e121f57e1b5ed2c588acbded40809bbb80",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "b7a901083517bb97236c38f866caf700",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 5210.94,
+      "setup_slack_ns": 11.8432,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 5210.94,
+        "setup_slack_ns": 11.8432,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.09632,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.1568,
+        "route_violation_count": 0,
+        "route_wirelength_um": 53108,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.369595,
+        "detail_route_resources": {
+          "elapsed_s": 98.12,
+          "cpu_s": 185.21,
+          "peak_rss_kib": 964064
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 153.251,
+      "cpu_s": 261.416,
+      "peak_rss_kib": 980888,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 10.045,
+          "peak_rss_kib": 143100,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 134.783,
+          "peak_rss_kib": 980888,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 6.839,
+          "peak_rss_kib": 234220,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "hadamard_int8.exact_check+simulation",
+        "passed": true
+      }
+    },
+    {
+      "case": "hadamard_int8-N4-sized_serial_butterfly",
+      "family": "hadamard_int8",
+      "config": 4,
+      "reference_name": "sized_serial_butterfly",
+      "is_baseline": false,
+      "source_sha256": "f9e267aa52cf9ad6f38a3ade758a2c256e173bfcee399edf488cf77b7a426f0b",
+      "freeze_sha256": "0ec4b4ce9424d81494c743fa5c9726be20ea93d5a895dbede651c990cff57ebc",
+      "seed_id": "b7a901083517bb97236c38f866caf700",
+      "generic_cells": null,
+      "physical_stdcell_area_um2": 2042.88,
+      "setup_slack_ns": 11.8571,
+      "route_violation_count": 0,
+      "physical_stage": "post_route_report",
+      "finite_pre_route_checked": true,
+      "route_completed": true,
+      "metrics": {
+        "mapped_stdcell_area_um2": null,
+        "physical_stdcell_area_um2": 2042.88,
+        "setup_slack_ns": 11.8571,
+        "setup_tns_ns": 0,
+        "hold_slack_ns": 0.108709,
+        "hold_tns_ns": 0,
+        "reported_path_delay_ns": 4.1429,
+        "route_violation_count": 0,
+        "route_wirelength_um": 17161,
+        "antenna_violating_nets": 0,
+        "requested_place_density": 0.55,
+        "effective_place_density": 0.55,
+        "floorplan_die_um": [
+          0,
+          0,
+          140,
+          140
+        ],
+        "floorplan_core_um": [
+          10,
+          10,
+          130,
+          130
+        ],
+        "actual_die_area_um2": 19600,
+        "actual_core_area_um2": 14099.1,
+        "actual_cell_utilization": 0.144895,
+        "detail_route_resources": {
+          "elapsed_s": 38.29,
+          "cpu_s": 65.27,
+          "peak_rss_kib": 909580
+        },
+        "rc_extraction": "OpenRCX extracted SPEF"
+      },
+      "error": null,
+      "elapsed_s": 68.482,
+      "cpu_s": 104.288,
+      "peak_rss_kib": 926468,
+      "stage_resources": {
+        "synth": {
+          "elapsed_s": 4.022,
+          "peak_rss_kib": 97716,
+          "exit_code": 0
+        },
+        "route": {
+          "elapsed_s": 59.658,
+          "peak_rss_kib": 926468,
+          "exit_code": 0
+        },
+        "report": {
+          "elapsed_s": 4.019,
+          "peak_rss_kib": 194832,
+          "exit_code": 0
+        }
+      },
+      "formal_equivalence": "not_run",
+      "post_route_functional": "not_run",
+      "signoff": false,
+      "functional_check": {
+        "official_simulator": "hadamard_int8.exact_check+simulation",
+        "passed": true
+      }
+    }
+  ]
+}

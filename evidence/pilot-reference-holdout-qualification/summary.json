@@ -1,0 +1,129 @@
+{
+  "attempted_cases": 65,
+  "by_family": {
+    "block_quant": {
+      "attempted": 36,
+      "failed": 0,
+      "tested_correct": 36
+    },
+    "gather": {
+      "attempted": 9,
+      "failed": 0,
+      "tested_correct": 9
+    },
+    "hadamard_int8": {
+      "attempted": 6,
+      "failed": 0,
+      "tested_correct": 6
+    },
+    "mshr": {
+      "attempted": 4,
+      "failed": 0,
+      "tested_correct": 4
+    },
+    "sparse24": {
+      "attempted": 10,
+      "failed": 0,
+      "tested_correct": 10
+    }
+  },
+  "by_reference": {
+    "block_quant:chunked4": {
+      "attempted": 12,
+      "failed": 0,
+      "tested_correct": 12
+    },
+    "block_quant:parallel": {
+      "attempted": 12,
+      "failed": 0,
+      "tested_correct": 12
+    },
+    "block_quant:serial": {
+      "attempted": 12,
+      "failed": 0,
+      "tested_correct": 12
+    },
+    "gather:legacy_baseline": {
+      "attempted": 3,
+      "failed": 0,
+      "tested_correct": 3
+    },
+    "gather:static_decoded": {
+      "attempted": 3,
+      "failed": 0,
+      "tested_correct": 3
+    },
+    "gather:time_mux": {
+      "attempted": 3,
+      "failed": 0,
+      "tested_correct": 3
+    },
+    "hadamard_int8:serial_butterfly": {
+      "attempted": 2,
+      "failed": 0,
+      "tested_correct": 2
+    },
+    "hadamard_int8:sized_serial_butterfly": {
+      "attempted": 2,
+      "failed": 0,
+      "tested_correct": 2
+    },
+    "hadamard_int8:stage_parallel": {
+      "attempted": 2,
+      "failed": 0,
+      "tested_correct": 2
+    },
+    "mshr:ring": {
+      "attempted": 2,
+      "failed": 0,
+      "tested_correct": 2
+    },
+    "mshr:shift": {
+      "attempted": 2,
+      "failed": 0,
+      "tested_correct": 2
+    },
+    "sparse24:pipeline": {
+      "attempted": 5,
+      "failed": 0,
+      "tested_correct": 5
+    },
+    "sparse24:serial": {
+      "attempted": 5,
+      "failed": 0,
+      "tested_correct": 5
+    }
+  },
+  "by_split": {
+    "dev": {
+      "attempted": 24,
+      "failed": 0,
+      "tested_correct": 24
+    },
+    "test": {
+      "attempted": 41,
+      "failed": 0,
+      "tested_correct": 41
+    }
+  },
+  "canonical_train_registry_sha256": "b428f5a19e16565e9e9a171f2eda78300f5b892867df524eed48f2ad5fb02c44",
+  "failed_cases": 0,
+  "failures": [],
+  "formal": "not_run",
+  "interpretation": "Frozen authored/legacy reference correctness checks only; not a model evaluation or training result. Do not expose DEV/TEST outcomes to a future model feedback path.",
+  "model_cost_usd": "unavailable_no_model_calls",
+  "model_token_count": "unavailable_no_model_calls",
+  "physical": "not_run",
+  "plan_sha256": "4e677b1a480c96f62663c6bed5acf55f6e796df4785ac9241200586afadc0552",
+  "qualification_scope": "reference correctness on DEV/TEST structural parameters only",
+  "registered_cases": 65,
+  "registry_sha256": "56e1c78c0fcf5e02f09310fcc437455ae755419d7313e5e1a055c749047c60db",
+  "roster_sha256": "6043754b06b4d98557ec563ce804599f39b47da5eb9df1aff51fa42d7c4b18e6",
+  "runner_case_cpu_sum_s": 777.616069,
+  "runner_case_cpu_time_scope": "sum of run_case runner_and_spawned_tools CPU times; no separate orchestration CPU measurement",
+  "runner_case_wall_sum_s": 791.062578,
+  "schema": "chip-rl-pilot-reference-holdout-qualification-v1",
+  "status": "complete",
+  "tested_correct_cases": 65,
+  "total_wall_time_s": 793.733037
+}
